@@ -1,0 +1,105 @@
+{
+  "$description": "Material Glass design tokens. Material 3 color roles and scales, rendered on Liquid-Glass-style translucent surfaces. Unofficial; not affiliated with Google or Apple.",
+  "themes": {
+    "sea-glass": {
+      "$description": "Dark-first teal theme. Seed #26A69A.",
+      "palette": {
+        "primary":   { "0": "#000000", "10": "#00201D", "20": "#003733", "30": "#00504A", "40": "#006A62", "50": "#00867C", "60": "#22A296", "70": "#4DBEB1", "80": "#6FDACC", "90": "#8DF6E8", "95": "#B4FFF4", "99": "#F2FFFC", "100": "#FFFFFF" },
+        "secondary": { "0": "#000000", "10": "#001E2C", "20": "#003549", "30": "#004C68", "40": "#006688", "50": "#0080AA", "60": "#2E9BC7", "70": "#54B6E3", "80": "#81CFF7", "90": "#C4E7FF", "95": "#E3F3FF", "99": "#FBFCFF", "100": "#FFFFFF" },
+        "tertiary":  { "0": "#000000", "10": "#002111", "20": "#00391F", "30": "#0E5131", "40": "#2B6A47", "50": "#45845E", "60": "#5F9E77", "70": "#79BA90", "80": "#93D6AA", "90": "#AEF2C5", "95": "#C5FFD8", "99": "#F5FFF5", "100": "#FFFFFF" },
+        "neutral":   { "0": "#000000", "10": "#161D1C", "20": "#2B3231", "30": "#414948", "40": "#59605F", "50": "#717978", "60": "#8B9391", "70": "#A5ADAB", "80": "#C1C8C6", "90": "#DDE4E2", "95": "#EBF2F0", "99": "#FAFDFB", "100": "#FFFFFF" },
+        "error":     { "0": "#000000", "10": "#410002", "20": "#690005", "30": "#93000A", "40": "#BA1A1A", "50": "#DE3730", "60": "#FF5449", "70": "#FF897D", "80": "#FFB4AB", "90": "#FFDAD6", "95": "#FFEDEA", "99": "#FFFBFF", "100": "#FFFFFF" }
+      },
+      "light": {
+        "color": {
+          "primary": "#006A62", "on-primary": "#FFFFFF", "primary-container": "#8DF6E8", "on-primary-container": "#00201D",
+          "secondary": "#006688", "on-secondary": "#FFFFFF", "secondary-container": "#C4E7FF", "on-secondary-container": "#001E2C",
+          "tertiary": "#2B6A47", "on-tertiary": "#FFFFFF", "tertiary-container": "#AEF2C5", "on-tertiary-container": "#002111",
+          "error": "#BA1A1A", "on-error": "#FFFFFF", "error-container": "#FFDAD6", "on-error-container": "#410002",
+          "surface": "#F4FBF9", "on-surface": "#161D1C", "on-surface-variant": "#3F4948",
+          "surface-container-lowest": "#FFFFFF", "surface-container-low": "#EEF5F3", "surface-container": "#E9EFED", "surface-container-high": "#E3EAE8", "surface-container-highest": "#DDE4E2",
+          "outline": "#6F7978", "outline-variant": "#BEC9C7",
+          "inverse-surface": "#2B3231", "inverse-on-surface": "#ECF2F0", "inverse-primary": "#6FDACC",
+          "scene-1": "#6FDACC", "scene-2": "#81CFF7", "scene-3": "#93D6AA", "scene-base": "#E3EFEC"
+        },
+        "glass": { "base": "#FFFFFF", "tint": "#6FDACC", "tint-alpha": 0.10, "alpha": [0.36, 0.48, 0.60, 0.72, 0.84], "specular": 1, "rim": 0.60, "saturate": 1.6, "shadow": "#00201D", "shadow-alpha": 0.14 }
+      },
+      "dark": {
+        "color": {
+          "primary": "#6FDACC", "on-primary": "#003733", "primary-container": "#00504A", "on-primary-container": "#8DF6E8",
+          "secondary": "#81CFF7", "on-secondary": "#003549", "secondary-container": "#004C68", "on-secondary-container": "#C4E7FF",
+          "tertiary": "#93D6AA", "on-tertiary": "#00391F", "tertiary-container": "#0E5131", "on-tertiary-container": "#AEF2C5",
+          "error": "#FFB4AB", "on-error": "#690005", "error-container": "#93000A", "on-error-container": "#FFDAD6",
+          "surface": "#0E1514", "on-surface": "#DDE4E2", "on-surface-variant": "#BEC9C7",
+          "surface-container-lowest": "#090F0E", "surface-container-low": "#161D1C", "surface-container": "#1A2120", "surface-container-high": "#252B2A", "surface-container-highest": "#2F3635",
+          "outline": "#899392", "outline-variant": "#3F4948",
+          "inverse-surface": "#DDE4E2", "inverse-on-surface": "#2B3231", "inverse-primary": "#006A62",
+          "scene-1": "#00867C", "scene-2": "#006688", "scene-3": "#2B6A47", "scene-base": "#070C0C"
+        },
+        "glass": { "base": "#141B1A", "tint": "#00504A", "tint-alpha": 0.16, "alpha": [0.34, 0.46, 0.58, 0.68, 0.78], "specular": 0.26, "rim": 0.13, "saturate": 1.4, "shadow": "#000000", "shadow-alpha": 0.45 }
+      }
+    },
+    "prism": {
+      "$description": "Light-first indigo and coral theme. Seed #4355B2.",
+      "palette": {
+        "primary":   { "0": "#000000", "10": "#00105C", "20": "#0F2380", "30": "#2A3C98", "40": "#4355B2", "50": "#5D6FCC", "60": "#7789E7", "70": "#92A4FF", "80": "#B8C3FF", "90": "#DEE0FF", "95": "#F0EFFF", "99": "#FFFBFF", "100": "#FFFFFF" },
+        "secondary": { "0": "#000000", "10": "#0A1D28", "20": "#20323E", "30": "#374955", "40": "#4F616D", "50": "#687A86", "60": "#8294A0", "70": "#9CAEBB", "80": "#B6C9D8", "90": "#D2E5F5", "95": "#E4F3FF", "99": "#F9FCFF", "100": "#FFFFFF" },
+        "tertiary":  { "0": "#000000", "10": "#3A0B06", "20": "#5E1E14", "30": "#7A3428", "40": "#984A3D", "50": "#B56253", "60": "#D47B6B", "70": "#F29584", "80": "#FFB4A5", "90": "#FFDAD3", "95": "#FFEDE9", "99": "#FFFBFF", "100": "#FFFFFF" },
+        "neutral":   { "0": "#000000", "10": "#1B1B23", "20": "#303038", "30": "#46464F", "40": "#5E5E67", "50": "#777680", "60": "#91909A", "70": "#ACAAB4", "80": "#C7C5D0", "90": "#E4E1EC", "95": "#F3F0FB", "99": "#FCF8FF", "100": "#FFFFFF" },
+        "error":     { "0": "#000000", "10": "#410002", "20": "#690005", "30": "#93000A", "40": "#BA1A1A", "50": "#DE3730", "60": "#FF5449", "70": "#FF897D", "80": "#FFB4AB", "90": "#FFDAD6", "95": "#FFEDEA", "99": "#FFFBFF", "100": "#FFFFFF" }
+      },
+      "light": {
+        "color": {
+          "primary": "#4355B2", "on-primary": "#FFFFFF", "primary-container": "#DEE0FF", "on-primary-container": "#00105C",
+          "secondary": "#4F616D", "on-secondary": "#FFFFFF", "secondary-container": "#D2E5F5", "on-secondary-container": "#0A1D28",
+          "tertiary": "#984A3D", "on-tertiary": "#FFFFFF", "tertiary-container": "#FFDAD3", "on-tertiary-container": "#3A0B06",
+          "error": "#BA1A1A", "on-error": "#FFFFFF", "error-container": "#FFDAD6", "on-error-container": "#410002",
+          "surface": "#FCF8FF", "on-surface": "#1B1B23", "on-surface-variant": "#46464F",
+          "surface-container-lowest": "#FFFFFF", "surface-container-low": "#F6F2FD", "surface-container": "#F0ECF7", "surface-container-high": "#EAE7F1", "surface-container-highest": "#E4E1EC",
+          "outline": "#777680", "outline-variant": "#C7C5D0",
+          "inverse-surface": "#303038", "inverse-on-surface": "#F3F0FB", "inverse-primary": "#B8C3FF",
+          "scene-1": "#B8C3FF", "scene-2": "#FFB4A5", "scene-3": "#B6C9D8", "scene-base": "#F1EEFB"
+        },
+        "glass": { "base": "#FFFFFF", "tint": "#B8C3FF", "tint-alpha": 0.10, "alpha": [0.36, 0.48, 0.60, 0.72, 0.84], "specular": 1, "rim": 0.60, "saturate": 1.6, "shadow": "#00105C", "shadow-alpha": 0.14 }
+      },
+      "dark": {
+        "color": {
+          "primary": "#B8C3FF", "on-primary": "#0F2380", "primary-container": "#2A3C98", "on-primary-container": "#DEE0FF",
+          "secondary": "#B6C9D8", "on-secondary": "#20323E", "secondary-container": "#374955", "on-secondary-container": "#D2E5F5",
+          "tertiary": "#FFB4A5", "on-tertiary": "#5E1E14", "tertiary-container": "#7A3428", "on-tertiary-container": "#FFDAD3",
+          "error": "#FFB4AB", "on-error": "#690005", "error-container": "#93000A", "on-error-container": "#FFDAD6",
+          "surface": "#121219", "on-surface": "#E4E1EC", "on-surface-variant": "#C7C5D0",
+          "surface-container-lowest": "#0D0D15", "surface-container-low": "#1B1B23", "surface-container": "#1F1F27", "surface-container-high": "#2A2931", "surface-container-highest": "#35343C",
+          "outline": "#91909A", "outline-variant": "#46464F",
+          "inverse-surface": "#E4E1EC", "inverse-on-surface": "#303038", "inverse-primary": "#4355B2",
+          "scene-1": "#4355B2", "scene-2": "#984A3D", "scene-3": "#4F616D", "scene-base": "#0B0B12"
+        },
+        "glass": { "base": "#1B1B25", "tint": "#2A3C98", "tint-alpha": 0.16, "alpha": [0.34, 0.46, 0.58, 0.68, 0.78], "specular": 0.26, "rim": 0.13, "saturate": 1.4, "shadow": "#000000", "shadow-alpha": 0.5 }
+      }
+    }
+  },
+  "glass-tier": {
+    "$description": "Glass tiers replace the five Material surface-container levels. Higher tier = more blur, more opacity, brighter edge.",
+    "blur": [8, 14, 20, 28, 36],
+    "shadow-y": [4, 6, 8, 11, 14],
+    "shadow-blur": [16, 22, 28, 44, 56]
+  },
+  "shape": { "none": 0, "xs": 8, "sm": 12, "md": 16, "lg": 24, "xl": 32, "full": 9999 },
+  "state": { "hover": 0.08, "focus": 0.12, "pressed": 0.12, "dragged": 0.16 },
+  "motion": {
+    "duration-short": 160,
+    "duration-medium": 320,
+    "duration-long": 520,
+    "ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "ease-emphasized": "cubic-bezier(0.3, 0, 0, 1.15)"
+  },
+  "type": {
+    "font-display": "\"Figtree\", ui-sans-serif, system-ui, sans-serif",
+    "font-body": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+    "display": { "size": 57, "line": 64, "weight": 700, "tracking": "-0.02em" },
+    "headline": { "size": 32, "line": 40, "weight": 600, "tracking": "-0.01em" },
+    "title": { "size": 22, "line": 28, "weight": 600, "tracking": "-0.01em" },
+    "body": { "size": 16, "line": 24, "weight": 400, "tracking": "0" },
+    "label": { "size": 14, "line": 20, "weight": 500, "tracking": "0.01em" }
+  }
+}

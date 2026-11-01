@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en" data-mg-theme="sea-glass" data-mg-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Material Glass · Material 3 on Liquid Glass</title>
+<meta name="description" content="Material 3 color roles, type and states, rendered on Liquid-Glass-style surfaces. Design tokens, a CSS file and optional JS for refraction and liquid motion. MIT.">
+<meta property="og:title" content="Material Glass">
+<meta property="og:description" content="Material 3 on Liquid-Glass-style surfaces. Tokens, CSS, refraction and liquid motion.">
+<meta property="og:image" content="https://raw.githubusercontent.com/sky-five/material-glass/main/docs/screenshots/hero-sea-glass-dark.jpg">
+<meta name="theme-color" content="#070C0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="material-glass.css">
+<link rel="stylesheet" href="demo/demo.css">
+<script>
+  try {
+    var s = JSON.parse(localStorage.getItem('mg-demo') || '{}');
+    if (s.theme) document.documentElement.setAttribute('data-mg-theme', s.theme);
+    if (s.mode === 'auto') document.documentElement.removeAttribute('data-mg-mode');
+    else if (s.mode) document.documentElement.setAttribute('data-mg-mode', s.mode);
+    if (s.reduced) document.documentElement.setAttribute('data-mg-transparency', 'reduced');
+  } catch (e) {}
+  var q = new URLSearchParams(location.search);
+  if (q.get('theme')) document.documentElement.setAttribute('data-mg-theme', q.get('theme'));
+  if (q.get('mode')) document.documentElement.setAttribute('data-mg-mode', q.get('mode'));
+</script>
+</head>
+<body>
+<a class="skip mg-btn" href="#main">Skip to content</a>
+
+<svg aria-hidden="true" width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="mg-demo-liquid" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="3" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></symbol>
+  <symbol id="i-library" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4-1v16l-4 1z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.8 8.6a5 5 0 0 0-8.8-3.2 5 5 0 0 0-8.8 3.2c0 5.3 8.8 10.4 8.8 10.4s8.8-5.1 8.8-10.4z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path fill="currentColor" d="M16 5h2v14h-2zM5 5v14l10-7z"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.5a5 5 0 0 1 5.5 4.5"/></g></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 13l3-8h12l3 8v6H3zM3 13h5l2 3h4l2-3h5"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></symbol>
+</svg>
+
+<header class="topbar wrap">
+  <div class="topbar__inner mg-glass-3" data-mg-refract="22" data-mg-bezel="14">
+    <a class="brand" href="#top" aria-label="Material Glass home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Material Glass</span>
+    </a>
+    <div class="controls">
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-label="Theme">
+        <button class="mg-segmented__item" type="button" data-theme="sea-glass" aria-pressed="true">Sea Glass</button>
+        <button class="mg-segmented__item" type="button" data-theme="prism" aria-pressed="false">Prism</button>
+      </div>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-label="Color mode">
+        <button class="mg-segmented__item" type="button" data-mode="auto" aria-pressed="false">Auto</button>
+        <button class="mg-segmented__item" type="button" data-mode="light" aria-pressed="false">Light</button>
+        <button class="mg-segmented__item" type="button" data-mode="dark" aria-pressed="true">Dark</button>
+      </div>
+      <span class="glass-toggle">
+        <button class="mg-switch" type="button" role="switch" aria-checked="true" id="glass-switch" aria-labelledby="glass-switch-label"></button>
+        <span class="control-label" id="glass-switch-label">Glass</span>
+      </span>
+      <a class="mg-btn mg-btn--sm" href="https://github.com/sky-five/material-glass"><svg aria-hidden="true"><use href="#i-code"/></svg>GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top">
+    <div class="hero__copy">
+      <span class="eyebrow">Unofficial · v0.1 · MIT</span>
+      <h1 class="mg-display">Material <span>Glass</span></h1>
+      <p class="hero__lede">What if Material 3 and Liquid Glass had a baby? Material's color roles, tonal palettes, type scale and state layers, rendered on translucent, refracting surfaces. One CSS file, design tokens, and a small optional script for refraction and liquid motion.</p>
+      <div class="hero__ctas">
+        <a class="mg-btn mg-btn--lg" href="#start">Get started <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="mg-btn mg-btn--lg mg-btn--glass" href="#components">See components</a>
+      </div>
+      <ul class="hero__facts">
+        <li><strong>2 themes</strong> × light and dark</li>
+        <li><strong>5 glass tiers</strong> mapped to elevation</li>
+        <li><strong>412 contrast checks</strong> passing</li>
+        <li><strong>0</strong> dependencies</li>
+      </ul>
+      <p class="lens-hint"><svg aria-hidden="true"><use href="#i-drag"/></svg><span>Drag the lens over the headline. In Chrome and Edge, it really refracts.</span></p>
+      <div class="lens-zone"><div class="mg-lens" data-mg-draggable data-mg-refract="28" data-mg-bezel="26" data-mg-magnify="0.1" aria-hidden="true"></div></div>
+    </div>
+
+    <div class="device" aria-label="Example: music app on a phone" role="region">
+      <div class="device__screen">
+        <div class="device__scroll">
+          <div class="art-grid">
+            <a class="art art--wide art-1" href="#top"><small>Featured playlist</small><b>Night<br>Drive</b></a>
+            <a class="art art-2" href="#top"><small>Hollow Tide</small><b>Glass&shy;work</b></a>
+            <a class="art art-3" href="#top"><small>Mira Vale</small><b>Tonal</b></a>
+            <a class="art art-4" href="#top"><small>Prism Radio</small><b>Seed 40</b></a>
+            <a class="art art-5" href="#top"><small>The Lows</small><b>Refract</b></a>
+          </div>
+          <div class="now"><h3>Made for you</h3><a href="#top" style="font-size:13px;font-weight:600;text-decoration:none">See all</a></div>
+          <ul class="mg-list">
+            <li class="mg-list-item mg-glass-1"><span class="mg-avatar">MF</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Morning focus</span><span class="mg-list-item__supporting">42 tracks · updated today</span></span></li>
+            <li class="mg-list-item mg-glass-1"><span class="mg-avatar mg-avatar--tertiary">RR</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Rainy run</span><span class="mg-list-item__supporting">28 tracks · 1 h 46 min</span></span></li>
+          </ul>
+          <div class="art-grid" style="margin-top:12px">
+            <a class="art art--wide art-6" href="#top"><small>Live session</small><b>Slow<br>Light</b></a>
+          </div>
+        </div>
+        <div class="device__top">
+          <label class="mg-search mg-glass-2" data-mg-refract="18" data-mg-bezel="14">
+            <svg aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="sr-only">Search music</span>
+            <input class="mg-field__input" type="search" placeholder="Songs, artists, podcasts">
+          </label>
+        </div>
+        <div class="device__bottom">
+          <div class="player mg-glass-3" data-mg-refract="20" data-mg-bezel="16">
+            <span class="player__art" aria-hidden="true"></span>
+            <span class="player__text"><b>Night Drive</b><span>Prism Radio · Lo-fi</span></span>
+            <button class="mg-icon-btn" type="button" aria-label="Pause"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="mg-icon-btn" type="button" aria-label="Next track"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+          </div>
+          <div class="device__bottom-row">
+            <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract="24" data-mg-bezel="18" aria-label="App">
+              <button class="mg-nav__item" type="button" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg>Home</button>
+              <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-search"/></svg>Search</button>
+              <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-library"/></svg>Library</button>
+            </nav>
+            <button class="mg-fab" type="button" aria-label="Add to queue" style="width:68px;height:68px;border-radius:999px"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="palette" aria-labelledby="palette-title">
+    <div class="section-head">
+      <div><span class="eyebrow">Palette</span><h2 class="mg-headline" id="palette-title"><span data-theme-name>Sea Glass</span> palette</h2></div>
+      <p>Material 3 color roles and 13-step tonal palettes. Every swatch and hex below is read live from the CSS, so it always matches the theme you picked.</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch mg-glass-1"><div class="swatch__liquid sw-primary"><i></i></div><div class="swatch__meta"><div><b>Primary</b><span>Actions, focus, selection</span></div><code class="swatch__hex" data-hex-of="primary"></code></div></div>
+      <div class="swatch mg-glass-1"><div class="swatch__liquid sw-secondary"><i></i></div><div class="swatch__meta"><div><b>Secondary</b><span>Tonal buttons, chips</span></div><code class="swatch__hex" data-hex-of="secondary"></code></div></div>
+      <div class="swatch mg-glass-1"><div class="swatch__liquid sw-tertiary"><i></i></div><div class="swatch__meta"><div><b>Tertiary</b><span>Accents, highlights</span></div><code class="swatch__hex" data-hex-of="tertiary"></code></div></div>
+      <div class="swatch mg-glass-1"><div class="swatch__liquid sw-neutral"><i></i></div><div class="swatch__meta"><div><b>Neutral</b><span>Surfaces, text</span></div><code class="swatch__hex" data-hex-of="surface"></code></div></div>
+    </div>
+    <div class="roles" id="roles"></div>
+    <div class="tonal" id="tonal"></div>
+  </section>
+
+  <section class="wrap" id="tiers" aria-labelledby="tiers-title">
+    <div class="section-head">
+      <div><span class="eyebrow">Elevation</span><h2 class="mg-headline" id="tiers-title">Five glass tiers</h2></div>
+      <p>Material has five surface-container levels. Here they become five panes of glass. Higher means more blur, more opacity and a brighter edge. Each tier falls back to its matching surface container when transparency is reduced.</p>
+    </div>
+    <div class="tier-stage mg-glass-0">
+      <div class="tier-stage__bg" aria-hidden="true"><span>Refraction · Tonal · Light · Refraction · Tonal · Light</span><span>Glass · Elevation · Spring · Glass · Elevation · Spring</span><span>Material · Seed · Container · Material · Seed · Container</span><span>Specular · Blur · Capsule · Specular · Blur · Capsule</span></div>
+      <div class="tiers">
+        <div class="tier mg-glass-0"><div><span class="eyebrow">G0</span><br><b>Lowest</b></div><dl><dt>blur</dt><dd>8px</dd><dt>fallback</dt><dd>lowest</dd></dl></div>
+        <div class="tier mg-glass-1"><div><span class="eyebrow">G1</span><br><b>Low</b></div><dl><dt>blur</dt><dd>14px</dd><dt>fallback</dt><dd>low</dd></dl></div>
+        <div class="tier mg-glass-2"><div><span class="eyebrow">G2</span><br><b>Mid</b></div><dl><dt>blur</dt><dd>20px</dd><dt>fallback</dt><dd>container</dd></dl></div>
+        <div class="tier mg-glass-3"><div><span class="eyebrow">G3</span><br><b>High</b></div><dl><dt>blur</dt><dd>28px</dd><dt>fallback</dt><dd>high</dd></dl></div>
+        <div class="tier mg-glass-4"><div><span class="eyebrow">G4</span><br><b>Highest</b></div><dl><dt>blur</dt><dd>36px</dd><dt>fallback</dt><dd>highest</dd></dl></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="components" aria-labelledby="components-title">
+    <div class="section-head">
+      <div><span class="eyebrow">Components</span><h2 class="mg-headline" id="components-title">Built from light</h2></div>
+      <p>States are light, not ink. Hovered and pressed glass brightens from the top edge, and pressed controls swell on a spring. Everything works with a keyboard and is a real form control.</p>
+    </div>
+    <div class="gallery">
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Buttons</h3>
+        <div class="row">
+          <button class="mg-btn" type="button">Filled</button>
+          <button class="mg-btn mg-btn--tonal" type="button">Tonal</button>
+          <button class="mg-btn mg-btn--glass" type="button">Glass</button>
+        </div>
+        <div class="row">
+          <button class="mg-btn mg-btn--outlined" type="button">Outlined</button>
+          <button class="mg-btn mg-btn--text" type="button">Text</button>
+          <button class="mg-btn mg-btn--danger" type="button">Delete</button>
+        </div>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>FAB and icon buttons</h3>
+        <div class="row">
+          <button class="mg-fab" type="button" aria-label="Create"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+          <button class="mg-fab mg-fab--extended" type="button"><svg aria-hidden="true"><use href="#i-edit"/></svg>Compose</button>
+        </div>
+        <div class="row">
+          <button class="mg-icon-btn" type="button" aria-label="Favourite" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-heart"/></svg></button>
+          <button class="mg-icon-btn" type="button" aria-label="Favourite" aria-pressed="true" data-toggle><svg aria-hidden="true"><use href="#i-heart"/></svg></button>
+          <button class="mg-icon-btn mg-glass-1" type="button" aria-label="Notifications"><svg aria-hidden="true"><use href="#i-bell"/></svg></button>
+          <button class="mg-icon-btn" type="button" aria-label="More options"><svg aria-hidden="true"><use href="#i-more"/></svg></button>
+        </div>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Chips</h3>
+        <div class="row">
+          <button class="mg-chip" type="button" aria-pressed="true" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>All</button>
+          <button class="mg-chip" type="button" aria-pressed="false" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>Design</button>
+          <button class="mg-chip" type="button" aria-pressed="true" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>Engineering</button>
+          <button class="mg-chip" type="button" aria-pressed="false" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>Docs</button>
+        </div>
+        <div class="row">
+          <span class="mg-badge mg-badge--primary">Live</span>
+          <span class="mg-badge">In review</span>
+          <span class="mg-badge mg-badge--tertiary">Shipped</span>
+          <span class="mg-badge mg-badge--error">Blocked</span>
+        </div>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Selection</h3>
+        <div class="row" style="gap:6px 18px">
+          <button class="mg-switch" type="button" role="switch" aria-checked="true" aria-label="Wi-Fi" data-toggle-switch></button>
+          <button class="mg-switch" type="button" role="switch" aria-checked="false" aria-label="Bluetooth" data-toggle-switch></button>
+          <label class="mg-choice"><input class="mg-check" type="checkbox" checked>Checked</label>
+          <label class="mg-choice"><input class="mg-radio" type="radio" name="demo-r" checked>On</label>
+          <label class="mg-choice"><input class="mg-radio" type="radio" name="demo-r">Off</label>
+        </div>
+        <label class="stack" style="gap:4px"><span class="control-label">Volume</span><input class="mg-slider" type="range" min="0" max="100" value="62"></label>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Text fields</h3>
+        <label class="mg-field"><span class="mg-field__label">Project name</span><input class="mg-field__input" type="text" value="Material Glass"></label>
+        <label class="mg-field"><span class="mg-field__label">Email</span><input class="mg-field__input" type="email" placeholder="name@company.com" autocomplete="off"></label>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Liquid selection</h3>
+        <div class="mg-segmented mg-glass-1" data-mg-liquid role="group" aria-label="Density" style="align-self:flex-start">
+          <button class="mg-segmented__item" type="button" aria-pressed="false">Compact</button>
+          <button class="mg-segmented__item" type="button" aria-pressed="true">Comfortable</button>
+          <button class="mg-segmented__item" type="button" aria-pressed="false">Spacious</button>
+        </div>
+        <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract="20" data-mg-bezel="16" aria-label="Example navigation">
+          <button class="mg-nav__item" type="button" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg>Home</button>
+          <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-search"/></svg>Search</button>
+          <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-library"/></svg>Library</button>
+          <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-user"/></svg>You</button>
+        </nav>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>Dialog and snackbar</h3>
+        <p class="muted" style="margin:0;font-size:14px;line-height:20px">The dialog is a native <code>&lt;dialog&gt;</code> on glass tier 3. It opens on a spring and traps focus.</p>
+        <div class="row">
+          <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog>Open dialog</button>
+          <button class="mg-btn mg-btn--glass" type="button" data-show-snack>Show snackbar</button>
+        </div>
+      </div>
+      <div class="mg-card mg-glass-2 demo-card">
+        <h3>List</h3>
+        <ul class="mg-list">
+          <li><a class="mg-list-item mg-list-item--interactive" href="#components" aria-selected="true"><span class="mg-avatar">RV</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Ravi moved Capsule nav</span><span class="mg-list-item__supporting">To In review · 12 min ago</span></span></a></li>
+          <li><a class="mg-list-item mg-list-item--interactive" href="#components"><span class="mg-avatar mg-avatar--tertiary">DN</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Dana commented</span><span class="mg-list-item__supporting">On the tier tokens · 40 min ago</span></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="example" aria-labelledby="example-title">
+    <div class="section-head">
+      <div><span class="eyebrow">In context</span><h2 class="mg-headline" id="example-title">A workspace, in glass</h2></div>
+      <p>A floating rail and a capsule toolbar over cards on lower tiers. The tabs are liquid. Resize the window and it reflows down to phone width.</p>
+    </div>
+    <div class="app-frame">
+      <div class="app-frame__bg" aria-hidden="true"></div>
+      <div class="app">
+        <nav class="mg-nav mg-rail mg-glass-3" data-mg-liquid aria-label="Workspace sections" style="align-self:flex-start">
+          <button class="mg-nav__item" type="button" aria-current="page" aria-label="Overview"><svg aria-hidden="true"><use href="#i-grid"/></svg></button>
+          <button class="mg-nav__item" type="button" aria-label="Analytics"><svg aria-hidden="true"><use href="#i-chart"/></svg></button>
+          <button class="mg-nav__item" type="button" aria-label="Inbox"><svg aria-hidden="true"><use href="#i-inbox"/></svg></button>
+          <button class="mg-nav__item" type="button" aria-label="Team"><svg aria-hidden="true"><use href="#i-team"/></svg></button>
+          <button class="mg-nav__item" type="button" aria-label="Settings"><svg aria-hidden="true"><use href="#i-gear"/></svg></button>
+        </nav>
+        <div class="app__main">
+          <div class="app__bar mg-glass-3">
+            <h3>Launch sprint</h3>
+            <div class="mg-segmented mg-glass-1" data-mg-liquid role="tablist" aria-label="View">
+              <button class="mg-segmented__item" type="button" role="tab" aria-selected="true">Dashboard</button>
+              <button class="mg-segmented__item" type="button" role="tab" aria-selected="false">Analytics</button>
+              <button class="mg-segmented__item" type="button" role="tab" aria-selected="false">Team</button>
+              <button class="mg-segmented__item" type="button" role="tab" aria-selected="false">Reports</button>
+            </div>
+            <button class="mg-icon-btn" type="button" aria-label="Notifications"><svg aria-hidden="true"><use href="#i-bell"/></svg></button>
+            <span class="mg-avatar mg-avatar--secondary" aria-hidden="true">SY</span>
+          </div>
+          <div class="app__grid">
+            <div class="mg-card mg-glass-2">
+              <h4 class="mg-card__title">Weekly throughput</h4>
+              <div class="kpis">
+                <div class="kpi"><span>Tasks closed</span><b>128</b><span class="mg-badge mg-badge--tertiary" style="align-self:flex-start">+18%</span></div>
+                <div class="kpi"><span>In review</span><b>7</b><span class="mg-badge" style="align-self:flex-start">+2 today</span></div>
+                <div class="kpi"><span>Blocked</span><b>2</b><span class="mg-badge mg-badge--error" style="align-self:flex-start">Needs owner</span></div>
+              </div>
+              <svg class="chart" viewBox="0 0 600 190" preserveAspectRatio="none" role="img" aria-label="Line chart: tasks closed rise from 14 to 31 per day over two weeks; tasks opened stay between 12 and 22.">
+                <defs>
+                  <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--mg-primary)" stop-opacity="0.35"/><stop offset="1" stop-color="var(--mg-primary)" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g stroke="var(--mg-outline-variant)" stroke-width="1"><path d="M0 40H600M0 90H600M0 140H600"/></g>
+                <path d="M0 150 C40 140 70 120 110 125 S180 150 220 120 S290 70 330 85 S400 110 440 70 S520 40 600 30 V190 H0Z" fill="url(#chart-fill)"/>
+                <path d="M0 150 C40 140 70 120 110 125 S180 150 220 120 S290 70 330 85 S400 110 440 70 S520 40 600 30" fill="none" stroke="var(--mg-primary)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M0 120 C50 130 90 100 140 105 S220 140 270 125 S350 95 400 115 S480 135 530 110 S580 100 600 105" fill="none" stroke="var(--mg-tertiary)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/>
+              </svg>
+              <div class="legend"><span><i style="background:var(--mg-primary)"></i>Closed</span><span><i style="background:var(--mg-tertiary)"></i>Opened</span></div>
+            </div>
+            <div class="mg-card mg-glass-2">
+              <h4 class="mg-card__title">Recent activity</h4>
+              <ul class="mg-list" style="margin-top:10px">
+                <li class="mg-list-item" aria-selected="true"><span class="mg-avatar">RV</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Ravi shipped the rail</span><span class="mg-list-item__supporting">12 minutes ago</span></span></li>
+                <li class="mg-list-item"><span class="mg-avatar mg-avatar--tertiary">DN</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Dana reviewed tokens</span><span class="mg-list-item__supporting">40 minutes ago</span></span></li>
+                <li class="mg-list-item"><span class="mg-avatar mg-avatar--secondary">AK</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Ana opened 3 issues</span><span class="mg-list-item__supporting">2 hours ago</span></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mg-card mg-glass-1">
+            <h4 class="mg-card__title">Tasks</h4>
+            <div class="mg-table-wrap">
+              <table class="mg-table">
+                <thead><tr><th scope="col">Task</th><th scope="col">Owner</th><th scope="col">Due</th><th scope="col">Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Glass tier tokens</td><td>Dana</td><td>Mon</td><td><span class="mg-badge mg-badge--tertiary">Done</span></td></tr>
+                  <tr><td>Capsule nav for tablet</td><td>Ravi</td><td>Wed</td><td><span class="mg-badge">In review</span></td></tr>
+                  <tr><td>Refraction on Safari</td><td>Ana</td><td>Fri</td><td><span class="mg-badge mg-badge--error">Blocked</span></td></tr>
+                  <tr><td>Motion guidelines</td><td>Sam</td><td>Next week</td><td><span class="mg-badge mg-badge--primary">In progress</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="mg-fab mg-fab--extended app__fab" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg>New task</button>
+    </div>
+  </section>
+
+  <section class="wrap" id="start" aria-labelledby="start-title">
+    <div class="section-head">
+      <div><span class="eyebrow">Get started</span><h2 class="mg-headline" id="start-title">Two lines to try it</h2></div>
+      <p>No build step. Link the stylesheet, optionally add the script, and set a theme on <code>&lt;html&gt;</code>. Tokens ship as JSON for Figma, Style Dictionary or your own pipeline.</p>
+    </div>
+    <div class="steps">
+      <div class="code-wrap">
+        <pre class="code mg-glass-2"><code><span class="tok-com">&lt;!-- 1. Styles (required) and script (optional) --&gt;</span>
+<span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-str">"stylesheet"</span>
+  <span class="tok-attr">href</span>=<span class="tok-str">"https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.1.0/material-glass.css"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;script</span> <span class="tok-attr">defer</span>
+  <span class="tok-attr">src</span>=<span class="tok-str">"https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.1.0/material-glass.js"</span><span class="tok-tag">&gt;&lt;/script&gt;</span>
+
+<span class="tok-com">&lt;!-- 2. Pick a theme. Omit data-mg-mode to follow the system. --&gt;</span>
+<span class="tok-tag">&lt;html</span> <span class="tok-attr">data-mg-theme</span>=<span class="tok-str">"sea-glass"</span> <span class="tok-attr">data-mg-mode</span>=<span class="tok-str">"dark"</span><span class="tok-tag">&gt;</span></code></pre>
+        <button class="mg-icon-btn" type="button" aria-label="Copy code" data-copy><svg aria-hidden="true"><use href="#i-copy"/></svg></button>
+      </div>
+      <div class="code-wrap">
+        <pre class="code mg-glass-2"><code><span class="tok-com">&lt;!-- 3. Use it --&gt;</span>
+<span class="tok-tag">&lt;body</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-scene"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;nav</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-nav mg-glass-3"</span> <span class="tok-attr">data-mg-liquid</span> <span class="tok-attr">data-mg-refract</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-nav__item"</span> <span class="tok-attr">href</span>=<span class="tok-str">"/"</span> <span class="tok-attr">aria-current</span>=<span class="tok-str">"page"</span><span class="tok-tag">&gt;</span>Home<span class="tok-tag">&lt;/a&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-nav__item"</span> <span class="tok-attr">href</span>=<span class="tok-str">"/library"</span><span class="tok-tag">&gt;</span>Library<span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-tag">&lt;/nav&gt;</span>
+  <span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-card mg-glass-2"</span><span class="tok-tag">&gt;</span>…<span class="tok-tag">&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;button</span> <span class="tok-attr">class</span>=<span class="tok-str">"mg-btn"</span><span class="tok-tag">&gt;</span>Save<span class="tok-tag">&lt;/button&gt;</span>
+<span class="tok-tag">&lt;/body&gt;</span></code></pre>
+        <button class="mg-icon-btn" type="button" aria-label="Copy code" data-copy><svg aria-hidden="true"><use href="#i-copy"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="principles-title">
+    <div class="section-head">
+      <div><span class="eyebrow">Principles</span><h2 class="mg-headline" id="principles-title">How the two systems meet</h2></div>
+    </div>
+    <div class="principles">
+      <div class="mg-card mg-glass-1 principle"><span class="num">01</span><h3>Glass is elevation</h3><p>Material's five surface containers become five glass tiers. Same roles and the same order, but depth comes from blur and light instead of tint.</p></div>
+      <div class="mg-card mg-glass-1 principle"><span class="num">02</span><h3>State is light</h3><p>Material's state-layer percentages are kept, but the layer is light from the top edge. Pressed glass brightens and swells. It never darkens.</p></div>
+      <div class="mg-card mg-glass-1 principle"><span class="num">03</span><h3>Selection is a drop</h3><p>The selected item is one lit pane that flows between options, stretching mid-flight like liquid, instead of a pill that pops in place.</p></div>
+      <div class="mg-card mg-glass-1 principle"><span class="num">04</span><h3>Glass steps aside</h3><p>Reduced transparency, high contrast, forced colors and older browsers get solid Material surfaces. Text contrast is tested on every theme.</p></div>
+    </div>
+  </section>
+</main>
+
+<dialog class="mg-dialog mg-glass-3" id="demo-dialog" aria-labelledby="dialog-title">
+  <h2 class="mg-dialog__title" id="dialog-title">Discard changes?</h2>
+  <p class="mg-dialog__body">Your edits to the tier tokens will be lost. This can't be undone.</p>
+  <form method="dialog" class="mg-dialog__actions">
+    <button class="mg-btn mg-btn--text" value="cancel">Keep editing</button>
+    <button class="mg-btn mg-btn--danger" value="discard">Discard</button>
+  </form>
+</dialog>
+
+<div class="snack-slot" aria-live="polite">
+  <div class="mg-snackbar" hidden id="snack"><span>Design review moved to Thursday</span><button class="mg-btn mg-btn--text mg-btn--sm" type="button" data-hide-snack>Undo</button></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Material Glass is an unofficial community project. It is not affiliated with or endorsed by Google or Apple. "Material Design" and "Liquid Glass" belong to their owners.</span>
+    <span>MIT License · <a href="https://github.com/sky-five/material-glass">Source on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="material-glass.js"></script>
+<script src="demo/demo.js"></script>
+</body>
+</html>

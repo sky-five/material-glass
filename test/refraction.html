@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-mg-theme="prism" data-mg-mode="light">
+<head>
+<meta charset="utf-8">
+<title>Refraction test</title>
+<link rel="stylesheet" href="../material-glass.css">
+<style>
+  body { margin: 0; padding: 20px; font-family: system-ui, sans-serif; background: #fff; }
+  .bg { position: relative; width: 900px; height: 300px; font-size: 64px; font-weight: 800; line-height: 75px; color: #4355B2;
+        background: repeating-linear-gradient(90deg, #0000 0 49px, #f29584 49px 50px), repeating-linear-gradient(0deg, #0000 0 49px, #f29584 49px 50px); }
+  .box { position: absolute; top: 60px; width: 180px; height: 180px; border-radius: 40px; background: transparent; border: 1px solid #0003; }
+  .a { left: 40px; } .b { left: 260px; } .c { left: 480px; } .d { left: 700px; }
+  p { font: 14px system-ui; }
+</style>
+</head>
+<body>
+<p>Left to right: neutral map (refract 0.01, should look untouched), edge only (refract 40), magnify 0.15 only, both.</p>
+<div class="bg">ABCDEFGHIJKLM<br>NOPQRSTUVWXYZ<br>0123456789012
+  <div class="box a" data-mg-refract="0.01" data-mg-bezel="1"></div>
+  <div class="box b" data-mg-refract="40" data-mg-bezel="30"></div>
+  <div class="box c" data-mg-refract="0.01" data-mg-bezel="1" data-mg-magnify="0.15"></div>
+  <div class="box d" data-mg-refract="40" data-mg-bezel="30" data-mg-magnify="0.15"></div>
+</div>
+<script src="../material-glass.js"></script>
+</body>
+</html>
