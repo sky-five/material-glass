@@ -4864,6 +4864,38 @@ th[aria-sort="descending"] .mg-table__sort::after { opacity: 1; rotate: 180deg; 
 }
 
 
+/* ─── Light source (experimental): data-mg-light on <html> or a container ───
+   One angle steers every glass highlight and gradient. 0deg = light from the top.
+   Set --mg-light-angle yourself (data-mg-light="custom"), or let material-glass.js drive it:
+   data-mg-light="pointer" follows the pointer, data-mg-light="tilt" follows device orientation. */
+@supports (width: calc(sin(1deg) * 1px)) {
+  [data-mg-light] :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4),
+  :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4)[data-mg-light] {
+    --_lx: calc(sin(var(--mg-light-angle, 0deg)) * -1px);
+    --_ly: calc(cos(var(--mg-light-angle, 0deg)) * 1px);
+    background:
+      linear-gradient(calc(135deg + var(--mg-light-angle, 0deg)), rgb(var(--mg-glass-base) / calc(var(--_a) + 0.08)), rgb(var(--mg-glass-base) / calc(var(--_a) - 0.12))),
+      rgb(var(--mg-glass-tint) / var(--mg-glass-tint-alpha));
+    box-shadow:
+      inset var(--_lx) var(--_ly) 0 rgb(255 255 255 / calc(var(--_spec) * var(--mg-glass-specular))),
+      inset calc(var(--_lx) * -1) calc(var(--_ly) * -1) 0 rgb(255 255 255 / calc(var(--_spec) * var(--mg-glass-specular) * 0.3)),
+      calc(var(--_lx) * -4) calc(var(--_sy) * cos(var(--mg-light-angle, 0deg))) var(--_sb) rgb(var(--mg-shadow) / var(--mg-shadow-alpha));
+    transition: box-shadow 120ms linear;
+  }
+}
+
+/* ─── Top bar without the script: scroll-driven animation raises the tier ─── */
+@supports (animation-timeline: scroll()) {
+  :root:not(.mg-js) .mg-top-bar[data-mg-top-bar] {
+    animation: mg-bar-rise linear both;
+    animation-timeline: scroll(nearest);
+    animation-range: 0 24px;
+  }
+}
+@keyframes mg-bar-rise {
+  to { --_a: var(--mg-glass-alpha-3); --_blur: var(--mg-glass-blur-3); --_sy: var(--mg-glass-shadow-y-2); --_sb: var(--mg-glass-shadow-blur-2); --_spec: 0.8; }
+}
+
 
 /* Glass preset: milk. Thick, bright glass. Most legible translucent option. */
 

@@ -63,7 +63,7 @@ section { padding-block: 56px; }
 .customize__row--split { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
 .customize__font { display: flex; flex-direction: column; gap: 6px; }
 .customize__font .mg-select { min-width: 200px; }
-@media (max-width: 1100px) { .topnav a[data-page="examples"] { display: none; } }
+@media (max-width: 1180px) { .topnav a[data-page="examples"] { display: none; } }
 @media (max-width: 980px) {
   .topbar__inner { border-radius: 28px; }
   .topnav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; margin-right: 0; }

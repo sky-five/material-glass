@@ -6,6 +6,7 @@
     </a>
     <nav class="topnav" aria-label="Site">
       <a href="{{base}}index.html" data-page="home">Overview</a>
+      <a href="{{base}}guide/index.html" data-page="docs">Docs</a>
       <a href="{{base}}components.html" data-page="components">Components</a>
       <a href="{{base}}builder.html" data-page="builder">Theme builder</a>
       <a href="{{base}}examples/index.html" data-page="examples">Examples</a>
@@ -68,6 +69,14 @@
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="calm">Calm</button>
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="standard">Standard</button>
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="expressive">Expressive</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-light">Light source <small>(experimental)</small></span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-light">
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="off">Fixed</button>
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="pointer">Follows pointer</button>
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="tilt">Device tilt</button>
       </div>
     </div>
     <div class="customize__row customize__row--split">

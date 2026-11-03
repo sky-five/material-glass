@@ -1,0 +1,27 @@
+name: Component request
+description: Propose a new component or a variant.
+labels: [component]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Component
+      placeholder: Segmented slider
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: What would you use it for?
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: References
+      description: Links to Material 3 guidance, Apple HIG, or screenshots.
+  - type: textarea
+    id: a11y
+    attributes:
+      label: Accessibility notes
+      description: Which native element or ARIA pattern fits? How does it work with a keyboard?

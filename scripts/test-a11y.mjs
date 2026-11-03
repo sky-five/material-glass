@@ -12,7 +12,7 @@ const filter = process.argv[2] || '';
 const PAGES = [
   'index.html?theme=sea-glass', 'index.html?theme=prism',
   'components.html?theme=sea-glass', 'components.html?theme=frost', 'components.html?theme=mono',
-  'builder.html',
+  'builder.html', 'guide/index.html', 'guide/customization.html', 'guide/accessibility.html',
   'examples/index.html', 'examples/weather/index.html', 'examples/music/index.html',
   'examples/dashboard/index.html', 'examples/settings/index.html', 'examples/landing/index.html'
 ];

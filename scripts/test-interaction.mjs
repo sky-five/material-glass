@@ -3,7 +3,7 @@
 //   node scripts/test-interaction.mjs
 import { serve, launch, open } from './lib/browser.mjs';
 
-const PAGES = ['index.html', 'components.html', 'builder.html', 'examples/index.html', 'examples/weather/index.html', 'examples/music/index.html', 'examples/dashboard/index.html', 'examples/settings/index.html', 'examples/landing/index.html'];
+const PAGES = ['index.html', 'components.html', 'builder.html', 'guide/index.html', 'guide/theming.html', 'guide/customization.html', 'examples/index.html', 'examples/weather/index.html', 'examples/music/index.html', 'examples/dashboard/index.html', 'examples/settings/index.html', 'examples/landing/index.html'];
 
 const server = await serve();
 const browser = await launch();

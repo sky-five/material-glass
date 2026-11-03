@@ -11,6 +11,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const partial = (name) => readFileSync(join(root, 'demo/partials', name + '.html'), 'utf8').trim();
 
 const pages = ['index.html', 'components.html', 'builder.html'].filter((p) => existsSync(join(root, p)));
+const guide = join(root, 'guide');
+if (existsSync(guide)) for (const f of readdirSync(guide)) if (f.endsWith('.html')) pages.push(`guide/${f}`);
 const ex = join(root, 'examples');
 if (existsSync(ex)) {
   pages.push('examples/index.html');
@@ -23,7 +25,7 @@ for (const page of pages) {
   if (!existsSync(file)) continue;
   const depth = page.split('/').length - 1;
   const base = depth ? '../'.repeat(depth) : '';
-  const current = page === 'index.html' ? 'home' : page.startsWith('examples') ? 'examples' : page.replace('.html', '');
+  const current = page === 'index.html' ? 'home' : page.startsWith('examples') ? 'examples' : page.startsWith('guide') ? 'docs' : page.replace('.html', '');
   let html = readFileSync(file, 'utf8');
   const before = html;
   for (const name of ['topbar', 'sprite', 'examplebar']) {

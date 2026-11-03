@@ -7,7 +7,8 @@
 <meta name="description" content="Material 3 color roles, type and states, rendered on Liquid-Glass-style surfaces. Design tokens, a CSS file and optional JS for refraction and liquid motion. MIT.">
 <meta property="og:title" content="Material Glass">
 <meta property="og:description" content="Material 3 on Liquid-Glass-style surfaces. Tokens, CSS, refraction and liquid motion.">
-<meta property="og:image" content="https://raw.githubusercontent.com/sky-five/material-glass/main/docs/screenshots/hero-sea-glass-dark.jpg">
+<meta property="og:image" content="https://sky-five.github.io/material-glass/docs/media/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070C0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +99,7 @@
     </a>
     <nav class="topnav" aria-label="Site">
       <a href="index.html" data-page="home" aria-current="page">Overview</a>
+      <a href="guide/index.html" data-page="docs">Docs</a>
       <a href="components.html" data-page="components">Components</a>
       <a href="builder.html" data-page="builder">Theme builder</a>
       <a href="examples/index.html" data-page="examples">Examples</a>
@@ -160,6 +162,14 @@
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="calm">Calm</button>
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="standard">Standard</button>
         <button class="mg-segmented__item" type="button" data-set="motion" data-value="expressive">Expressive</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-light">Light source <small>(experimental)</small></span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-light">
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="off">Fixed</button>
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="pointer">Follows pointer</button>
+        <button class="mg-segmented__item" type="button" data-set="light" data-value="tilt">Device tilt</button>
       </div>
     </div>
     <div class="customize__row customize__row--split">

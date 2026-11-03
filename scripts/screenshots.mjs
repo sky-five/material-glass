@@ -20,6 +20,7 @@ for (const theme of ['sea-glass', 'prism']) {
     SHOTS.push([`workspace-${theme}-${mode}`, q, { width: 1440, height: 900 }, '#example']);
   }
 }
+SHOTS.push(['themes', 'docs/themes-grid.html', { width: 1520, height: 540 }, null, 'themes']);
 SHOTS.push(['social', 'docs/social.html', { width: 1280, height: 640 }, null, '../media/social']);
 SHOTS.push(['catalog', 'components.html?theme=sea-glass&mode=dark', { width: 1440, height: 1400 }, null]);
 SHOTS.push(['builder', 'builder.html?mode=dark', { width: 1440, height: 1300 }, null]);

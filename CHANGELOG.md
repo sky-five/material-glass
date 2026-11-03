@@ -18,6 +18,14 @@ All notable changes to Material Glass. The format follows [Keep a Changelog](htt
 - **Print stylesheet**: glass becomes paper, navigation is hidden.
 - **Tests**: Lightning CSS parses every stylesheet in CI; the contrast suite now covers 8 themes, every text-safe glass preset and a 72-seed generator sweep (22,256 checks).
 - npm packaging with `exports` for CSS, JS, tokens, the theme engine and per-component files.
+- **Framework packages**: `@material-glass/react`, `@material-glass/vue`, `@material-glass/svelte`, `@material-glass/elements` (Web Components) and `@material-glass/tailwind` (a v3 preset and a v4 theme).
+- **Design tokens for tools and platforms**: W3C Design Tokens files for Figma and Penpot, a Tokens Studio file, Figma glass effect recipes, and Swift, Kotlin/Compose and Dart/Flutter colour tokens built with Style Dictionary.
+- **Per-component custom properties** such as `--mg-btn-radius`, `--mg-card-padding`, `--mg-field-height` and `--mg-tabs-indicator`.
+- **Docs site** (`guide/`): getting started, theming, customization, JavaScript, frameworks, design tools, accessibility, migration from MUI, Vuetify and Material Web, and principles, with search and generated reference tables.
+- **Right-to-left support**: logical properties throughout, `mg-flip-rtl` for directional icons, and indicators that re-measure when the direction changes.
+- **Experimental**: `data-mg-light="pointer|tilt"` gives every glass highlight one light angle. `setTheme(…, { transition: true })` crossfades with View Transitions. Top bars rise a tier on scroll without the script, using scroll-driven animations.
+- **Browser tests in CI**: axe-core on every page in both modes, interaction tests, visual regression baselines, and tests for each framework package.
+- Launch media (`docs/media/demo.gif`, `demo.mp4`, `social.jpg`), a contributing guide, code of conduct, security policy, issue forms and architecture decision records.
 
 ### Changed
 

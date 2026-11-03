@@ -1,0 +1,48 @@
+name: Bug report
+description: Something looks or behaves wrong.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. A minimal example (CodePen, StackBlitz or a snippet) makes fixes much faster.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [CSS / a component, Theme or colours, material-glass.js, React, Vue, Svelte, Web Components, Tailwind, Docs or demo, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps or code to reproduce
+      render: html
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 142 on macOS 15
+    validations:
+      required: true
+  - type: checkboxes
+    id: settings
+    attributes:
+      label: Relevant settings
+      options:
+        - label: Dark mode
+        - label: Reduced transparency or high contrast
+        - label: Reduced motion
+        - label: Right-to-left

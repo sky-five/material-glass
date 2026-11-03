@@ -1,0 +1,33 @@
+name: Theme request
+description: Suggest a new built-in theme.
+labels: [theme]
+body:
+  - type: markdown
+    attributes:
+      value: Build it first in the [theme builder](https://sky-five.github.io/material-glass/builder.html), then paste the share link and the config it gives you.
+  - type: input
+    id: name
+    attributes:
+      label: Theme name
+      placeholder: lagoon
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Theme builder link
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Config (from "Copy config")
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Who is it for, and how is it different from the existing themes?
+    validations:
+      required: true

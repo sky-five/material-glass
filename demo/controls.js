@@ -4,7 +4,7 @@
   var html = document.documentElement;
   var THEMES = window.MG_THEMES || [];
   var listeners = [];
-  var CUSTOM = { glass: 'frosted', density: 'comfortable', shape: 'soft', motion: 'standard', font: 'default' };
+  var CUSTOM = { glass: 'frosted', density: 'comfortable', shape: 'soft', motion: 'standard', font: 'default', light: 'off' };
 
   function get(k) {
     if (k === 'theme') return html.getAttribute('data-mg-theme') || 'sea-glass';
@@ -22,11 +22,18 @@
     if (!THEMES.some(function (t) { return t.id === s.theme; })) { try { s.theme = JSON.parse(localStorage.getItem('mg-demo') || '{}').theme; } catch (e) { delete s.theme; } }
     try { localStorage.setItem('mg-demo', JSON.stringify(s)); } catch (e) {}
   }
-  function set(k, v) {
+  function apply(k, v) {
     if (k === 'theme') html.setAttribute('data-mg-theme', v);
     else if (k === 'mode') { if (v === 'auto') html.removeAttribute('data-mg-mode'); else html.setAttribute('data-mg-mode', v); }
     else if (v === CUSTOM[k]) html.removeAttribute('data-mg-' + k);
     else html.setAttribute('data-mg-' + k, v);
+  }
+  function set(k, v) {
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Theme and mode changes crossfade with a View Transition where supported.
+    if ((k === 'theme' || k === 'mode') && document.startViewTransition && !reduce) document.startViewTransition(function () { apply(k, v); });
+    else apply(k, v);
+    if (k === 'light' && v === 'off') html.style.removeProperty('--mg-light-angle');
     changed();
   }
   function changed() {

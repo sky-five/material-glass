@@ -39,7 +39,10 @@
  *   [data-mg-split]            Resizable split pane (pointer and arrow keys).
  *   [data-mg-kanban]           Drag cards between .mg-kanban__col columns.
  *
- *  API: MaterialGlass.init(root) · refresh() · setTheme(theme, mode) · toast(msg, opts)
+ *  Experimental
+ *   data-mg-light="pointer|tilt" on <html>  One light angle for every glass highlight.
+ *
+ *  API: MaterialGlass.init(root) · refresh() · setTheme(theme, mode, { transition }) · toast(msg, opts)
  *       sparkline(el, values) · chartTheme() · supportsRefraction · version
  */
 (function () {
@@ -1150,11 +1153,38 @@
     $$(doc, '[data-mg-liquid]').forEach((el) => { if (el.__mgLiquid) el.__mgLiquid.sync(false); });
   }
 
-  function setTheme(theme, mode) {
-    if (theme) html.setAttribute('data-mg-theme', theme);
-    if (mode === 'auto') html.removeAttribute('data-mg-mode');
-    else if (mode) html.setAttribute('data-mg-mode', mode);
-    requestAnimationFrame(refresh);
+  // setTheme('ember', 'dark', { transition: true }) crossfades with a View Transition where supported.
+  function setTheme(theme, mode, opts) {
+    const apply = () => {
+      if (theme) html.setAttribute('data-mg-theme', theme);
+      if (mode === 'auto') html.removeAttribute('data-mg-mode');
+      else if (mode) html.setAttribute('data-mg-mode', mode);
+    };
+    if (opts && opts.transition && doc.startViewTransition && !reduceMotion.matches) doc.startViewTransition(apply).finished.then(refresh);
+    else { apply(); requestAnimationFrame(refresh); }
+  }
+
+  /* ══════════ Light source (experimental) ══════════ */
+
+  // data-mg-light="pointer" | "tilt" on <html> drives --mg-light-angle (0deg = light from the top).
+  let lightBound = false;
+  function light() {
+    const mode = html.getAttribute('data-mg-light');
+    if (lightBound || (mode !== 'pointer' && mode !== 'tilt')) return;
+    lightBound = true;
+    let raf = 0;
+    const set = (deg) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => html.style.setProperty('--mg-light-angle', deg.toFixed(1) + 'deg'));
+    };
+    addEventListener('pointermove', (e) => {
+      if (html.getAttribute('data-mg-light') !== 'pointer') return;
+      set((Math.atan2(e.clientX - innerWidth / 2, -(e.clientY - innerHeight / 2)) * 180) / Math.PI);
+    }, { passive: true });
+    addEventListener('deviceorientation', (e) => {
+      if (html.getAttribute('data-mg-light') !== 'tilt' || e.gamma == null) return;
+      set(Math.max(-60, Math.min(60, e.gamma * 1.5)));
+    });
   }
 
   // Elements added later (frameworks, fetched HTML) are picked up automatically.
@@ -1173,11 +1203,12 @@
   });
 
   // Re-measure when theme or customization attributes change on <html>.
-  new MutationObserver(() => requestAnimationFrame(refresh)).observe(html, { attributes: true, attributeFilter: ['data-mg-theme', 'data-mg-mode', 'data-mg-glass', 'data-mg-density', 'data-mg-shape', 'data-mg-font', 'data-mg-type', 'data-mg-transparency', 'dir', 'lang'] });
+  new MutationObserver(() => { light(); requestAnimationFrame(refresh); }).observe(html, { attributes: true, attributeFilter: ['data-mg-theme', 'data-mg-mode', 'data-mg-glass', 'data-mg-density', 'data-mg-shape', 'data-mg-font', 'data-mg-type', 'data-mg-transparency', 'dir', 'lang', 'data-mg-light'] });
 
   window.MaterialGlass = { init, refresh, setTheme, toast, sparkline, chartTheme, supportsRefraction: canRefract, version: '0.2.0' };
+  html.classList.add('mg-js');
 
-  const start = () => { init(); observer.observe(doc.body, { childList: true, subtree: true }); };
+  const start = () => { init(); light(); observer.observe(doc.body, { childList: true, subtree: true }); };
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start);
   else start();
 })();

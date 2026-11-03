@@ -2,35 +2,23 @@
 
 **What if Material 3 and Liquid Glass had a baby?**
 
-Material Glass takes Material 3's color roles, tonal palettes, type scale and state layers, and renders them on translucent, refracting glass surfaces. You get one CSS file, design tokens in JSON, and a small optional script for real edge refraction and liquid motion. There are no dependencies and no build step.
+Material Glass takes Material 3's colour roles, tonal palettes, type scale and state layers, and renders them on translucent, refracting glass. It has eight themes and a theme generator, about 60 components, real edge refraction and liquid motion. Every glass surface is contrast-tested. The core has no dependencies and no build step.
 
-**[Live demo →](https://sky-five.github.io/material-glass/)**
+**[Live demo](https://sky-five.github.io/material-glass/)** · **[Docs](https://sky-five.github.io/material-glass/guide/)** · **[Components](https://sky-five.github.io/material-glass/components.html)** · **[Theme builder](https://sky-five.github.io/material-glass/builder.html)** · **[Examples](https://sky-five.github.io/material-glass/examples/)**
 
-![Material Glass, Sea Glass theme, dark](docs/screenshots/hero-sea-glass-dark.jpg)
+![Material Glass: dragging the lens, liquid navigation, switching themes](docs/media/demo.gif)
 
-> Unofficial community project. Not affiliated with or endorsed by Google or Apple. "Material Design" and "Liquid Glass" belong to their owners.
-
-## Why
-
-Glassmorphism kits usually give you a blurred box and stop there. Material 3 gives you a rigorous color and elevation system but flat surfaces. Material Glass keeps Material's structure and swaps the material:
-
-| Material 3 | Material Glass |
-|---|---|
-| Five surface-container levels | Five **glass tiers**. More blur, opacity and edge light as elevation rises. |
-| State layers of ink (8%, 12%, 16%) | The same percentages as **light** falling from the top edge. Pressed glass brightens and swells. |
-| Selected pill appears in place | One **lit pane that flows** between items, stretching mid-flight like a drop of liquid. |
-| Flat container colors | Real **refraction** at the rim, in Chromium browsers. |
-| Accessible color pairs | Same, plus glass that **turns solid** for reduced transparency, high contrast and forced colors. |
+> Unofficial community project. It is not affiliated with or endorsed by Google or Apple. "Material Design" and "Liquid Glass" belong to their owners.
 
 ## Quick start
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.1.0/material-glass.css">
-<script defer src="https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.1.0/material-glass.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.2.0/material-glass.min.css">
+<script defer src="https://cdn.jsdelivr.net/gh/sky-five/material-glass@0.2.0/material-glass.min.js"></script>
 
 <html data-mg-theme="sea-glass" data-mg-mode="dark">
   <body class="mg-scene">
-    <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract>
+    <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract aria-label="Main">
       <a class="mg-nav__item" href="/" aria-current="page">Home</a>
       <a class="mg-nav__item" href="/library">Library</a>
     </nav>
@@ -40,107 +28,122 @@ Glassmorphism kits usually give you a blurred box and stop there. Material 3 giv
 </html>
 ```
 
-The script is optional. Without it everything still works, and you lose refraction, the flowing selection pill and the draggable lens.
+The script is optional. Without it everything still looks right. With it you get liquid selection, refraction, anchored menus, pickers, sortable tables, toasts and more. It's about 12 KB gzipped.
+
+## Why
+
+Glassmorphism kits usually give you a blurred box and stop there. Material 3 gives you a rigorous colour and elevation system, but flat surfaces. Material Glass keeps Material's structure and swaps the material.
+
+| Material 3 | Material Glass |
+| --- | --- |
+| Five surface-container levels | Five **glass tiers**. Higher tiers get more blur, opacity and edge light. |
+| State layers of ink (8%, 12%, 16%) | The same percentages as **light** from the top edge. Pressed glass brightens and swells. |
+| The selected pill appears in place | One **lit pane that flows** between items, stretching like a drop of liquid. |
+| Flat containers | Real **refraction** at the rim in Chromium, with lens, ripple and chromatic profiles. |
+| Accessible colour pairs | The same, plus **contrast measured through the glass**. Glass turns solid when it should. |
 
 ## Themes
 
-Two themes ship, each with light and dark modes.
+![The eight built-in themes](docs/screenshots/themes.jpg)
 
-| | Sea Glass (default) | Prism |
-|---|---|---|
-| Seed | `#26A69A` teal | `#4355B2` indigo |
-| Character | Dark-first, frosted teal, glacial blue, viridian | Light-first, indigo with a coral accent |
-| Light | ![](docs/screenshots/hero-sea-glass-light.jpg) | ![](docs/screenshots/hero-prism-light.jpg) |
-| Dark | ![](docs/screenshots/hero-sea-glass-dark.jpg) | ![](docs/screenshots/hero-prism-dark.jpg) |
+| Theme | Character |
+| --- | --- |
+| `sea-glass` | Dark-first teal. The default. |
+| `prism` | Light-first indigo with a coral accent |
+| `obsidian` | Near-black and amber, for dashboards and dev tools |
+| `frost` | Light-first cobalt and lilac, high blur |
+| `ember` | Coral and gold on charcoal, for media and food |
+| `aurora` | Mint, violet and magenta, gradient-forward |
+| `mono` | Achromatic, the safe enterprise theme |
+| `sand` | Paper tones, terracotta and olive, close to classic Material |
 
-Set the theme with `data-mg-theme` and the mode with `data-mg-mode`. Leave out `data-mg-mode` to follow the system. Both attributes also work on any element to theme just that subtree.
+Each comes in light and dark. You can also make your own:
 
-```js
-MaterialGlass.setTheme('prism', 'light'); // theme, then 'light' | 'dark' | 'auto'
+- **In the browser.** Use the [theme builder](https://sky-five.github.io/material-glass/builder.html). Pick a colour or drop in a photo, tune the glass, then copy the CSS. It runs live WCAG checks as you go.
+- **From the command line.** `npm run themes -- --name lagoon --seed "#1E88E5"` or `--from-image photo.png`. It uses Google's Material Color Utilities.
+
+## Customize
+
+Every switch is a data attribute on `<html>` or any container:
+
+```html
+<html data-mg-theme="frost" data-mg-glass="milk" data-mg-density="compact" data-mg-shape="round" data-mg-motion="calm">
 ```
 
-![Sea Glass palette](docs/screenshots/palette-sea-glass-dark.jpg)
+| Attribute | Options |
+| --- | --- |
+| `data-mg-glass` | `frosted`, `milk`, `smoked`, `crystal`, `clear`, `paper` |
+| `data-mg-density` | `comfortable`, `compact`, `dense` |
+| `data-mg-shape` | `sharp`, `soft`, `round`, `squircle` |
+| `data-mg-motion` | `none`, `calm`, `standard`, `expressive` |
+| `data-mg-font` | `system`, `inter`, `geist`, `jakarta`, `serif`, `mono` |
+| `data-mg-type` | `fluid` |
+| `data-mg-light` | `pointer`, `tilt`. Experimental: one light angle for every highlight. |
 
-## Glass tiers
-
-| Class | Blur | Light alpha | Dark alpha | Solid fallback |
-|---|---|---|---|---|
-| `.mg-glass-0` | 8px | 0.36 | 0.34 | surface-container-lowest |
-| `.mg-glass-1` | 14px | 0.48 | 0.46 | surface-container-low |
-| `.mg-glass-2` / `.mg-glass` | 20px | 0.60 | 0.58 | surface-container |
-| `.mg-glass-3` | 28px | 0.72 | 0.68 | surface-container-high |
-| `.mg-glass-4` | 36px | 0.84 | 0.78 | surface-container-highest |
-
-Glass needs something behind it to look like glass. Put `.mg-scene` on a page or section for an ambient backdrop with soft color fields and grain, or place glass over your own imagery.
+Components also expose variables such as `--mg-btn-radius`, `--mg-card-padding` and `--mg-tabs-indicator`. The CSS ships in cascade layers, so your own rules win without `!important`. See [Customization](https://sky-five.github.io/material-glass/guide/customization.html).
 
 ## Components
 
-![Components](docs/screenshots/components-sea-glass-dark.jpg)
+![The component catalog](docs/screenshots/catalog.jpg)
 
-| Component | Markup |
-|---|---|
-| Buttons | `.mg-btn` plus `--tonal`, `--glass`, `--outlined`, `--text`, `--danger`, `--sm`, `--lg` |
-| Icon button | `.mg-icon-btn`. Toggle with `aria-pressed`. |
-| FAB | `.mg-fab`, `.mg-fab--extended`. Tinted glass with a glow. |
-| Chip | `.mg-chip` with `aria-pressed`. Optional `.mg-chip__check` icon. |
-| Switch | `<button class="mg-switch" role="switch" aria-checked>` |
-| Checkbox, radio | `.mg-check`, `.mg-radio` inside `.mg-choice` |
-| Slider | `<input type="range" class="mg-slider">` |
-| Text field | `<label class="mg-field"><span class="mg-field__label">…</span><input class="mg-field__input"></label>` |
-| Search | `.mg-search` on a glass tier |
-| Segmented | `.mg-segmented` > `.mg-segmented__item` with `aria-pressed` or `aria-selected` |
-| Nav bar, rail | `.mg-nav` / `.mg-nav.mg-rail` > `.mg-nav__item` with `aria-current="page"` |
-| Card | `.mg-card` on a glass tier |
-| Dialog | `<dialog class="mg-dialog mg-glass-3">` |
-| Snackbar | `.mg-snackbar` |
-| List | `.mg-list` > `.mg-list-item`, `--interactive` |
-| Badge, avatar | `.mg-badge` (`--primary`, `--tertiary`, `--error`), `.mg-avatar` |
-| Table | `.mg-table` inside `.mg-table-wrap` |
-| Lens | `.mg-lens` with `data-mg-draggable` |
-| Type | `.mg-display`, `.mg-headline`, `.mg-title`, `.mg-body`, `.mg-label` |
+The components cover the Material 3 set:
 
-![A workspace in glass](docs/screenshots/workspace-sea-glass-dark.jpg)
+- **Navigation:** top app bars, navigation bar, rail and drawer, tabs, bottom and side sheets, breadcrumbs, pagination.
+- **Inputs:** buttons, FAB, chips, switches, checkboxes and radios, sliders (single, range, vertical, ticks), text fields (glass, outlined, filled, with validation and counters), select, menus, combobox, date and range picker, time picker, stepper, drop zone, colour input, rating, tag input.
+- **Feedback:** linear (including wavy) and circular progress, skeletons, tooltips, toasts, banners, empty states, loading overlay.
+- **Containment:** card variants, accordion, dividers, carousel, popover, dialog variants, command palette, split pane.
+- **Data:** sortable and resizable tables, stat tiles, CSS bar charts, sparklines, legends, timeline, kanban, calendar, tree.
+- **Media:** avatars and groups, badges, figure captions, video and audio players.
 
-## Enhancements in material-glass.js
+Browse them all in the [catalog](https://sky-five.github.io/material-glass/components.html). Press <kbd>Ctrl</kbd>+<kbd>K</kbd> there for the command palette.
 
-| Attribute | What it does |
-|---|---|
-| `data-mg-refract="28"` | Bends the backdrop at the element's rim like a real lens. The value is strength in px. Add `data-mg-bezel` for the edge width and `data-mg-magnify="0.1"` to zoom the face. |
-| `data-mg-liquid` | On a nav, rail or segmented control, the selection pill flows between items. It updates `aria-*` on click. Use `data-mg-liquid="manual"` to manage selection yourself. |
-| `data-mg-draggable` | Pointer-drag inside the offset parent, with a spring swell. |
+## Examples
 
-Refraction uses an SVG displacement map as a `backdrop-filter`. Only Chromium browsers render that today. Safari and Firefox keep the normal frosted blur, so nothing breaks.
+| | |
+| --- | --- |
+| [![Weather](docs/screenshots/example-weather.jpg)](https://sky-five.github.io/material-glass/examples/weather/) **Weather**: the sky changes with the forecast. | [![Music](docs/screenshots/example-music.jpg)](https://sky-five.github.io/material-glass/examples/music/) **Music**: the app re-themes from album art. |
+| [![Dashboard](docs/screenshots/example-dashboard.jpg)](https://sky-five.github.io/material-glass/examples/dashboard/) **Analytics dashboard** on Obsidian | [![Landing](docs/screenshots/example-landing.jpg)](https://sky-five.github.io/material-glass/examples/landing/) **Landing page** template on Aurora |
 
-## Tokens
+## Frameworks, design tools, platforms
 
-[`tokens/material-glass.tokens.json`](tokens/material-glass.tokens.json) is the source of truth. It holds the tonal palettes, the color roles for each theme and mode, glass parameters, shape, state, motion and type. Every value is also a CSS custom property, for example `--mg-primary`, `--mg-primary-rgb`, `--mg-ref-primary-40`, `--mg-glass-blur-2` and `--mg-shape-lg`.
+| Package | For |
+| --- | --- |
+| [`@material-glass/react`](packages/react) | Typed components and hooks, server-render safe |
+| [`@material-glass/vue`](packages/vue) | Vue 3 with `v-model` and a plugin |
+| [`@material-glass/svelte`](packages/svelte) | Svelte 5 with runes and bindable props |
+| [`@material-glass/elements`](packages/elements) | Web Components, light DOM, no dependencies |
+| [`@material-glass/tailwind`](packages/tailwind) | Tailwind v3 preset and v4 theme |
 
-To add a theme, add an entry under `themes` and rebuild:
+Tokens are exported for **Figma** and **Penpot** (W3C Design Tokens), **Tokens Studio**, and as **Swift**, **Kotlin/Compose** and **Dart/Flutter** colour files. See [Design tools](https://sky-five.github.io/material-glass/guide/design-tools.html).
+
+## Install
 
 ```bash
-npm run build
+npm i material-glass
 ```
 
-```bash
-npm test
+```js
+import 'material-glass/css';   // or 'material-glass/min.css', 'material-glass/unlayered.css'
+import 'material-glass/js';
 ```
 
-## Accessibility
+You can also load only what you use: `material-glass/core.css` plus `material-glass/components/inputs.css` and the other component files.
 
-- **Contrast is tested.** `npm test` runs 412 WCAG checks across every theme and mode. They cover each on-color pair, text on every surface container, outlines, and text on glass tiers over the theme's own surfaces. CI fails if any drop below AA.
-- **Glass steps aside.** `prefers-reduced-transparency`, `prefers-contrast: more`, `forced-colors`, browsers without `backdrop-filter`, and `data-mg-transparency="reduced"` on any ancestor all turn glass into the matching solid surface container.
-- **Motion respects the user.** `prefers-reduced-motion` removes the spring, the swell and the liquid stretch.
-- **Real controls.** Components are native buttons, inputs, links and dialogs with visible focus rings.
+## Accessibility and testing
 
-Glass over arbitrary photos can't be guaranteed to pass contrast. Use a higher tier, or reduced transparency, when text sits over busy imagery.
+- **Contrast through the glass.** Over 22,000 WCAG checks run on every commit. They cover every theme, mode and glass tier composited over the theme's backgrounds, every text-safe glass preset, and a sweep of 72 generated themes.
+- **Glass steps aside.** Reduced transparency, high contrast, forced colours, no `backdrop-filter`, and print all get solid Material surfaces.
+- **Real controls.** Components use native buttons, inputs, dialogs, popovers and details, plus ARIA patterns with full keyboard support.
+- **Tested in a browser.** CI runs axe-core on every page in both modes, 36 interaction checks, 43 visual baselines (themes, presets, density, shape, right-to-left), and 100 checks across the framework packages.
+- **Right-to-left.** Logical properties are used throughout, and indicators mirror correctly.
 
 ## Browser support
 
-The styles work in current Chrome, Edge, Safari and Firefox. The spring easing uses `linear()` where supported and falls back to Material's emphasized curve elsewhere.
+Everything works in current Chrome, Edge, Safari and Firefox. Edge refraction uses SVG filters inside `backdrop-filter`, which only Chromium renders today. Other browsers keep the frosted blur. Newer features, including customizable `<select>`, `corner-shape`, scroll-driven animations and View Transitions, are progressive enhancements.
 
 ## Contributing
 
-Issues and pull requests are welcome. New themes, components, and refraction for more browsers are especially useful. Edit `tokens/` or `src/`, then run `npm run build` and `npm test`. Don't edit `material-glass.css` by hand, because it's generated. `test/refraction.html` is a visual check for the displacement maps.
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how the tokens, build and tests fit together. [SHOWCASE.md](SHOWCASE.md) lists sites built with Material Glass, so add yours.
 
 ## License
 
