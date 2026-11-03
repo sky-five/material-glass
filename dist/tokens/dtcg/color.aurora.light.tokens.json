@@ -1,0 +1,261 @@
+{
+  "$description": "Material Glass · Aurora · light. Collection \"Material Glass\", mode \"Aurora Light\".",
+  "color": {
+    "primary": {
+      "primary": {
+        "$type": "color",
+        "$value": "#006C45"
+      },
+      "on-primary": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "primary-container": {
+        "$type": "color",
+        "$value": "#4EFFB1"
+      },
+      "on-primary-container": {
+        "$type": "color",
+        "$value": "#005233"
+      },
+      "inverse-primary": {
+        "$type": "color",
+        "$value": "#00E296"
+      }
+    },
+    "secondary": {
+      "secondary": {
+        "$type": "color",
+        "$value": "#7732D9"
+      },
+      "on-secondary": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "secondary-container": {
+        "$type": "color",
+        "$value": "#ECDCFF"
+      },
+      "on-secondary-container": {
+        "$type": "color",
+        "$value": "#5E00C1"
+      }
+    },
+    "tertiary": {
+      "tertiary": {
+        "$type": "color",
+        "$value": "#B5007C"
+      },
+      "on-tertiary": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "tertiary-container": {
+        "$type": "color",
+        "$value": "#FFD8E8"
+      },
+      "on-tertiary-container": {
+        "$type": "color",
+        "$value": "#8A005E"
+      }
+    },
+    "error": {
+      "error": {
+        "$type": "color",
+        "$value": "#BA1A1A"
+      },
+      "on-error": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "error-container": {
+        "$type": "color",
+        "$value": "#FFDAD6"
+      },
+      "on-error-container": {
+        "$type": "color",
+        "$value": "#93000A"
+      }
+    },
+    "surface": {
+      "surface": {
+        "$type": "color",
+        "$value": "#F0FDF1"
+      },
+      "on-surface": {
+        "$type": "color",
+        "$value": "#131E17"
+      },
+      "on-surface-variant": {
+        "$type": "color",
+        "$value": "#3C4A41"
+      },
+      "surface-container-lowest": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "surface-container-low": {
+        "$type": "color",
+        "$value": "#EAF7EC"
+      },
+      "surface-container": {
+        "$type": "color",
+        "$value": "#E4F1E6"
+      },
+      "surface-container-high": {
+        "$type": "color",
+        "$value": "#DFEBE0"
+      },
+      "surface-container-highest": {
+        "$type": "color",
+        "$value": "#D9E6DB"
+      },
+      "inverse-surface": {
+        "$type": "color",
+        "$value": "#28332C"
+      },
+      "inverse-on-surface": {
+        "$type": "color",
+        "$value": "#E7F4E9"
+      }
+    },
+    "outline": {
+      "outline": {
+        "$type": "color",
+        "$value": "#6B7B70"
+      },
+      "outline-variant": {
+        "$type": "color",
+        "$value": "#BACBBE"
+      }
+    },
+    "scene": {
+      "scene-1": {
+        "$type": "color",
+        "$value": "#7FF0C4"
+      },
+      "scene-2": {
+        "$type": "color",
+        "$value": "#C9A8FF"
+      },
+      "scene-3": {
+        "$type": "color",
+        "$value": "#FFA8D9"
+      },
+      "scene-base": {
+        "$type": "color",
+        "$value": "#E4EDE5"
+      }
+    }
+  },
+  "glass": {
+    "base": {
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "$description": "Glass fill colour. Opacity comes from the tier."
+    },
+    "tint": {
+      "$type": "color",
+      "$value": "#00E296"
+    },
+    "tint-alpha": {
+      "$type": "number",
+      "$value": 0.06
+    },
+    "specular": {
+      "$type": "number",
+      "$value": 1
+    },
+    "rim": {
+      "$type": "number",
+      "$value": 0.6
+    },
+    "saturate": {
+      "$type": "number",
+      "$value": 1.9
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "#002112"
+    },
+    "shadow-alpha": {
+      "$type": "number",
+      "$value": 0.14
+    },
+    "tier-0": {
+      "fill": {
+        "$type": "color",
+        "$value": "#FFFFFF5C",
+        "$description": "Glass tier 0: base colour at 36% opacity"
+      },
+      "alpha": {
+        "$type": "number",
+        "$value": 0.36
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "8px"
+      }
+    },
+    "tier-1": {
+      "fill": {
+        "$type": "color",
+        "$value": "#FFFFFF7A",
+        "$description": "Glass tier 1: base colour at 48% opacity"
+      },
+      "alpha": {
+        "$type": "number",
+        "$value": 0.48
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "14px"
+      }
+    },
+    "tier-2": {
+      "fill": {
+        "$type": "color",
+        "$value": "#FFFFFF99",
+        "$description": "Glass tier 2: base colour at 60% opacity"
+      },
+      "alpha": {
+        "$type": "number",
+        "$value": 0.6
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "20px"
+      }
+    },
+    "tier-3": {
+      "fill": {
+        "$type": "color",
+        "$value": "#FFFFFFB8",
+        "$description": "Glass tier 3: base colour at 72% opacity"
+      },
+      "alpha": {
+        "$type": "number",
+        "$value": 0.72
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "28px"
+      }
+    },
+    "tier-4": {
+      "fill": {
+        "$type": "color",
+        "$value": "#FFFFFFD6",
+        "$description": "Glass tier 4: base colour at 84% opacity"
+      },
+      "alpha": {
+        "$type": "number",
+        "$value": 0.84
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": "36px"
+      }
+    }
+  }
+}

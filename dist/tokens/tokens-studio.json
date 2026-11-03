@@ -1,0 +1,4463 @@
+{
+  "$metadata": {
+    "tokenSetOrder": [
+      "base",
+      "sea-glass/light",
+      "sea-glass/dark",
+      "prism/light",
+      "prism/dark",
+      "obsidian/light",
+      "obsidian/dark",
+      "frost/light",
+      "frost/dark",
+      "ember/light",
+      "ember/dark",
+      "aurora/light",
+      "aurora/dark",
+      "mono/light",
+      "mono/dark",
+      "sand/light",
+      "sand/dark"
+    ]
+  },
+  "$themes": [
+    {
+      "id": "sea-glass/light",
+      "name": "Sea Glass Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "sea-glass/light": "enabled"
+      }
+    },
+    {
+      "id": "sea-glass/dark",
+      "name": "Sea Glass Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "sea-glass/dark": "enabled"
+      }
+    },
+    {
+      "id": "prism/light",
+      "name": "Prism Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "prism/light": "enabled"
+      }
+    },
+    {
+      "id": "prism/dark",
+      "name": "Prism Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "prism/dark": "enabled"
+      }
+    },
+    {
+      "id": "obsidian/light",
+      "name": "Obsidian Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "obsidian/light": "enabled"
+      }
+    },
+    {
+      "id": "obsidian/dark",
+      "name": "Obsidian Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "obsidian/dark": "enabled"
+      }
+    },
+    {
+      "id": "frost/light",
+      "name": "Frost Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "frost/light": "enabled"
+      }
+    },
+    {
+      "id": "frost/dark",
+      "name": "Frost Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "frost/dark": "enabled"
+      }
+    },
+    {
+      "id": "ember/light",
+      "name": "Ember Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "ember/light": "enabled"
+      }
+    },
+    {
+      "id": "ember/dark",
+      "name": "Ember Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "ember/dark": "enabled"
+      }
+    },
+    {
+      "id": "aurora/light",
+      "name": "Aurora Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "aurora/light": "enabled"
+      }
+    },
+    {
+      "id": "aurora/dark",
+      "name": "Aurora Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "aurora/dark": "enabled"
+      }
+    },
+    {
+      "id": "mono/light",
+      "name": "Mono Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "mono/light": "enabled"
+      }
+    },
+    {
+      "id": "mono/dark",
+      "name": "Mono Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "mono/dark": "enabled"
+      }
+    },
+    {
+      "id": "sand/light",
+      "name": "Sand Light",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "sand/light": "enabled"
+      }
+    },
+    {
+      "id": "sand/dark",
+      "name": "Sand Dark",
+      "group": "Material Glass",
+      "selectedTokenSets": {
+        "base": "source",
+        "sand/dark": "enabled"
+      }
+    }
+  ],
+  "base": {
+    "shape": {
+      "none": {
+        "type": "dimension",
+        "value": "0px"
+      },
+      "xs": {
+        "type": "dimension",
+        "value": "8px"
+      },
+      "sm": {
+        "type": "dimension",
+        "value": "12px"
+      },
+      "md": {
+        "type": "dimension",
+        "value": "16px"
+      },
+      "lg": {
+        "type": "dimension",
+        "value": "24px"
+      },
+      "xl": {
+        "type": "dimension",
+        "value": "32px"
+      },
+      "full": {
+        "type": "dimension",
+        "value": "9999px"
+      }
+    },
+    "type": {
+      "display": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "Figtree",
+          "fontSize": "57px",
+          "lineHeight": 1.1228070175438596,
+          "fontWeight": 700,
+          "letterSpacing": "-0.02em"
+        }
+      },
+      "headline": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "Figtree",
+          "fontSize": "32px",
+          "lineHeight": 1.25,
+          "fontWeight": 600,
+          "letterSpacing": "-0.01em"
+        }
+      },
+      "title": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "Figtree",
+          "fontSize": "22px",
+          "lineHeight": 1.2727272727272727,
+          "fontWeight": 600,
+          "letterSpacing": "-0.01em"
+        }
+      },
+      "body": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "Inter",
+          "fontSize": "16px",
+          "lineHeight": 1.5,
+          "fontWeight": 400,
+          "letterSpacing": "0px"
+        }
+      },
+      "label": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "Inter",
+          "fontSize": "14px",
+          "lineHeight": 1.4285714285714286,
+          "fontWeight": 500,
+          "letterSpacing": "0.01em"
+        }
+      }
+    },
+    "motion": {
+      "duration-short": {
+        "type": "duration",
+        "value": "160ms"
+      },
+      "duration-medium": {
+        "type": "duration",
+        "value": "320ms"
+      },
+      "duration-long": {
+        "type": "duration",
+        "value": "520ms"
+      },
+      "ease-standard": {
+        "type": "cubicBezier",
+        "value": [
+          0.2,
+          0,
+          0,
+          1
+        ]
+      },
+      "ease-emphasized": {
+        "type": "cubicBezier",
+        "value": [
+          0.3,
+          0,
+          0,
+          1.15
+        ]
+      }
+    },
+    "state": {
+      "hover": {
+        "type": "number",
+        "value": 0.08
+      },
+      "focus": {
+        "type": "number",
+        "value": 0.12
+      },
+      "pressed": {
+        "type": "number",
+        "value": 0.12
+      },
+      "dragged": {
+        "type": "number",
+        "value": 0.16
+      }
+    }
+  },
+  "sea-glass/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#006A62"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#8DF6E8"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#00201D"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#6FDACC"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#006688"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#C4E7FF"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#001E2C"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#2B6A47"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#AEF2C5"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#002111"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#410002"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#F4FBF9"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#161D1C"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#3F4948"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#EEF5F3"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#E9EFED"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#E3EAE8"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#DDE4E2"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#2B3231"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#ECF2F0"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#6F7978"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#BEC9C7"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#6FDACC"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#81CFF7"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#93D6AA"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#E3EFEC"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#6FDACC"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.1
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.6
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#00201D"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "sea-glass/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#6FDACC"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#003733"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#00504A"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#8DF6E8"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#006A62"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#81CFF7"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#003549"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#004C68"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#C4E7FF"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#93D6AA"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#00391F"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#0E5131"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#AEF2C5"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#0E1514"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#DDE4E2"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#BEC9C7"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#090F0E"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#161D1C"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#1A2120"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#252B2A"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#2F3635"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#DDE4E2"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#2B3231"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#899392"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#3F4948"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#00867C"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#006688"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#2B6A47"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#070C0C"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#141B1A",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#00504A"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.16
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.4
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#141B1A57",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#141B1A75",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#141B1A94",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#141B1AAD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#141B1AC7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "prism/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#4355B2"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#DEE0FF"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#00105C"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#B8C3FF"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#4F616D"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#D2E5F5"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#0A1D28"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#984A3D"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#FFDAD3"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#3A0B06"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#410002"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#FCF8FF"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#1B1B23"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#46464F"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#F6F2FD"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#F0ECF7"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#EAE7F1"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#E4E1EC"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#303038"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#F3F0FB"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#777680"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#C7C5D0"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#B8C3FF"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#FFB4A5"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#B6C9D8"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#F1EEFB"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#B8C3FF"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.1
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.6
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#00105C"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "prism/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#B8C3FF"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#0F2380"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#2A3C98"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#DEE0FF"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#4355B2"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#B6C9D8"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#20323E"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#374955"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#D2E5F5"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#FFB4A5"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#5E1E14"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#7A3428"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#FFDAD3"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#121219"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#E4E1EC"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#C7C5D0"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#0D0D15"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#1B1B23"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#1F1F27"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#2A2931"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#35343C"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#E4E1EC"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#303038"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#91909A"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#46464F"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#4355B2"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#984A3D"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#4F616D"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#0B0B12"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#1B1B25",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#2A3C98"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.16
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.4
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.5
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B2557",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B2575",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B2594",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B25AD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B25C7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "obsidian/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#7D570D"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#FFDEAC"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#604100"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#F0BE6D"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#595F68"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#DDE3EE"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#414750"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#225FA5"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#D5E3FF"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#004787"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#93000A"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#FAF9FB"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#1B1C1D"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#43474D"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#F5F3F5"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#EFEDF0"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#E9E7EA"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#E3E2E4"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#303032"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#F2F0F3"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#74777E"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#C4C6CE"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#F0BE6D"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#C1C7D2"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#A6C8FF"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#F7E9D7"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#F0BE6D"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.1
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.7
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.6
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#281900"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF66",
+          "description": "Glass tier 0: base colour at 40% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.4
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF85",
+          "description": "Glass tier 1: base colour at 52% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.52
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFA3",
+          "description": "Glass tier 2: base colour at 64% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.64
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFC2",
+          "description": "Glass tier 3: base colour at 76% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.76
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFDB",
+          "description": "Glass tier 4: base colour at 86% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.86
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "obsidian/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#F0BE6D"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#432C00"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#604100"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#FFDEAC"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#7D570D"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#C1C7D2"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#2B313A"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#414750"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#DDE3EE"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#A6C8FF"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#00315F"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#004787"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#D5E3FF"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#121315"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#E3E2E4"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#C4C6CE"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#0D0E10"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#1B1C1D"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#1F2022"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#292A2C"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#343537"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#E3E2E4"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#303032"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#8E9198"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#43474D"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#8A5A00"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#2C3A55"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#3A4A66"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#050608"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#1B1C1D",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#604100"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.08
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.34
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.16
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.2
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1C1D4D",
+          "description": "Glass tier 0: base colour at 30% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.3
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1C1D6B",
+          "description": "Glass tier 1: base colour at 42% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.42
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1C1D8A",
+          "description": "Glass tier 2: base colour at 54% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.54
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1C1DA3",
+          "description": "Glass tier 3: base colour at 64% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.64
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1C1DBD",
+          "description": "Glass tier 4: base colour at 74% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.74
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "frost/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#4C5C92"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#DBE1FF"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#334479"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#B5C4FF"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#595E72"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#DDE1F9"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#414659"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#654ABA"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#E7DEFF"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#4D30A1"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#93000A"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#F8F9FE"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#191C1F"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#41474F"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#F3F3F8"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#EDEEF2"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#E7E8EC"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#E1E2E7"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#2E3134"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#F0F0F5"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#727880"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#C1C7D0"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#B5C4FF"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#C1C5DD"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#CDBDFF"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#EAEAF5"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#B5C4FF"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.06
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.75
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.8
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#02174B"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "12px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "38px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "48px"
+        }
+      }
+    }
+  },
+  "frost/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#B5C4FF"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#1C2D61"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#334479"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#DBE1FF"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#4C5C92"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#C1C5DD"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#2B3042"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#414659"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#DDE1F9"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#CDBDFF"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#36108A"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#4D30A1"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#E7DEFF"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#111417"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#E1E2E7"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#C1C7D0"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#0C0E12"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#191C1F"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#1D2023"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#282A2E"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#323539"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#E1E2E7"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#2E3134"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#8B919A"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#41474F"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#6475AD"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#595E72"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#654ABA"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#0D0E13"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#191C1F",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#334479"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.12
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.4
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#191C1F57",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "12px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#191C1F75",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#191C1F94",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#191C1FAD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "38px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#191C1FC7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "48px"
+        }
+      }
+    }
+  },
+  "ember/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#904B3B"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#FFDAD2"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#733426"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#FFB4A3"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#7C5800"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#FFDEA8"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#5E4200"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#4B663E"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#CDECB9"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#344D28"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#93000A"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#FFF8F6"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#221A18"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#54433F"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#FFF0EE"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#FAEAE7"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#F5E5E2"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#EFDFDC"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#372E2D"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#FDEDEA"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#87726E"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#DAC1BC"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#FFB4A3"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#FABC3E"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#B1CF9F"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#FEE6E1"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#FFB4A3"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.12
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.5
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#3A0A02"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "ember/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#FFB4A3"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#561F12"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#733426"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#FFDAD2"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#904B3B"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#FABC3E"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#422D00"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#5E4200"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#FFDEA8"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#B1CF9F"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#1E3613"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#344D28"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#CDECB9"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#191210"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#EFDFDC"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#DAC1BC"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#130D0B"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#221A18"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#261E1C"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#312826"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#3C3331"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#EFDFDC"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#372E2D"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#A28C87"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#54433F"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#AD6352"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#7C5800"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#4B663E"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#140C0A"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#221A18",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#733426"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.18
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.5
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#221A1857",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#221A1875",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#221A1894",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#221A18AD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#221A18C7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "aurora/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#006C45"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#4EFFB1"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#005233"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#00E296"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#7732D9"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#ECDCFF"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#5E00C1"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#B5007C"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#FFD8E8"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#8A005E"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#93000A"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#F0FDF1"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#131E17"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#3C4A41"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#EAF7EC"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#E4F1E6"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#DFEBE0"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#D9E6DB"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#28332C"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#E7F4E9"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#6B7B70"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#BACBBE"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#7FF0C4"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#C9A8FF"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#FFA8D9"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#E4EDE5"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#00E296"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.06
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.9
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#002112"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "aurora/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#00E296"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#003822"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#005233"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#4EFFB1"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#006C45"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#D5BAFF"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#42008A"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#5E00C1"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#ECDCFF"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#FFAFD5"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#620042"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#8A005E"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#FFD8E8"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#0B160F"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#D9E6DB"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#BACBBE"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#06100A"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#131E17"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#17221B"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#222C25"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#2C3730"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#D9E6DB"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#28332C"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#859589"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#3C4A41"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#00806A"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#5B2DB0"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#A0236E"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#06040C"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#131E17",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#005233"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.1
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.8
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#131E1757",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#131E1775",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#131E1794",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#131E17AD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#131E17C7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "mono/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#000000"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#C6C6C6"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#5E5E5E"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#D4D4D4"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#1B1B1B"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#3B3B3B"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#1B1B1B"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#410002"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#F9F9F9"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#474747"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#F3F3F3"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#EEEEEE"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#E8E8E8"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#303030"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#F1F1F1"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#777777"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#C6C6C6"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#C6C6C6"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#C6C6C6"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#C6C6C6"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#E6EBF3"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#C6C6C6"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#1B1B1B"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF5C",
+          "description": "Glass tier 0: base colour at 36% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.36
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF7A",
+          "description": "Glass tier 1: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF99",
+          "description": "Glass tier 2: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFB8",
+          "description": "Glass tier 3: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 4: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "mono/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#474747"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#5E5E5E"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#C6C6C6"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#474747"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#E2E2E2"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#474747"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#E2E2E2"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#131313"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#C6C6C6"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#0E0E0E"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#1B1B1B"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#1F1F1F"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#2A2A2A"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#353535"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#E2E2E2"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#303030"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#919191"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#474747"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#777777"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#5E5E5E"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#5E5E5E"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#0B0F12"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#1B1B1B",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#474747"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B1B57",
+          "description": "Glass tier 0: base colour at 34% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.34
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B1B75",
+          "description": "Glass tier 1: base colour at 46% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.46
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "14px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B1B94",
+          "description": "Glass tier 2: base colour at 58% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.58
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B1BAD",
+          "description": "Glass tier 3: base colour at 68% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.68
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "28px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#1B1B1BC7",
+          "description": "Glass tier 4: base colour at 78% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.78
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "36px"
+        }
+      }
+    }
+  },
+  "sand/light": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#8E4D32"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#FFDBCE"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#71361D"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#FFB599"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#58641A"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#DCEA91"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#414C00"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#395F94"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#D5E3FF"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#1E477B"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#BA1A1A"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#93000A"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#FFF8F4"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#211A13"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#524436"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#FFFFFF"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#FFF1E6"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#F9EBE0"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#F4E6DA"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#EEE0D4"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#372F27"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#FCEEE2"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#847464"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#D7C3B0"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#FFB599"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#C0CE78"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#A7C8FF"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#FDE6DE"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#FFFFFF",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#FFB599"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.1
+      },
+      "specular": {
+        "type": "number",
+        "value": 1
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.6
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.2
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#370E00"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.14
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF80",
+          "description": "Glass tier 0: base colour at 50% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.5
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "4px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFF9E",
+          "description": "Glass tier 1: base colour at 62% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.62
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFBD",
+          "description": "Glass tier 2: base colour at 74% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.74
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "12px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFD6",
+          "description": "Glass tier 3: base colour at 84% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.84
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "16px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#FFFFFFEB",
+          "description": "Glass tier 4: base colour at 92% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.92
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      }
+    }
+  },
+  "sand/dark": {
+    "color": {
+      "primary": {
+        "primary": {
+          "type": "color",
+          "value": "#FFB599"
+        },
+        "on-primary": {
+          "type": "color",
+          "value": "#552009"
+        },
+        "primary-container": {
+          "type": "color",
+          "value": "#71361D"
+        },
+        "on-primary-container": {
+          "type": "color",
+          "value": "#FFDBCE"
+        },
+        "inverse-primary": {
+          "type": "color",
+          "value": "#8E4D32"
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "type": "color",
+          "value": "#C0CE78"
+        },
+        "on-secondary": {
+          "type": "color",
+          "value": "#2C3400"
+        },
+        "secondary-container": {
+          "type": "color",
+          "value": "#414C00"
+        },
+        "on-secondary-container": {
+          "type": "color",
+          "value": "#DCEA91"
+        }
+      },
+      "tertiary": {
+        "tertiary": {
+          "type": "color",
+          "value": "#A7C8FF"
+        },
+        "on-tertiary": {
+          "type": "color",
+          "value": "#003060"
+        },
+        "tertiary-container": {
+          "type": "color",
+          "value": "#1E477B"
+        },
+        "on-tertiary-container": {
+          "type": "color",
+          "value": "#D5E3FF"
+        }
+      },
+      "error": {
+        "error": {
+          "type": "color",
+          "value": "#FFB4AB"
+        },
+        "on-error": {
+          "type": "color",
+          "value": "#690005"
+        },
+        "error-container": {
+          "type": "color",
+          "value": "#93000A"
+        },
+        "on-error-container": {
+          "type": "color",
+          "value": "#FFDAD6"
+        }
+      },
+      "surface": {
+        "surface": {
+          "type": "color",
+          "value": "#18120C"
+        },
+        "on-surface": {
+          "type": "color",
+          "value": "#EEE0D4"
+        },
+        "on-surface-variant": {
+          "type": "color",
+          "value": "#D7C3B0"
+        },
+        "surface-container-lowest": {
+          "type": "color",
+          "value": "#130D07"
+        },
+        "surface-container-low": {
+          "type": "color",
+          "value": "#211A13"
+        },
+        "surface-container": {
+          "type": "color",
+          "value": "#251E17"
+        },
+        "surface-container-high": {
+          "type": "color",
+          "value": "#302921"
+        },
+        "surface-container-highest": {
+          "type": "color",
+          "value": "#3B332B"
+        },
+        "inverse-surface": {
+          "type": "color",
+          "value": "#EEE0D4"
+        },
+        "inverse-on-surface": {
+          "type": "color",
+          "value": "#372F27"
+        }
+      },
+      "outline": {
+        "outline": {
+          "type": "color",
+          "value": "#9F8E7C"
+        },
+        "outline-variant": {
+          "type": "color",
+          "value": "#524436"
+        }
+      },
+      "scene": {
+        "scene-1": {
+          "type": "color",
+          "value": "#AC6448"
+        },
+        "scene-2": {
+          "type": "color",
+          "value": "#58641A"
+        },
+        "scene-3": {
+          "type": "color",
+          "value": "#395F94"
+        },
+        "scene-base": {
+          "type": "color",
+          "value": "#140C09"
+        }
+      }
+    },
+    "glass": {
+      "base": {
+        "type": "color",
+        "value": "#211A13",
+        "description": "Glass fill colour. Opacity comes from the tier."
+      },
+      "tint": {
+        "type": "color",
+        "value": "#71361D"
+      },
+      "tint-alpha": {
+        "type": "number",
+        "value": 0.16
+      },
+      "specular": {
+        "type": "number",
+        "value": 0.26
+      },
+      "rim": {
+        "type": "number",
+        "value": 0.13
+      },
+      "saturate": {
+        "type": "number",
+        "value": 1.15
+      },
+      "shadow": {
+        "type": "color",
+        "value": "#000000"
+      },
+      "shadow-alpha": {
+        "type": "number",
+        "value": 0.45
+      },
+      "tier-0": {
+        "fill": {
+          "type": "color",
+          "value": "#211A137A",
+          "description": "Glass tier 0: base colour at 48% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.48
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "4px"
+        }
+      },
+      "tier-1": {
+        "fill": {
+          "type": "color",
+          "value": "#211A1399",
+          "description": "Glass tier 1: base colour at 60% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.6
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "8px"
+        }
+      },
+      "tier-2": {
+        "fill": {
+          "type": "color",
+          "value": "#211A13B8",
+          "description": "Glass tier 2: base colour at 72% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.72
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "12px"
+        }
+      },
+      "tier-3": {
+        "fill": {
+          "type": "color",
+          "value": "#211A13D1",
+          "description": "Glass tier 3: base colour at 82% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.82
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "16px"
+        }
+      },
+      "tier-4": {
+        "fill": {
+          "type": "color",
+          "value": "#211A13E6",
+          "description": "Glass tier 4: base colour at 90% opacity"
+        },
+        "alpha": {
+          "type": "number",
+          "value": 0.9
+        },
+        "blur": {
+          "type": "dimension",
+          "value": "20px"
+        }
+      }
+    }
+  }
+}

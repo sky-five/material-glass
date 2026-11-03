@@ -176,3 +176,7 @@ console.log(`dist/themes.json + demo/themes.js: ${themeIndex.length} themes, ${p
   const { gzipSync } = await import('node:zlib');
   console.log(`material-glass.min.js written (${(code.length / 1024).toFixed(1)} KB, gzip ${(gzipSync(code).length / 1024).toFixed(1)} KB)`);
 }
+
+/* ─── Design-tool and platform token exports ─── */
+await import('./export-tokens.mjs');
+await import('./platforms.mjs');

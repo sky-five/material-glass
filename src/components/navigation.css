@@ -161,13 +161,13 @@ dialog.mg-drawer--end:dir(rtl)[open], dialog.mg-sheet--side:dir(rtl)[open] { ani
   bottom: 0;
   height: 3px;
   border-radius: 3px 3px 0 0;
-  background: var(--mg-primary);
+  background: var(--mg-tabs-indicator, var(--mg-primary));
 }
 .mg-tabs--secondary .mg-tab[aria-selected="true"]::before { left: 0; right: 0; height: 2px; border-radius: 0; }
 .mg-tabs.mg-liquid-ready .mg-tab::before { display: none; }
 .mg-tabs .mg-liquid__indicator {
   top: auto !important;
-  background: var(--mg-primary);
+  background: var(--mg-tabs-indicator, var(--mg-primary));
   box-shadow: 0 0 12px rgb(var(--mg-primary-rgb) / 0.5);
   border-radius: 3px 3px 0 0;
 }

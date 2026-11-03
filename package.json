@@ -30,7 +30,9 @@
     "./themes.json": "./dist/themes.json",
     "./theme-core": "./src/theme-core.js",
     "./package.json": "./package.json",
-    "./min.js": "./material-glass.min.js"
+    "./min.js": "./material-glass.min.js",
+    "./tokens/dtcg/*": "./dist/tokens/dtcg/*",
+    "./tokens-studio.json": "./dist/tokens/tokens-studio.json"
   },
   "sideEffects": [
     "*.css",
@@ -75,7 +77,8 @@
     "test:visual": "node scripts/test-visual.mjs",
     "test:browser": "node scripts/test-a11y.mjs && node scripts/test-interaction.mjs && node scripts/test-visual.mjs",
     "build:packages": "npm run build --workspaces --if-present",
-    "test:packages": "npm test --workspaces --if-present"
+    "test:packages": "npm test --workspaces --if-present",
+    "tokens": "node scripts/export-tokens.mjs && node scripts/platforms.mjs"
   },
   "devDependencies": {
     "@material/material-color-utilities": "^0.3.0",
@@ -84,7 +87,8 @@
     "gifenc": "^1.0.3",
     "lightningcss": "^1.28.2",
     "pngjs": "^7.0.0",
-    "puppeteer-core": "^23.11.1"
+    "puppeteer-core": "^23.11.1",
+    "style-dictionary": "^5.7.1"
   },
   "workspaces": [
     "packages/*"

@@ -12,8 +12,8 @@
 
 /* ─── Buttons ─── */
 .mg-btn {
-  --_bg: var(--mg-primary);
-  --_fg: var(--mg-on-primary);
+  --_bg: var(--mg-btn-bg, var(--mg-primary));
+  --_fg: var(--mg-btn-fg, var(--mg-on-primary));
   --_glow: 0 6px 18px rgb(var(--mg-primary-rgb) / 0.32);
   appearance: none;
   border: 0;
@@ -22,9 +22,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: calc(44px + var(--mg-density-step));
-  padding: 0 22px;
-  border-radius: var(--mg-shape-full);
+  min-height: var(--mg-btn-height, calc(44px + var(--mg-density-step)));
+  padding: 0 var(--mg-btn-padding, 22px);
+  border-radius: var(--mg-btn-radius, var(--mg-shape-full));
   background: var(--_bg);
   color: var(--_fg);
   font-family: var(--mg-font-body);
@@ -89,10 +89,10 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-width: calc(56px + var(--mg-density-step));
-  height: calc(56px + var(--mg-density-step));
+  min-width: var(--mg-fab-size, calc(56px + var(--mg-density-step)));
+  height: var(--mg-fab-size, calc(56px + var(--mg-density-step)));
   padding: 0 16px;
-  border-radius: calc(var(--mg-shape-md) + 4px);
+  border-radius: var(--mg-fab-radius, calc(var(--mg-shape-md) + 4px));
   color: var(--mg-on-primary-container);
   font-family: var(--mg-font-body);
   font-size: var(--mg-type-label-size);
@@ -123,9 +123,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: calc(36px + var(--mg-density-step));
+  min-height: var(--mg-chip-height, calc(36px + var(--mg-density-step)));
   padding: 0 14px;
-  border-radius: var(--mg-shape-full);
+  border-radius: var(--mg-chip-radius, var(--mg-shape-full));
   border: 1px solid var(--mg-outline);
   background: rgb(var(--mg-glass-base) / calc(var(--mg-glass-alpha-0) * 0.6));
   color: var(--mg-on-surface-variant);
@@ -173,7 +173,7 @@
   transform: translateY(-50%);
   transition: inset-inline-start var(--mg-spring-duration) var(--mg-spring), width var(--mg-motion-duration-medium) var(--mg-spring), height var(--mg-motion-duration-medium) var(--mg-spring), background-color var(--mg-motion-duration-short) linear;
 }
-.mg-switch[aria-checked="true"] { background: var(--mg-primary); border-color: var(--mg-primary); }
+.mg-switch[aria-checked="true"] { background: var(--mg-switch-on, var(--mg-primary)); border-color: var(--mg-switch-on, var(--mg-primary)); }
 .mg-switch[aria-checked="true"]::before { inset-inline-start: 24px; width: 24px; height: 24px; background: var(--mg-on-primary); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6), 0 1px 4px rgb(0 0 0 / 0.25); }
 .mg-switch:active::before { width: 30px; height: 26px; }
 .mg-switch[aria-checked="true"]:active::before { inset-inline-start: 18px; }
@@ -226,10 +226,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 2px;
-  min-height: calc(56px + var(--mg-density-step));
+  min-height: var(--mg-field-height, calc(56px + var(--mg-density-step)));
   padding: 6px 16px;
   box-sizing: border-box;
-  border-radius: calc(var(--mg-shape-md) + 2px);
+  border-radius: var(--mg-field-radius, calc(var(--mg-shape-md) + 2px));
   border: 1px solid rgb(var(--mg-outline-rgb) / 0.55);
   background: rgb(var(--mg-glass-base) / var(--mg-glass-alpha-1));
   -webkit-backdrop-filter: blur(var(--mg-glass-blur-1));
@@ -307,9 +307,9 @@
 .mg-nav {
   display: flex;
   align-items: center;
-  gap: 2px;
-  padding: 6px;
-  border-radius: var(--mg-shape-full);
+  gap: var(--mg-nav-gap, 2px);
+  padding: var(--mg-nav-padding, 6px);
+  border-radius: var(--mg-nav-radius, var(--mg-shape-full));
 }
 .mg-nav__item {
   appearance: none;
@@ -344,13 +344,13 @@
 .mg-rail .mg-nav__item { flex: none; width: calc(56px + var(--mg-density-step)); min-width: 0; height: calc(56px + var(--mg-density-step)); padding: 0; }
 
 /* ─── Containers ─── */
-.mg-card { border-radius: var(--mg-shape-lg); padding: 20px; box-sizing: border-box; }
+.mg-card { border-radius: var(--mg-card-radius, var(--mg-shape-lg)); padding: var(--mg-card-padding, 20px); box-sizing: border-box; }
 .mg-card__title { margin: 0; font-family: var(--mg-font-display); font-size: 18px; line-height: 24px; font-weight: 600; color: var(--mg-on-surface); }
 
 .mg-dialog {
-  max-width: min(400px, calc(100vw - 32px));
+  max-width: min(var(--mg-dialog-width, 400px), calc(100vw - 32px));
   padding: 24px 24px 18px;
-  border-radius: var(--mg-shape-xl);
+  border-radius: var(--mg-dialog-radius, var(--mg-shape-xl));
   margin: auto;
 }
 .mg-dialog[open] { animation: mg-dialog-in var(--mg-spring-duration) var(--mg-spring); }
@@ -367,7 +367,7 @@
   min-height: 52px;
   padding: 0 8px 0 20px;
   box-sizing: border-box;
-  border-radius: var(--mg-shape-full);
+  border-radius: var(--mg-snackbar-radius, var(--mg-shape-full));
   color: var(--mg-inverse-on-surface);
   font-family: var(--mg-font-body);
   font-size: 14px;

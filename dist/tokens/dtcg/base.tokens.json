@@ -1,0 +1,135 @@
+{
+  "$description": "Material Glass base tokens: shape, type, motion, state layers.",
+  "shape": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0px"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px"
+    }
+  },
+  "type": {
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Figtree",
+        "fontSize": "57px",
+        "lineHeight": 1.1228070175438596,
+        "fontWeight": 700,
+        "letterSpacing": "-0.02em"
+      }
+    },
+    "headline": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Figtree",
+        "fontSize": "32px",
+        "lineHeight": 1.25,
+        "fontWeight": 600,
+        "letterSpacing": "-0.01em"
+      }
+    },
+    "title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Figtree",
+        "fontSize": "22px",
+        "lineHeight": 1.2727272727272727,
+        "fontWeight": 600,
+        "letterSpacing": "-0.01em"
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "lineHeight": 1.5,
+        "fontWeight": 400,
+        "letterSpacing": "0px"
+      }
+    },
+    "label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter",
+        "fontSize": "14px",
+        "lineHeight": 1.4285714285714286,
+        "fontWeight": 500,
+        "letterSpacing": "0.01em"
+      }
+    }
+  },
+  "motion": {
+    "duration-short": {
+      "$type": "duration",
+      "$value": "160ms"
+    },
+    "duration-medium": {
+      "$type": "duration",
+      "$value": "320ms"
+    },
+    "duration-long": {
+      "$type": "duration",
+      "$value": "520ms"
+    },
+    "ease-standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0,
+        0,
+        1
+      ]
+    },
+    "ease-emphasized": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.3,
+        0,
+        0,
+        1.15
+      ]
+    }
+  },
+  "state": {
+    "hover": {
+      "$type": "number",
+      "$value": 0.08
+    },
+    "focus": {
+      "$type": "number",
+      "$value": 0.12
+    },
+    "pressed": {
+      "$type": "number",
+      "$value": 0.12
+    },
+    "dragged": {
+      "$type": "number",
+      "$value": 0.16
+    }
+  }
+}

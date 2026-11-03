@@ -1,0 +1,111 @@
+{
+  "$description": "Public custom properties per component. Set them on the component, a container, or :root. Each falls back to the system token shown.",
+  "components": {
+    "button": {
+      "selector": ".mg-btn",
+      "vars": {
+        "--mg-btn-bg": "var(--mg-primary) (filled buttons)",
+        "--mg-btn-fg": "var(--mg-on-primary) (filled buttons)",
+        "--mg-btn-radius": "var(--mg-shape-full)",
+        "--mg-btn-height": "44px + density",
+        "--mg-btn-padding": "22px"
+      }
+    },
+    "fab": {
+      "selector": ".mg-fab",
+      "vars": {
+        "--mg-fab-size": "56px + density",
+        "--mg-fab-radius": "var(--mg-shape-md) + 4px"
+      }
+    },
+    "chip": {
+      "selector": ".mg-chip",
+      "vars": {
+        "--mg-chip-height": "36px + density",
+        "--mg-chip-radius": "var(--mg-shape-full)"
+      }
+    },
+    "switch": {
+      "selector": ".mg-switch",
+      "vars": {
+        "--mg-switch-on": "var(--mg-primary)"
+      }
+    },
+    "field": {
+      "selector": ".mg-field",
+      "vars": {
+        "--mg-field-height": "56px + density",
+        "--mg-field-radius": "var(--mg-shape-md) + 2px"
+      }
+    },
+    "nav": {
+      "selector": ".mg-nav",
+      "vars": {
+        "--mg-nav-radius": "var(--mg-shape-full)",
+        "--mg-nav-gap": "2px",
+        "--mg-nav-padding": "6px"
+      }
+    },
+    "tabs": {
+      "selector": ".mg-tabs",
+      "vars": {
+        "--mg-tabs-indicator": "var(--mg-primary)"
+      }
+    },
+    "card": {
+      "selector": ".mg-card",
+      "vars": {
+        "--mg-card-radius": "var(--mg-shape-lg)",
+        "--mg-card-padding": "20px"
+      }
+    },
+    "dialog": {
+      "selector": ".mg-dialog",
+      "vars": {
+        "--mg-dialog-width": "400px",
+        "--mg-dialog-radius": "var(--mg-shape-xl)"
+      }
+    },
+    "menu": {
+      "selector": ".mg-menu",
+      "vars": {
+        "--mg-menu-radius": "var(--mg-shape-md)",
+        "--mg-menu-min-width": "200px"
+      }
+    },
+    "snackbar": {
+      "selector": ".mg-snackbar",
+      "vars": {
+        "--mg-snackbar-radius": "var(--mg-shape-full)"
+      }
+    },
+    "glass": {
+      "selector": ".mg-glass-0 … .mg-glass-4",
+      "vars": {
+        "--mg-glass-alpha-0…4": "theme",
+        "--mg-glass-blur-0…4": "theme",
+        "--mg-glass-tint-alpha": "theme",
+        "--mg-glass-specular": "theme",
+        "--mg-glass-rim": "theme",
+        "--mg-glass-saturate": "theme"
+      }
+    },
+    "scene": {
+      "selector": ".mg-scene",
+      "vars": {
+        "--mg-scene-image": "none (.mg-scene--image)",
+        "--mg-scene-image-dim": "0.35"
+      }
+    },
+    "motion": {
+      "selector": ":root or any container",
+      "vars": {
+        "--mg-spring": "spring curve",
+        "--mg-spring-duration": "520ms",
+        "--mg-motion-press": "1",
+        "--mg-liquid-duration": "560ms",
+        "--mg-liquid-stretch": "0.55"
+      }
+    }
+  }
+}

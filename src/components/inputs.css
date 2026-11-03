@@ -76,14 +76,14 @@ textarea.mg-field__input { resize: vertical; min-height: 66px; field-sizing: con
    material-glass.js anchors the menu to its button and adds arrow-key navigation. */
 .mg-menu {
   box-sizing: border-box;
-  min-width: 200px;
+  min-width: var(--mg-menu-min-width, 200px);
   max-width: min(320px, calc(100vw - 16px));
   max-height: min(420px, calc(100vh - 24px));
   margin: 0;
   padding: 6px;
   overflow-y: auto;
   inset: auto;
-  border-radius: var(--mg-shape-md);
+  border-radius: var(--mg-menu-radius, var(--mg-shape-md));
   color: var(--mg-on-surface);
 }
 .mg-menu:popover-open { display: flex; flex-direction: column; gap: 2px; animation: mg-pop-in var(--mg-motion-duration-medium) var(--mg-spring); }

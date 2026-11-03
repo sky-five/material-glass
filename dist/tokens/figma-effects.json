@@ -1,0 +1,4517 @@
+{
+  "$description": "Glass tiers as Figma layer recipes: fills, effects and stroke, per theme and mode. Apply to a frame and save as an effect/fill style.",
+  "themes": {
+    "Sea Glass Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#6FDACC",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00201D",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#6FDACC",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00201D",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#6FDACC",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00201D",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#6FDACC",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00201D",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#6FDACC",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00201D",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Sea Glass Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00504A",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#141B1A",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#141B1A",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00504A",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#141B1A",
+                "opacity": 0.54
+              },
+              {
+                "color": "#141B1A",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00504A",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#141B1A",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#141B1A",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00504A",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#141B1A",
+                "opacity": 0.76
+              },
+              {
+                "color": "#141B1A",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00504A",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#141B1A",
+                "opacity": 0.86
+              },
+              {
+                "color": "#141B1A",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Prism Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B8C3FF",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00105C",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B8C3FF",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00105C",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B8C3FF",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00105C",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B8C3FF",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00105C",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B8C3FF",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#00105C",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Prism Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#2A3C98",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B25",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#1B1B25",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#2A3C98",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B25",
+                "opacity": 0.54
+              },
+              {
+                "color": "#1B1B25",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#2A3C98",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B25",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#1B1B25",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#2A3C98",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B25",
+                "opacity": 0.76
+              },
+              {
+                "color": "#1B1B25",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#2A3C98",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B25",
+                "opacity": 0.86
+              },
+              {
+                "color": "#1B1B25",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Obsidian Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#F0BE6D",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48000000000000004
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.28
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#281900",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.7,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#F0BE6D",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.4
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#281900",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.7,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#F0BE6D",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.52
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#281900",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.7,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#F0BE6D",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.84
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.64
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#281900",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.7,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#F0BE6D",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.94
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.74
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#281900",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.7,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Obsidian Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#604100",
+            "opacity": 0.08
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.38
+              },
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.18
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.119,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.16,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#604100",
+            "opacity": 0.08
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.5
+              },
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.3
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.17,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.16,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#604100",
+            "opacity": 0.08
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.62
+              },
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.42000000000000004
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.221,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.16,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#604100",
+            "opacity": 0.08
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.72
+              },
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.52
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.272,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.16,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#604100",
+            "opacity": 0.08
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.82
+              },
+              {
+                "color": "#1B1C1D",
+                "opacity": 0.62
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.306,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.16,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Frost Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B5C4FF",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 12
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#02174B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.75,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B5C4FF",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#02174B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.75,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B5C4FF",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#02174B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.75,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B5C4FF",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 38
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#02174B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.75,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#B5C4FF",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 48
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#02174B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.75,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Frost Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#334479",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#191C1F",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#191C1F",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 12
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#334479",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#191C1F",
+                "opacity": 0.54
+              },
+              {
+                "color": "#191C1F",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#334479",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#191C1F",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#191C1F",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#334479",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#191C1F",
+                "opacity": 0.76
+              },
+              {
+                "color": "#191C1F",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 38
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#334479",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#191C1F",
+                "opacity": 0.86
+              },
+              {
+                "color": "#191C1F",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 48
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Ember Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB4A3",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#3A0A02",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB4A3",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#3A0A02",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB4A3",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#3A0A02",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB4A3",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#3A0A02",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB4A3",
+            "opacity": 0.12
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#3A0A02",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Ember Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#733426",
+            "opacity": 0.18
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#221A18",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#221A18",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#733426",
+            "opacity": 0.18
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#221A18",
+                "opacity": 0.54
+              },
+              {
+                "color": "#221A18",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#733426",
+            "opacity": 0.18
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#221A18",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#221A18",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#733426",
+            "opacity": 0.18
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#221A18",
+                "opacity": 0.76
+              },
+              {
+                "color": "#221A18",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#733426",
+            "opacity": 0.18
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#221A18",
+                "opacity": 0.86
+              },
+              {
+                "color": "#221A18",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Aurora Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00E296",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#002112",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00E296",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#002112",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00E296",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#002112",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00E296",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#002112",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#00E296",
+            "opacity": 0.06
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#002112",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Aurora Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#005233",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#131E17",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#131E17",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#005233",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#131E17",
+                "opacity": 0.54
+              },
+              {
+                "color": "#131E17",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#005233",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#131E17",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#131E17",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#005233",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#131E17",
+                "opacity": 0.76
+              },
+              {
+                "color": "#131E17",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#005233",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#131E17",
+                "opacity": 0.86
+              },
+              {
+                "color": "#131E17",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Mono Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#C6C6C6",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.44
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.24
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#1B1B1B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#C6C6C6",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#1B1B1B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#C6C6C6",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#1B1B1B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#C6C6C6",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#1B1B1B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#C6C6C6",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#1B1B1B",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Mono Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#474747",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.42000000000000004
+              },
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.22000000000000003
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#474747",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.54
+              },
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.34
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 14
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#474747",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.6599999999999999
+              },
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.45999999999999996
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#474747",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.76
+              },
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.56
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 28
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#474747",
+            "opacity": 0
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.86
+              },
+              {
+                "color": "#1B1B1B",
+                "opacity": 0.66
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 36
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Sand Light": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB599",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.58
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.38
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 4
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.35,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#370E00",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB599",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.7
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.5
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.5,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#370E00",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB599",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.82
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.62
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 12
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.65,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#370E00",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB599",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.9199999999999999
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.72
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 16
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.8,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#370E00",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#FFB599",
+            "opacity": 0.1
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 1
+              },
+              {
+                "color": "#FFFFFF",
+                "opacity": 0.8
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#370E00",
+            "opacity": 0.14,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.6,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ],
+    "Sand Dark": [
+      {
+        "name": "Glass/0",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#71361D",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#211A13",
+                "opacity": 0.5599999999999999
+              },
+              {
+                "color": "#211A13",
+                "opacity": 0.36
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 4
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.091,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 4
+            },
+            "radius": 16
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/1",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#71361D",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#211A13",
+                "opacity": 0.6799999999999999
+              },
+              {
+                "color": "#211A13",
+                "opacity": 0.48
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 8
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.13,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "radius": 22
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/2",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#71361D",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#211A13",
+                "opacity": 0.7999999999999999
+              },
+              {
+                "color": "#211A13",
+                "opacity": 0.6
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 12
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.169,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "radius": 28
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/3",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#71361D",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#211A13",
+                "opacity": 0.8999999999999999
+              },
+              {
+                "color": "#211A13",
+                "opacity": 0.7
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 16
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.208,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 11
+            },
+            "radius": 44
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      },
+      {
+        "name": "Glass/4",
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#71361D",
+            "opacity": 0.16
+          },
+          {
+            "type": "GRADIENT_LINEAR",
+            "angle": 135,
+            "stops": [
+              {
+                "color": "#211A13",
+                "opacity": 0.98
+              },
+              {
+                "color": "#211A13",
+                "opacity": 0.78
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "radius": 20
+          },
+          {
+            "type": "INNER_SHADOW",
+            "color": "#FFFFFF",
+            "opacity": 0.234,
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "radius": 0
+          },
+          {
+            "type": "DROP_SHADOW",
+            "color": "#000000",
+            "opacity": 0.45,
+            "offset": {
+              "x": 0,
+              "y": 14
+            },
+            "radius": 56
+          }
+        ],
+        "stroke": {
+          "color": "#FFFFFF",
+          "opacity": 0.13,
+          "weight": 1,
+          "align": "INSIDE"
+        }
+      }
+    ]
+  }
+}
