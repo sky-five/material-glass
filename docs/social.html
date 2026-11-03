@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-mg-theme="sea-glass" data-mg-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Material Glass social card</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../material-glass.css">
+<style>
+  html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; }
+  body { font-family: var(--mg-font-body); color: var(--mg-on-surface); }
+  .card { position: relative; width: 1280px; height: 640px; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; padding: 0 72px; box-sizing: border-box; }
+  .card::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+    radial-gradient(40% 55% at 8% 12%, rgb(var(--mg-scene-1-rgb) / 0.9), transparent 70%),
+    radial-gradient(35% 50% at 92% 18%, rgb(var(--mg-scene-2-rgb) / 0.8), transparent 70%),
+    radial-gradient(45% 55% at 62% 100%, rgb(var(--mg-scene-3-rgb) / 0.75), transparent 70%), var(--mg-scene-base); }
+  .mark { width: 64px; height: 64px; border-radius: 20px; background: radial-gradient(120% 100% at 25% 15%, rgb(255 255 255 / 0.75), transparent 50%), linear-gradient(140deg, var(--mg-ref-primary-60), var(--mg-ref-secondary-40) 60%, var(--mg-ref-tertiary-30)); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6), 0 10px 30px rgb(var(--mg-primary-rgb) / 0.45); }
+  h1 { margin: 28px 0 14px; font-family: var(--mg-font-display); font-size: 104px; line-height: 0.92; letter-spacing: -0.04em; }
+  h1 span { display: block; background: linear-gradient(100deg, var(--mg-primary), var(--mg-secondary) 55%, var(--mg-tertiary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  p { margin: 0 0 26px; font-size: 25px; line-height: 1.35; color: var(--mg-on-surface-variant); max-width: 540px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .facts .mg-badge { min-height: 34px; padding: 0 14px; font-size: 15px; }
+  .stage { position: relative; height: 520px; }
+  .phone { position: absolute; right: 150px; top: 0; width: 300px; height: 520px; border-radius: 44px; padding: 14px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; }
+  .art { height: 170px; border-radius: 26px; padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; background: radial-gradient(60% 70% at 78% 18%, var(--mg-ref-tertiary-70), transparent 70%), linear-gradient(150deg, var(--mg-ref-primary-40), var(--mg-ref-secondary-20)); }
+  .art small { font-size: 13px; font-weight: 600; opacity: 0.85; }
+  .art b { font-family: var(--mg-font-display); font-size: 34px; line-height: 1; }
+  .phone .mg-nav { margin-top: auto; }
+  .phone .mg-nav__item { min-width: 0; }
+  .themes { display: inline-flex; margin-top: 22px; gap: 10px; padding: 12px 14px; border-radius: 999px; }
+  .themes i { width: 34px; height: 34px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.4); }
+  .tiers { position: absolute; right: 0; top: 60px; display: flex; flex-direction: column; gap: 10px; }
+  .tiers div { width: 120px; height: 62px; border-radius: 20px; display: grid; place-items: center; font-size: 15px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div>
+    <div class="mark"></div>
+    <h1>Material<span>Glass</span></h1>
+    <p>Material 3 color roles, type and states on Liquid&#8209;Glass surfaces.</p>
+    <div class="facts"><span class="mg-badge mg-badge--primary">8 themes + generator</span><span class="mg-badge">60+ components</span><span class="mg-badge mg-badge--tertiary">22,000 contrast checks</span><span class="mg-badge">MIT</span></div>
+    <div class="themes mg-glass-3"><i style="background:#6FDACC"></i><i style="background:#B8C3FF"></i><i style="background:#FFB300"></i><i style="background:#2F6BFF"></i><i style="background:#FF6F4F"></i><i style="background:#3DDC97"></i><i style="background:#9E9E9E"></i><i style="background:#C0623B"></i></div>
+  </div>
+  <div class="stage">
+    <div class="phone mg-glass-1">
+      <label class="mg-search mg-glass-2"><span style="opacity:.7">Search</span></label>
+      <div class="art"><small>Featured</small><b>NIGHT<br>DRIVE</b></div>
+      <div class="mg-list-item mg-glass-1"><span class="mg-avatar">MF</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Morning focus</span><span class="mg-list-item__supporting">42 tracks</span></span></div>
+      <nav class="mg-nav mg-glass-3" aria-label="x"><span class="mg-nav__item" aria-current="page">Home</span><span class="mg-nav__item">Search</span><span class="mg-nav__item">Library</span></nav>
+    </div>
+    <div class="tiers"><div class="mg-glass-1">G1</div><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div><div class="mg-glass-4">G4</div></div>
+  </div>
+</div>
+</body>
+</html>

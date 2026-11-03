@@ -16,6 +16,9 @@
 /* The hidden attribute always wins over component display rules. */
 :where([class*="mg-"])[hidden] { display: none !important; }
 
+/* Icons that point "forward" or "back" can opt into mirroring in right-to-left layouts. */
+.mg-flip-rtl:dir(rtl) { scale: -1 1; }
+
 /* ─── Typography ─── */
 .mg-display, .mg-headline, .mg-title { font-family: var(--mg-font-display); }
 .mg-body, .mg-label { font-family: var(--mg-font-body); }

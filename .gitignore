@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+# Visual-test baselines are per platform; only CI's Linux set is committed.
+test/__screenshots__/win32/
+test/__screenshots__/darwin/
+test/__diff__/

@@ -1,41 +1,85 @@
 {
   "name": "material-glass",
   "version": "0.2.0",
-  "description": "Material 3 color roles and scales on Liquid-Glass-style translucent surfaces. Tokens, CSS components, refraction and liquid motion. No dependencies.",
-  "homepage": "https://github.com/sky-five/material-glass",
+  "description": "Material 3 color roles, type and states on Liquid-Glass-style translucent surfaces. 8 themes and a theme generator, 60+ components, refraction and liquid motion. Tested against WCAG AA. No runtime dependencies.",
+  "homepage": "https://sky-five.github.io/material-glass/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sky-five/material-glass.git"
   },
+  "bugs": {
+    "url": "https://github.com/sky-five/material-glass/issues"
+  },
   "license": "MIT",
+  "author": "sky-five",
   "type": "module",
   "style": "material-glass.css",
   "main": "material-glass.js",
+  "exports": {
+    ".": {
+      "style": "./material-glass.css",
+      "default": "./material-glass.js"
+    },
+    "./css": "./material-glass.css",
+    "./min.css": "./material-glass.min.css",
+    "./unlayered.css": "./dist/material-glass.unlayered.css",
+    "./core.css": "./dist/material-glass.core.css",
+    "./components/*": "./dist/components/*",
+    "./js": "./material-glass.js",
+    "./tokens": "./tokens/material-glass.tokens.json",
+    "./themes.json": "./dist/themes.json",
+    "./theme-core": "./src/theme-core.js",
+    "./package.json": "./package.json",
+    "./min.js": "./material-glass.min.js"
+  },
+  "sideEffects": [
+    "*.css",
+    "./material-glass.js"
+  ],
   "files": [
     "material-glass.css",
+    "material-glass.min.css",
     "material-glass.js",
-    "tokens/"
+    "material-glass.min.js",
+    "dist/",
+    "tokens/",
+    "src/theme-core.js",
+    "CHANGELOG.md"
   ],
   "keywords": [
     "design-system",
     "design-tokens",
     "material-design",
     "material-3",
+    "material-you",
     "glassmorphism",
     "liquid-glass",
     "css",
-    "theme"
+    "css-framework",
+    "theme",
+    "theme-generator",
+    "dark-mode",
+    "accessibility",
+    "wcag"
   ],
   "scripts": {
     "build": "node scripts/build.mjs && node scripts/pages.mjs",
     "test": "node scripts/lint-css.mjs && node scripts/contrast.mjs",
     "themes": "node scripts/theme.mjs",
     "test:contrast": "node scripts/contrast.mjs",
-    "test:css": "node scripts/lint-css.mjs"
+    "test:css": "node scripts/lint-css.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "record": "node scripts/record.mjs",
+    "test:a11y": "node scripts/test-a11y.mjs",
+    "test:interaction": "node scripts/test-interaction.mjs",
+    "test:visual": "node scripts/test-visual.mjs",
+    "test:browser": "node scripts/test-a11y.mjs && node scripts/test-interaction.mjs && node scripts/test-visual.mjs"
   },
   "devDependencies": {
     "@material/material-color-utilities": "^0.3.0",
     "axe-core": "^4.10.2",
+    "esbuild": "^0.24.2",
+    "gifenc": "^1.0.3",
     "lightningcss": "^1.28.2",
     "pngjs": "^7.0.0",
     "puppeteer-core": "^23.11.1"

@@ -7,7 +7,7 @@
 .mg-avatar[data-status]::after {
   content: "";
   position: absolute;
-  right: -1px;
+  inset-inline-end: -1px;
   bottom: -1px;
   width: 30%;
   height: 30%;
@@ -22,8 +22,8 @@
 .mg-avatar[data-status="busy"]::after { background: var(--mg-error); }
 .mg-avatar[data-status="away"]::after { background: #E5A00D; }
 .mg-avatar-group { display: inline-flex; align-items: center; }
-.mg-avatar-group > .mg-avatar { margin-left: -10px; box-shadow: 0 0 0 2px var(--mg-surface); }
-.mg-avatar-group > .mg-avatar:first-child { margin-left: 0; }
+.mg-avatar-group > .mg-avatar { margin-inline-start: -10px; box-shadow: 0 0 0 2px var(--mg-surface); }
+.mg-avatar-group > .mg-avatar:first-child { margin-inline-start: 0; }
 .mg-avatar-group__more { background: var(--mg-surface-container-highest); color: var(--mg-on-surface-variant); }
 
 /* ─── Badges: dot, count, on-icon ─── */
@@ -44,7 +44,7 @@
 .mg-badge--dot { width: 8px; min-height: 8px; height: 8px; padding: 0; background: var(--mg-error); }
 .mg-badge--dot::before { display: none; }
 .mg-badge-anchor { position: relative; display: inline-flex; }
-.mg-badge-anchor > .mg-badge--count, .mg-badge-anchor > .mg-badge--dot { position: absolute; top: 4px; right: 4px; translate: 40% -30%; box-shadow: 0 0 0 2px var(--mg-surface); pointer-events: none; }
+.mg-badge-anchor > .mg-badge--count, .mg-badge-anchor > .mg-badge--dot { position: absolute; top: 4px; inset-inline-end: 4px; translate: 40% -30%; box-shadow: 0 0 0 2px var(--mg-surface); pointer-events: none; }
 
 /* ─── Tag input: <div class="mg-tag-input mg-field" data-mg-tag-input><span class="mg-chip">…</span><input class="mg-field__input"></div> ─── */
 .mg-tag-input { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 12px; cursor: text; }

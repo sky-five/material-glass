@@ -20,6 +20,6 @@ jobs:
       - name: Build CSS from tokens
         run: npm run build
       - name: Generated CSS is committed
-        run: git diff --exit-code -- material-glass.css material-glass.min.css dist/
+        run: git diff --exit-code -- material-glass.css material-glass.min.css material-glass.min.js dist/ demo/themes.js
       - name: CSS parses cleanly, WCAG contrast checks
         run: npm test

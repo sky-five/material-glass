@@ -18,13 +18,13 @@ a:not([class]) { color: var(--mg-primary); }
 .theme-menu .mg-menu__swatch { width: 24px; height: 24px; }
 @media (max-width: 760px) {
   .ex-chrome { left: auto; right: 10px; bottom: auto; top: 10px; }
-  .ex-chrome .theme-btn [data-theme-name] { display: none; }
+  .ex-chrome .theme-btn [data-theme-name] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
 
 /* On app-shell examples the controls stack under the side rail instead of covering content. */
 @media (min-width: 761px) {
   [data-ex-chrome="rail"] .ex-chrome { flex-direction: column; left: 20px; width: 64px; padding: 6px 4px; border-radius: 32px; }
   [data-ex-chrome="rail"] .ex-chrome .theme-btn { padding: 0; width: 44px; justify-content: center; }
-  [data-ex-chrome="rail"] .ex-chrome .theme-btn [data-theme-name] { display: none; }
+  [data-ex-chrome="rail"] .ex-chrome .theme-btn [data-theme-name] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   [data-ex-chrome="rail"] .ex-chrome .mode-switch { flex-direction: column; }
 }

@@ -1,0 +1,48 @@
+name: Browser tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      update-baselines:
+        description: Rewrite every visual baseline
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Accessibility (axe-core)
+        run: node scripts/test-a11y.mjs
+      - name: Interaction and page errors
+        run: node scripts/test-interaction.mjs
+      - name: Visual regression
+        run: node scripts/test-visual.mjs ${{ inputs.update-baselines && '--update' || '' }}
+      - name: Upload visual diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diffs
+          path: test/__diff__/
+      - name: Commit new or updated baselines
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git add test/__screenshots__/linux
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update visual baselines [skip ci]"
+            git push
+          fi

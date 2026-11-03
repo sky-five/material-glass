@@ -72,7 +72,7 @@ section { padding-block: 56px; }
 }
 @media (max-width: 560px) {
   .mode-switch .mg-segmented__item { padding: 0 10px; }
-  .theme-btn [data-theme-name] { display: none; }
+  .theme-btn [data-theme-name] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
 
 /* ── Hero ── */

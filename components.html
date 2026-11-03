@@ -378,8 +378,8 @@
             <button class="mg-menu__item" type="button" role="menuitem"><svg aria-hidden="true"><use href="#i-trash"/></svg>Delete</button>
           </div>
           <div class="row">
-            <header class="mg-top-bar mg-top-bar--center mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Centered</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Account"><svg aria-hidden="true"><use href="#i-user"/></svg></button></div></header>
-            <header class="mg-top-bar mg-top-bar--large mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Large title</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Edit"><svg aria-hidden="true"><use href="#i-edit"/></svg></button></div></header>
+            <header class="mg-top-bar mg-top-bar--center mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg class="mg-flip-rtl" aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Centered</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Account"><svg aria-hidden="true"><use href="#i-user"/></svg></button></div></header>
+            <header class="mg-top-bar mg-top-bar--large mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg class="mg-flip-rtl" aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Large title</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Edit"><svg aria-hidden="true"><use href="#i-edit"/></svg></button></div></header>
           </div>
         </div>
         <div class="mg-card mg-glass-2 demo-card">
@@ -411,9 +411,9 @@
           <h3>Breadcrumbs and pagination</h3>
           <nav class="mg-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#navigation">Home</a></li><li><a href="#navigation">Library</a></li><li><span aria-current="page">Glass tokens</span></li></ol></nav>
           <nav class="mg-pagination mg-glass-1" aria-label="Pages">
-            <button class="mg-pagination__item" type="button" aria-label="Previous page" disabled><svg aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+            <button class="mg-pagination__item" type="button" aria-label="Previous page" disabled><svg class="mg-flip-rtl" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
             <button class="mg-pagination__item" type="button" aria-current="page">1</button><button class="mg-pagination__item" type="button">2</button><button class="mg-pagination__item" type="button">3</button><span class="mg-pagination__gap" aria-hidden="true">…</span><button class="mg-pagination__item" type="button">12</button>
-            <button class="mg-pagination__item" type="button" aria-label="Next page"><svg aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+            <button class="mg-pagination__item" type="button" aria-label="Next page"><svg class="mg-flip-rtl" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
           </nav>
           <div class="row"><button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="drawer"><svg aria-hidden="true"><use href="#i-menu"/></svg>Open drawer</button></div>
         </div>
@@ -443,7 +443,7 @@
         <div class="mg-card mg-glass-2 demo-card">
           <h3>Menu and popover</h3>
           <div class="row">
-            <button class="mg-btn mg-btn--glass" type="button" popovertarget="cat-menu">Sort by<svg aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+            <button class="mg-btn mg-btn--glass" type="button" popovertarget="cat-menu">Sort by<svg class="mg-flip-rtl" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
             <button class="mg-btn mg-btn--glass" type="button" popovertarget="cat-pop">Details</button>
           </div>
           <div class="mg-menu mg-glass-3" id="cat-menu" popover role="menu" aria-label="Sort by">
@@ -476,13 +476,13 @@
     <section id="containment" class="cat-section" aria-labelledby="h-containment">
       <h2 class="mg-headline" id="h-containment">Containment</h2>
       <div class="cat-grid">
-        <div class="mg-card mg-glass-2"><h4 class="mg-card__title">Glass card</h4><p class="mg-card__subtitle">.mg-card.mg-glass-2</p><p class="mg-card__body">The default. Pick any tier for elevation.</p><div class="mg-card__actions"><button class="mg-btn mg-btn--text" type="button">Later</button><button class="mg-btn" type="button">Open</button></div></div>
-        <div class="mg-card mg-card--elevated"><h4 class="mg-card__title">Elevated</h4><p class="mg-card__subtitle">Opaque, with a shadow</p><p class="mg-card__body">For dense layouts where glass would be noisy.</p></div>
-        <div class="mg-card mg-card--filled"><h4 class="mg-card__title">Filled</h4><p class="mg-card__subtitle">surface-container-highest</p><p class="mg-card__body">Calm and solid.</p></div>
-        <div class="mg-card mg-card--outlined"><h4 class="mg-card__title">Outlined</h4><p class="mg-card__subtitle">A quiet boundary</p><p class="mg-card__body">For grouping without weight.</p></div>
-        <div class="mg-card mg-card--media mg-glass-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><h4 class="mg-card__title">Media card</h4><p class="mg-card__subtitle">Image on top, content below</p></div>
-        <a class="mg-card mg-card--interactive mg-glass-2" href="#containment"><h4 class="mg-card__title">Interactive</h4><p class="mg-card__body">The whole card is a link. It lifts on hover and its glass climbs a tier.</p></a>
-        <div class="mg-card mg-card--horizontal mg-glass-2 cat-span-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><div><h4 class="mg-card__title">Horizontal card</h4><p class="mg-card__body">Media on the side for lists of articles or products.</p></div></div>
+        <div class="mg-card mg-glass-2"><h3 class="mg-card__title">Glass card</h3><p class="mg-card__subtitle">.mg-card.mg-glass-2</p><p class="mg-card__body">The default. Pick any tier for elevation.</p><div class="mg-card__actions"><button class="mg-btn mg-btn--text" type="button">Later</button><button class="mg-btn" type="button">Open</button></div></div>
+        <div class="mg-card mg-card--elevated"><h3 class="mg-card__title">Elevated</h3><p class="mg-card__subtitle">Opaque, with a shadow</p><p class="mg-card__body">For dense layouts where glass would be noisy.</p></div>
+        <div class="mg-card mg-card--filled"><h3 class="mg-card__title">Filled</h3><p class="mg-card__subtitle">surface-container-highest</p><p class="mg-card__body">Calm and solid.</p></div>
+        <div class="mg-card mg-card--outlined"><h3 class="mg-card__title">Outlined</h3><p class="mg-card__subtitle">A quiet boundary</p><p class="mg-card__body">For grouping without weight.</p></div>
+        <div class="mg-card mg-card--media mg-glass-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><h3 class="mg-card__title">Media card</h3><p class="mg-card__subtitle">Image on top, content below</p></div>
+        <a class="mg-card mg-card--interactive mg-glass-2" href="#containment"><h3 class="mg-card__title">Interactive</h3><p class="mg-card__body">The whole card is a link. It lifts on hover and its glass climbs a tier.</p></a>
+        <div class="mg-card mg-card--horizontal mg-glass-2 cat-span-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><div><h3 class="mg-card__title">Horizontal card</h3><p class="mg-card__body">Media on the side for lists of articles or products.</p></div></div>
         <div class="demo-card cat-span-2" style="padding:0">
           <div class="mg-accordion">
             <details class="mg-glass-1" open><summary>What is a glass tier?</summary><div class="mg-accordion__body">One of five translucent surfaces that replace Material's surface-container levels. Higher tiers blur more and glow brighter at the edge.</div></details>
@@ -642,7 +642,7 @@
         </div>
         <div class="mg-card mg-glass-2 demo-card">
           <h3>Tree</h3>
-          <div class="mg-tree" role="tree" aria-label="Files">
+          <nav class="mg-tree" aria-label="Files">
             <details open><summary>src</summary><div>
               <details open><summary>components</summary><div>
                 <a class="mg-tree__leaf" href="#data">core.css</a><a class="mg-tree__leaf" href="#data" aria-current="page">data.css</a><a class="mg-tree__leaf" href="#data">inputs.css</a>
@@ -650,7 +650,7 @@
               <a class="mg-tree__leaf" href="#data">base.css</a><a class="mg-tree__leaf" href="#data">customize.css</a>
             </div></details>
             <details><summary>tokens</summary><div><a class="mg-tree__leaf" href="#data">material-glass.tokens.json</a></div></details>
-          </div>
+          </nav>
         </div>
       </div>
     </section>

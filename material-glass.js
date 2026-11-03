@@ -849,6 +849,9 @@
     const dots = root.querySelector('.mg-carousel__dots');
     if (!track) return;
     const items = $$(track, '.mg-carousel__item');
+    // A scrolling region must be reachable by keyboard (arrow keys then scroll it).
+    if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
+    if (!track.hasAttribute('aria-label') && !track.hasAttribute('aria-labelledby')) track.setAttribute('aria-label', root.getAttribute('aria-label') || 'Slides');
     const behavior = () => (reduceMotion.matches ? 'auto' : 'smooth');
     if (dots) {
       dots.setAttribute('role', 'group');
@@ -1169,7 +1172,7 @@
   });
 
   // Re-measure when theme or customization attributes change on <html>.
-  new MutationObserver(() => requestAnimationFrame(refresh)).observe(html, { attributes: true, attributeFilter: ['data-mg-theme', 'data-mg-mode', 'data-mg-glass', 'data-mg-density', 'data-mg-shape', 'data-mg-font', 'data-mg-type', 'data-mg-transparency'] });
+  new MutationObserver(() => requestAnimationFrame(refresh)).observe(html, { attributes: true, attributeFilter: ['data-mg-theme', 'data-mg-mode', 'data-mg-glass', 'data-mg-density', 'data-mg-shape', 'data-mg-font', 'data-mg-type', 'data-mg-transparency', 'dir', 'lang'] });
 
   window.MaterialGlass = { init, refresh, setTheme, toast, sparkline, chartTheme, supportsRefraction: canRefract, version: '0.2.0' };
 
