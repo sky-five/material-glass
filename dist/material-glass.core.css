@@ -1,5 +1,5 @@
 /*!
- * Material Glass v0.1.0 · core: tokens, glass, customization, a11y
+ * Material Glass v0.2.0 · core: tokens, glass, customization, a11y
  * Material 3 color roles and scales on Liquid-Glass-style surfaces.
  * https://github.com/sky-five/material-glass
  * MIT License. Unofficial: not affiliated with Google or Apple.
@@ -2663,6 +2663,9 @@
   }
 }
 
+/* The hidden attribute always wins over component display rules. */
+:where([class*="mg-"])[hidden] { display: none !important; }
+
 /* ─── Typography ─── */
 .mg-display, .mg-headline, .mg-title { font-family: var(--mg-font-display); }
 .mg-body, .mg-label { font-family: var(--mg-font-body); }
@@ -3093,6 +3096,10 @@
 }
 
 @layer mg.a11y {
+
+/* Behaviour guards. This is the last layer, so component display rules cannot reopen closed things. */
+dialog:where([class*="mg-"]):not([open]) { display: none; }
+:where([class*="mg-"])[popover]:not(:popover-open) { display: none; }
 
 /* ─── Accessibility fallbacks ───
    Glass turns into the matching Material surface container whenever translucency

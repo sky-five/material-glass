@@ -1,0 +1,251 @@
+{
+  "version": "0.2.0",
+  "themes": [
+    {
+      "id": "sea-glass",
+      "label": "Sea Glass",
+      "description": "Dark-first teal theme. Seed #26A69A.",
+      "generated": false,
+      "light": {
+        "primary": "#006A62",
+        "tertiary": "#2B6A47",
+        "surface": "#F4FBF9",
+        "scene": [
+          "#6FDACC",
+          "#81CFF7",
+          "#93D6AA"
+        ]
+      },
+      "dark": {
+        "primary": "#6FDACC",
+        "tertiary": "#93D6AA",
+        "surface": "#0E1514",
+        "scene": [
+          "#00867C",
+          "#006688",
+          "#2B6A47"
+        ]
+      }
+    },
+    {
+      "id": "prism",
+      "label": "Prism",
+      "description": "Light-first indigo and coral theme. Seed #4355B2.",
+      "generated": false,
+      "light": {
+        "primary": "#4355B2",
+        "tertiary": "#984A3D",
+        "surface": "#FCF8FF",
+        "scene": [
+          "#B8C3FF",
+          "#FFB4A5",
+          "#B6C9D8"
+        ]
+      },
+      "dark": {
+        "primary": "#B8C3FF",
+        "tertiary": "#FFB4A5",
+        "surface": "#121219",
+        "scene": [
+          "#4355B2",
+          "#984A3D",
+          "#4F616D"
+        ]
+      }
+    },
+    {
+      "id": "obsidian",
+      "label": "Obsidian",
+      "description": "Near-black and amber. Cool grey glass, strong specular. For dashboards and dev tools.",
+      "generated": true,
+      "light": {
+        "primary": "#7D570D",
+        "tertiary": "#225FA5",
+        "surface": "#FAF9FB",
+        "scene": [
+          "#F0BE6D",
+          "#C1C7D2",
+          "#A6C8FF"
+        ]
+      },
+      "dark": {
+        "primary": "#F0BE6D",
+        "tertiary": "#A6C8FF",
+        "surface": "#121315",
+        "scene": [
+          "#8A5A00",
+          "#2C3A55",
+          "#3A4A66"
+        ]
+      }
+    },
+    {
+      "id": "frost",
+      "label": "Frost",
+      "description": "Light-first cobalt and lilac. High blur, low tint. For productivity apps.",
+      "generated": true,
+      "light": {
+        "primary": "#4C5C92",
+        "tertiary": "#654ABA",
+        "surface": "#F8F9FE",
+        "scene": [
+          "#B5C4FF",
+          "#C1C5DD",
+          "#CDBDFF"
+        ]
+      },
+      "dark": {
+        "primary": "#B5C4FF",
+        "tertiary": "#CDBDFF",
+        "surface": "#111417",
+        "scene": [
+          "#6475AD",
+          "#595E72",
+          "#654ABA"
+        ]
+      }
+    },
+    {
+      "id": "ember",
+      "label": "Ember",
+      "description": "Warm coral and gold on charcoal, with a sage accent. For media and food apps.",
+      "generated": true,
+      "light": {
+        "primary": "#904B3B",
+        "tertiary": "#4B663E",
+        "surface": "#FFF8F6",
+        "scene": [
+          "#FFB4A3",
+          "#FABC3E",
+          "#B1CF9F"
+        ]
+      },
+      "dark": {
+        "primary": "#FFB4A3",
+        "tertiary": "#B1CF9F",
+        "surface": "#191210",
+        "scene": [
+          "#AD6352",
+          "#7C5800",
+          "#4B663E"
+        ]
+      }
+    },
+    {
+      "id": "aurora",
+      "label": "Aurora",
+      "description": "Mint, violet and magenta. Gradient-forward and saturated. For landing pages and portfolios.",
+      "generated": true,
+      "light": {
+        "primary": "#006C45",
+        "tertiary": "#B5007C",
+        "surface": "#F0FDF1",
+        "scene": [
+          "#7FF0C4",
+          "#C9A8FF",
+          "#FFA8D9"
+        ]
+      },
+      "dark": {
+        "primary": "#00E296",
+        "tertiary": "#FFAFD5",
+        "surface": "#0B160F",
+        "scene": [
+          "#00806A",
+          "#5B2DB0",
+          "#A0236E"
+        ]
+      }
+    },
+    {
+      "id": "mono",
+      "label": "Mono",
+      "description": "Achromatic greyscale. Proves the system works with no hue. The safe enterprise theme.",
+      "generated": true,
+      "light": {
+        "primary": "#000000",
+        "tertiary": "#3B3B3B",
+        "surface": "#F9F9F9",
+        "scene": [
+          "#C6C6C6",
+          "#C6C6C6",
+          "#C6C6C6"
+        ]
+      },
+      "dark": {
+        "primary": "#FFFFFF",
+        "tertiary": "#E2E2E2",
+        "surface": "#131313",
+        "scene": [
+          "#777777",
+          "#5E5E5E",
+          "#5E5E5E"
+        ]
+      }
+    },
+    {
+      "id": "sand",
+      "label": "Sand",
+      "description": "Paper-toned neutrals, terracotta, olive and denim. Low blur, high opacity, closest to classic Material. For reading apps.",
+      "generated": true,
+      "light": {
+        "primary": "#8E4D32",
+        "tertiary": "#395F94",
+        "surface": "#FFF8F4",
+        "scene": [
+          "#FFB599",
+          "#C0CE78",
+          "#A7C8FF"
+        ]
+      },
+      "dark": {
+        "primary": "#FFB599",
+        "tertiary": "#A7C8FF",
+        "surface": "#18120C",
+        "scene": [
+          "#AC6448",
+          "#58641A",
+          "#395F94"
+        ]
+      }
+    }
+  ],
+  "glassPresets": [
+    {
+      "id": "frosted",
+      "label": "Frosted",
+      "description": "The default: what the theme defines.",
+      "textSafe": true
+    },
+    {
+      "id": "milk",
+      "label": "Milk",
+      "description": "Thick, bright glass. Most legible translucent option.",
+      "textSafe": true
+    },
+    {
+      "id": "smoked",
+      "label": "Smoked",
+      "description": "Darkened glass, like a tinted window.",
+      "textSafe": true
+    },
+    {
+      "id": "crystal",
+      "label": "Crystal",
+      "description": "Thin, clear glass with a prismatic rim.",
+      "textSafe": true
+    },
+    {
+      "id": "clear",
+      "label": "Clear",
+      "description": "Barely there. Decorative surfaces and large display text only.",
+      "textSafe": false
+    },
+    {
+      "id": "paper",
+      "label": "Paper",
+      "description": "Opaque Material surfaces with a glass rim. No blur.",
+      "textSafe": true
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+/* Behaviour guards. This is the last layer, so component display rules cannot reopen closed things. */
+dialog:where([class*="mg-"]):not([open]) { display: none; }
+:where([class*="mg-"])[popover]:not(:popover-open) { display: none; }
+
 /* ─── Accessibility fallbacks ───
    Glass turns into the matching Material surface container whenever translucency
    is unavailable or unwanted. Add data-mg-transparency="reduced" to any ancestor to force it. */

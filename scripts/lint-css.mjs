@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const KNOWN_NEW = /'(picker|picker-icon|checkmark|details-content)' is not recognized/;
-const files = ['material-glass.css', 'material-glass.min.css', 'dist/material-glass.core.css',
+const files = ['material-glass.css', 'material-glass.min.css', 'dist/material-glass.core.css', 'dist/material-glass.unlayered.css',
   ...readdirSync(join(root, 'dist/components')).map((f) => `dist/components/${f}`)];
 
 let problems = 0;

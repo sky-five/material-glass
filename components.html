@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en" data-mg-theme="sea-glass" data-mg-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components · Material Glass</title>
+<meta name="description" content="Every Material Glass component, live: navigation, inputs, pickers, feedback, containment, data and media, on Liquid-Glass-style surfaces.">
+<meta name="theme-color" content="#070C0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Fraunces:opsz,wght@9..144,600&family=Plus+Jakarta+Sans:wght@400;600;700&family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="material-glass.css">
+<link rel="stylesheet" href="demo/demo.css">
+<link rel="stylesheet" href="demo/catalog.css">
+<script src="demo/prefs.js"></script>
+</head>
+<body>
+<a class="skip mg-btn" href="#main">Skip to content</a>
+
+<!-- @sprite -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="mg-demo-liquid" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="3" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></symbol>
+  <symbol id="i-library" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4-1v16l-4 1z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.8 8.6a5 5 0 0 0-8.8-3.2 5 5 0 0 0-8.8 3.2c0 5.3 8.8 10.4 8.8 10.4s8.8-5.1 8.8-10.4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path fill="currentColor" d="M16 5h2v14h-2zM5 5v14l10-7z"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path fill="currentColor" d="M6 5h2v14H6zM19 5v14L9 12z"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></g></symbol>
+  <symbol id="i-more-v" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></g></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.5a5 5 0 0 1 5.5 4.5"/></g></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 13l3-8h12l3 8v6H3zM3 13h5l2 3h4l2-3h5"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></g></symbol>
+  <symbol id="i-tune" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4M7 9l5-5 5 5M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></g></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l10 18H2zM12 10v5M12 18v.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h8l5 5v13H6zM14 3v5h5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19.5 10 4 4 0 0 1 18 18z"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 15a5 5 0 1 1 1-9.9A6 6 0 0 1 19.5 7 4 4 0 0 1 18 15zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.5 12h11L21 8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></g></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5v.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></g></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 0 0 4-4c0-4.5-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></g></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v12M7 11l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"/></g></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5h18l-7 8v6l-4 2v-8z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+</svg>
+<!-- /@sprite -->
+
+<!-- @topbar -->
+<header class="topbar wrap">
+  <div class="topbar__inner mg-glass-3" data-mg-refract="22" data-mg-bezel="14">
+    <a class="brand" href="index.html" aria-label="Material Glass home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Material Glass</span>
+    </a>
+    <nav class="topnav" aria-label="Site">
+      <a href="index.html" data-page="home">Overview</a>
+      <a href="components.html" data-page="components" aria-current="page">Components</a>
+      <a href="builder.html" data-page="builder">Theme builder</a>
+      <a href="examples/index.html" data-page="examples">Examples</a>
+    </nav>
+    <div class="controls">
+      <button class="mg-btn mg-btn--glass mg-btn--sm theme-btn" type="button" popovertarget="theme-menu" aria-haspopup="menu" aria-expanded="false">
+        <span class="theme-btn__dot" aria-hidden="true"></span><span data-theme-name>Sea Glass</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5"/></svg>
+      </button>
+      <div class="mg-menu mg-glass-3 theme-menu" id="theme-menu" popover role="menu" aria-label="Theme"></div>
+      <div class="mg-segmented mg-glass-1 mode-switch" data-mg-liquid="manual" role="group" aria-label="Color mode">
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="auto" aria-pressed="false">Auto</button>
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="light" aria-pressed="false">Light</button>
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="dark" aria-pressed="true">Dark</button>
+      </div>
+      <span class="mg-badge-anchor">
+        <button class="mg-icon-btn mg-glass-1" type="button" popovertarget="customize" aria-label="Customize" data-mg-tooltip="Customize" data-mg-tooltip-pos="bottom"><svg aria-hidden="true"><use href="#i-tune"/></svg></button>
+        <span class="mg-badge mg-badge--dot" data-customized-dot hidden></span>
+      </span>
+      <a class="mg-icon-btn mg-glass-1" href="https://github.com/sky-five/material-glass" aria-label="Source on GitHub" data-mg-tooltip="GitHub" data-mg-tooltip-pos="bottom"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
+    </div>
+  </div>
+  <div class="mg-popover mg-glass-4 customize" id="customize" popover data-mg-align="end" aria-label="Customize">
+    <div class="customize__head">
+      <b>Customize</b>
+      <button class="mg-btn mg-btn--text mg-btn--sm" type="button" data-reset-custom>Reset</button>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-glass">Glass</span>
+      <div class="mg-segmented mg-glass-1 customize__seg" data-mg-liquid="manual" role="group" aria-labelledby="c-glass">
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="frosted">Frosted</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="milk">Milk</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="smoked">Smoked</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="crystal">Crystal</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="clear">Clear</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="paper">Paper</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-density">Density</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-density">
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="comfortable">Comfortable</button>
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="compact">Compact</button>
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="dense">Dense</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-shape">Shape</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-shape">
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="sharp">Sharp</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="soft">Soft</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="round">Round</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="squircle">Squircle</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-motion">Motion</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-motion">
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="none">None</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="calm">Calm</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="standard">Standard</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="expressive">Expressive</button>
+      </div>
+    </div>
+    <div class="customize__row customize__row--split">
+      <label class="customize__font"><span class="control-label">Font</span>
+        <select class="mg-select" data-set-select="font">
+          <option value="default">Figtree + Inter</option>
+          <option value="system">System UI</option>
+          <option value="inter">Inter</option>
+          <option value="geist">Geist</option>
+          <option value="jakarta">Plus Jakarta Sans</option>
+          <option value="serif">Fraunces + Inter</option>
+          <option value="mono">JetBrains Mono</option>
+        </select>
+      </label>
+      <span class="glass-toggle">
+        <button class="mg-switch" type="button" role="switch" aria-checked="true" id="glass-switch" aria-labelledby="glass-switch-label"></button>
+        <span class="control-label" id="glass-switch-label">Transparency</span>
+      </span>
+    </div>
+  </div>
+</header>
+<!-- /@topbar -->
+
+<div class="catalog wrap">
+  <nav class="catalog__nav mg-glass-1" aria-label="Component groups">
+    <a class="mg-drawer__item" href="#actions">Actions</a>
+    <a class="mg-drawer__item" href="#selection">Selection</a>
+    <a class="mg-drawer__item" href="#inputs">Text inputs</a>
+    <a class="mg-drawer__item" href="#pickers">Pickers</a>
+    <a class="mg-drawer__item" href="#navigation">Navigation</a>
+    <a class="mg-drawer__item" href="#overlays">Overlays</a>
+    <a class="mg-drawer__item" href="#containment">Containment</a>
+    <a class="mg-drawer__item" href="#feedback">Feedback</a>
+    <a class="mg-drawer__item" href="#data">Data</a>
+    <a class="mg-drawer__item" href="#media">Media</a>
+    <a class="mg-drawer__item" href="#glass">Glass and scenes</a>
+  </nav>
+
+  <main id="main" class="catalog__main">
+    <header class="catalog__intro">
+      <span class="eyebrow">Catalog</span>
+      <h1 class="mg-display">Components</h1>
+      <p>Every component on one page, live. Switch theme, mode, glass, density, shape and motion from the top bar and everything below follows. Press <span class="mg-kbd">Ctrl</span> <span class="mg-kbd">K</span> for the command palette.</p>
+    </header>
+
+    <!-- ═══ Actions ═══ -->
+    <section id="actions" class="cat-section" aria-labelledby="h-actions">
+      <h2 class="mg-headline" id="h-actions">Actions</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Buttons</h3>
+          <div class="row"><button class="mg-btn" type="button">Filled</button><button class="mg-btn mg-btn--tonal" type="button">Tonal</button><button class="mg-btn mg-btn--glass" type="button">Glass</button></div>
+          <div class="row"><button class="mg-btn mg-btn--outlined" type="button">Outlined</button><button class="mg-btn mg-btn--text" type="button">Text</button><button class="mg-btn mg-btn--danger" type="button">Delete</button></div>
+          <div class="row"><button class="mg-btn mg-btn--sm" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg>Small</button><button class="mg-btn mg-btn--lg mg-btn--tonal" type="button">Large</button><button class="mg-btn" type="button" disabled>Disabled</button></div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>FAB and icon buttons</h3>
+          <div class="row"><button class="mg-fab" type="button" aria-label="Create"><svg aria-hidden="true"><use href="#i-plus"/></svg></button><button class="mg-fab mg-fab--extended" type="button"><svg aria-hidden="true"><use href="#i-edit"/></svg>Compose</button></div>
+          <div class="row">
+            <button class="mg-icon-btn" type="button" aria-label="Favourite" aria-pressed="false" data-toggle data-mg-tooltip="Favourite"><svg aria-hidden="true"><use href="#i-heart"/></svg></button>
+            <button class="mg-icon-btn" type="button" aria-label="Favourite" aria-pressed="true" data-toggle data-mg-tooltip="Saved"><svg aria-hidden="true"><use href="#i-heart"/></svg></button>
+            <span class="mg-badge-anchor"><button class="mg-icon-btn mg-glass-1" type="button" aria-label="Notifications, 3 new"><svg aria-hidden="true"><use href="#i-bell"/></svg></button><span class="mg-badge mg-badge--count">3</span></span>
+            <span class="mg-badge-anchor"><button class="mg-icon-btn" type="button" aria-label="Inbox, unread"><svg aria-hidden="true"><use href="#i-inbox"/></svg></button><span class="mg-badge mg-badge--dot"></span></span>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Segmented buttons</h3>
+          <div class="mg-segmented mg-glass-1" data-mg-liquid role="group" aria-label="View" style="align-self:flex-start">
+            <button class="mg-segmented__item" type="button" aria-pressed="true">Day</button><button class="mg-segmented__item" type="button" aria-pressed="false">Week</button><button class="mg-segmented__item" type="button" aria-pressed="false">Month</button>
+          </div>
+          <p class="cat-note">Multi-select: each item toggles on its own.</p>
+          <div class="mg-segmented mg-glass-1" role="group" aria-label="Text style" style="align-self:flex-start">
+            <button class="mg-segmented__item" type="button" aria-pressed="true" data-toggle><b>B</b></button><button class="mg-segmented__item" type="button" aria-pressed="false" data-toggle><i>I</i></button><button class="mg-segmented__item" type="button" aria-pressed="true" data-toggle><u>U</u></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Selection ═══ -->
+    <section id="selection" class="cat-section" aria-labelledby="h-selection">
+      <h2 class="mg-headline" id="h-selection">Selection</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Chips and badges</h3>
+          <div class="row">
+            <button class="mg-chip" type="button" aria-pressed="true" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>All</button>
+            <button class="mg-chip" type="button" aria-pressed="false" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>Design</button>
+            <button class="mg-chip" type="button" aria-pressed="false" data-toggle><svg class="mg-chip__check" aria-hidden="true"><use href="#i-check"/></svg>Docs</button>
+          </div>
+          <div class="row"><span class="mg-badge mg-badge--primary">Live</span><span class="mg-badge">In review</span><span class="mg-badge mg-badge--tertiary">Shipped</span><span class="mg-badge mg-badge--error">Blocked</span></div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Switches, checkboxes, radios</h3>
+          <div class="row" style="gap:8px 18px">
+            <button class="mg-switch" type="button" role="switch" aria-checked="true" aria-label="Wi-Fi" data-toggle-switch></button>
+            <button class="mg-switch" type="button" role="switch" aria-checked="false" aria-label="Bluetooth" data-toggle-switch></button>
+          </div>
+          <div class="row" style="gap:4px 18px">
+            <label class="mg-choice"><input class="mg-check" type="checkbox" checked>Email</label>
+            <label class="mg-choice"><input class="mg-check" type="checkbox">SMS</label>
+            <label class="mg-choice"><input class="mg-radio" type="radio" name="c-r" checked>Daily</label>
+            <label class="mg-choice"><input class="mg-radio" type="radio" name="c-r">Weekly</label>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Sliders</h3>
+          <label class="stack" style="gap:2px"><span class="control-label">Volume <output for="s-vol">62</output></span><input class="mg-slider" id="s-vol" type="range" min="0" max="100" value="62"></label>
+          <label class="stack" style="gap:2px"><span class="control-label">Steps of 10</span><input class="mg-slider mg-slider--ticks" type="range" min="0" max="100" step="10" value="40" style="--step:10%"></label>
+          <div class="stack" style="gap:2px"><span class="control-label" id="range-l">Price range</span><div class="mg-range" role="group" aria-labelledby="range-l"><input class="mg-slider" type="range" min="0" max="100" value="20" aria-label="Minimum"><input class="mg-slider" type="range" min="0" max="100" value="72" aria-label="Maximum"></div></div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Vertical slider and rating</h3>
+          <div class="row" style="align-items:center;gap:24px">
+            <input class="mg-slider mg-slider--vertical" type="range" min="0" max="100" value="65" aria-label="Brightness">
+            <div class="stack" style="gap:8px">
+              <fieldset class="mg-rating"><legend>Rating</legend>
+                <input type="radio" id="rt5" name="rt" value="5"><label for="rt5">5 stars</label>
+                <input type="radio" id="rt4" name="rt" value="4" checked><label for="rt4">4 stars</label>
+                <input type="radio" id="rt3" name="rt" value="3"><label for="rt3">3 stars</label>
+                <input type="radio" id="rt2" name="rt" value="2"><label for="rt2">2 stars</label>
+                <input type="radio" id="rt1" name="rt" value="1"><label for="rt1">1 star</label>
+              </fieldset>
+              <label class="mg-color"><input type="color" value="#26A69A">Accent colour</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Inputs ═══ -->
+    <section id="inputs" class="cat-section" aria-labelledby="h-inputs">
+      <h2 class="mg-headline" id="h-inputs">Text inputs</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Text fields</h3>
+          <label class="mg-field"><span class="mg-field__label">Glass (default)</span><input class="mg-field__input" type="text" value="Material Glass"></label>
+          <label class="mg-field mg-field--outlined"><span class="mg-field__label">Outlined</span><span class="mg-field__row"><svg class="mg-field__icon" aria-hidden="true"><use href="#i-search"/></svg><input class="mg-field__input" type="search" placeholder="Search tokens"></span></label>
+          <label class="mg-field mg-field--filled"><span class="mg-field__label">Filled, with affixes</span><span class="mg-field__row"><span class="mg-field__affix">$</span><input class="mg-field__input" type="text" inputmode="decimal" value="1,280"><span class="mg-field__affix">USD</span></span></label>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Validation and counters</h3>
+          <div>
+            <label class="mg-field"><span class="mg-field__label">Email</span><input class="mg-field__input" type="email" value="hello@" aria-invalid="true" aria-describedby="email-err"></label>
+            <div class="mg-field__support mg-field__support--error" id="email-err"><span>Enter a full email address.</span></div>
+          </div>
+          <div>
+            <label class="mg-field"><span class="mg-field__label">Bio</span><textarea class="mg-field__input" rows="2" maxlength="120" data-counter="bio-count">Designer who likes glass more than is reasonable.</textarea></label>
+            <div class="mg-field__support"><span>Shown on your profile.</span><span class="mg-field__count" id="bio-count">49/120</span></div>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Select, combobox, stepper</h3>
+          <label class="stack" style="gap:4px"><span class="control-label">Region</span>
+            <select class="mg-select"><option>North America</option><option selected>Europe</option><option>Asia Pacific</option><option>South America</option></select>
+          </label>
+          <div class="mg-combobox" data-mg-combobox>
+            <label class="mg-field"><span class="mg-field__label">Font family</span><input class="mg-field__input" role="combobox" aria-expanded="false" aria-controls="fonts-list" aria-autocomplete="list" placeholder="Type to filter" autocomplete="off"></label>
+            <div class="mg-menu mg-glass-3" id="fonts-list" role="listbox" aria-label="Fonts">
+              <div class="mg-menu__item" role="option">Figtree</div><div class="mg-menu__item" role="option">Inter</div><div class="mg-menu__item" role="option">Geist</div><div class="mg-menu__item" role="option">Plus Jakarta Sans</div><div class="mg-menu__item" role="option">Fraunces</div><div class="mg-menu__item" role="option">JetBrains Mono</div><div class="mg-menu__item" role="option">IBM Plex Sans</div><div class="mg-menu__item" role="option">Space Grotesk</div>
+            </div>
+          </div>
+          <div class="row" style="align-items:center"><span class="control-label" id="guests-l">Guests</span>
+            <div class="mg-stepper mg-glass-1" data-mg-stepper role="group" aria-labelledby="guests-l">
+              <button class="mg-icon-btn" type="button" aria-label="Fewer"><svg aria-hidden="true"><use href="#i-minus"/></svg></button><input type="number" min="1" max="12" value="2" aria-label="Guests"><button class="mg-icon-btn" type="button" aria-label="More"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Tags and files</h3>
+          <div class="mg-field mg-tag-input" data-mg-tag-input>
+            <span class="mg-chip">design<button type="button" class="mg-chip__remove" aria-label="Remove design"><svg aria-hidden="true"><use href="#i-close"/></svg></button></span>
+            <span class="mg-chip">glass<button type="button" class="mg-chip__remove" aria-label="Remove glass"><svg aria-hidden="true"><use href="#i-close"/></svg></button></span>
+            <input class="mg-field__input" placeholder="Add a tag, press Enter" aria-label="Add tag">
+          </div>
+          <label class="mg-dropzone" data-mg-dropzone>
+            <input type="file" multiple>
+            <svg aria-hidden="true"><use href="#i-upload"/></svg>
+            <strong>Drop files here</strong>
+            <span>or click to browse</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Pickers ═══ -->
+    <section id="pickers" class="cat-section" aria-labelledby="h-pickers">
+      <h2 class="mg-headline" id="h-pickers">Pickers</h2>
+      <div class="cat-grid cat-grid--wide">
+        <div class="stack" style="gap:8px"><span class="control-label">Date</span><div class="mg-datepicker mg-glass-2" data-mg-datepicker data-value="2026-11-12" aria-label="Choose date"></div></div>
+        <div class="stack" style="gap:8px"><span class="control-label">Date range</span><div class="mg-datepicker mg-glass-2" data-mg-datepicker data-range data-value="2026-11-09/2026-11-14" aria-label="Choose dates"></div></div>
+        <div class="stack" style="gap:8px"><span class="control-label">Time</span><div class="mg-timepicker mg-glass-2" data-mg-timepicker data-value="09:30" aria-label="Choose time"></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ Navigation ═══ -->
+    <section id="navigation" class="cat-section" aria-labelledby="h-navigation">
+      <h2 class="mg-headline" id="h-navigation">Navigation</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card cat-span-2">
+          <h3>Top app bars</h3>
+          <div class="cat-scroll mg-scene" tabindex="0" aria-label="Scrolling example">
+            <header class="mg-top-bar mg-glass-1" data-mg-top-bar>
+              <div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Menu" data-open-dialog="drawer"><svg aria-hidden="true"><use href="#i-menu"/></svg></button></div>
+              <h4 class="mg-top-bar__title">Scroll me</h4>
+              <div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Search"><svg aria-hidden="true"><use href="#i-search"/></svg></button><button class="mg-icon-btn" type="button" aria-label="More" popovertarget="bar-menu"><svg aria-hidden="true"><use href="#i-more-v"/></svg></button></div>
+            </header>
+            <div class="cat-scroll__body">
+              <p>The bar starts on glass tier 1. When content scrolls under it, it rises to tier 3: more blur, more opacity, a brighter rim. With material-glass.js, any <code>[data-mg-top-bar]</code> does this.</p>
+              <div class="cat-swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <p>Keep scrolling. The art passes under the bar and blurs.</p>
+              <div class="cat-swatches"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="mg-menu mg-glass-3" id="bar-menu" popover role="menu" data-mg-align="end">
+            <button class="mg-menu__item" type="button" role="menuitem"><svg aria-hidden="true"><use href="#i-share"/></svg>Share<span class="mg-menu__shortcut">Ctrl S</span></button>
+            <button class="mg-menu__item" type="button" role="menuitem"><svg aria-hidden="true"><use href="#i-download"/></svg>Download</button>
+            <hr class="mg-divider">
+            <button class="mg-menu__item" type="button" role="menuitem"><svg aria-hidden="true"><use href="#i-trash"/></svg>Delete</button>
+          </div>
+          <div class="row">
+            <header class="mg-top-bar mg-top-bar--center mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Centered</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Account"><svg aria-hidden="true"><use href="#i-user"/></svg></button></div></header>
+            <header class="mg-top-bar mg-top-bar--large mg-glass-2 cat-bar"><div class="mg-top-bar__lead"><button class="mg-icon-btn" type="button" aria-label="Back"><svg aria-hidden="true"><use href="#i-back"/></svg></button></div><h4 class="mg-top-bar__title">Large title</h4><div class="mg-top-bar__trail"><button class="mg-icon-btn" type="button" aria-label="Edit"><svg aria-hidden="true"><use href="#i-edit"/></svg></button></div></header>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Tabs</h3>
+          <div class="mg-tabs" role="tablist" data-mg-liquid aria-label="Library">
+            <button class="mg-tab" type="button" role="tab" aria-selected="true" aria-controls="tp-1" id="t-1">Songs</button><button class="mg-tab" type="button" role="tab" aria-selected="false" aria-controls="tp-2" id="t-2">Albums</button><button class="mg-tab" type="button" role="tab" aria-selected="false" aria-controls="tp-3" id="t-3">Artists</button>
+          </div>
+          <div class="mg-tab-panel" id="tp-1" role="tabpanel" aria-labelledby="t-1">412 songs, sorted by date added.</div>
+          <div class="mg-tab-panel" id="tp-2" role="tabpanel" aria-labelledby="t-2" hidden>38 albums.</div>
+          <div class="mg-tab-panel" id="tp-3" role="tabpanel" aria-labelledby="t-3" hidden>121 artists.</div>
+          <div class="mg-tabs mg-tabs--secondary" role="tablist" data-mg-liquid aria-label="Icons">
+            <button class="mg-tab" type="button" role="tab" aria-selected="true"><svg aria-hidden="true"><use href="#i-sun"/></svg>Today</button><button class="mg-tab" type="button" role="tab" aria-selected="false"><svg aria-hidden="true"><use href="#i-cal"/></svg>Week</button><button class="mg-tab" type="button" role="tab" aria-selected="false"><svg aria-hidden="true"><use href="#i-chart"/></svg>Trends</button>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Navigation bar and rail</h3>
+          <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract="20" data-mg-bezel="16" aria-label="Example bar">
+            <button class="mg-nav__item" type="button" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg>Home</button>
+            <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-search"/></svg>Search</button>
+            <button class="mg-nav__item" type="button"><svg aria-hidden="true"><use href="#i-library"/></svg>Library</button>
+          </nav>
+          <nav class="mg-nav mg-rail mg-glass-3 cat-rail" data-mg-liquid aria-label="Example rail">
+            <button class="mg-nav__item" type="button" aria-current="page" aria-label="Overview"><svg aria-hidden="true"><use href="#i-grid"/></svg></button>
+            <button class="mg-nav__item" type="button" aria-label="Analytics"><svg aria-hidden="true"><use href="#i-chart"/></svg></button>
+            <button class="mg-nav__item" type="button" aria-label="Team"><svg aria-hidden="true"><use href="#i-team"/></svg></button>
+          </nav>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Breadcrumbs and pagination</h3>
+          <nav class="mg-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#navigation">Home</a></li><li><a href="#navigation">Library</a></li><li><span aria-current="page">Glass tokens</span></li></ol></nav>
+          <nav class="mg-pagination mg-glass-1" aria-label="Pages">
+            <button class="mg-pagination__item" type="button" aria-label="Previous page" disabled><svg aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+            <button class="mg-pagination__item" type="button" aria-current="page">1</button><button class="mg-pagination__item" type="button">2</button><button class="mg-pagination__item" type="button">3</button><span class="mg-pagination__gap" aria-hidden="true">…</span><button class="mg-pagination__item" type="button">12</button>
+            <button class="mg-pagination__item" type="button" aria-label="Next page"><svg aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+          </nav>
+          <div class="row"><button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="drawer"><svg aria-hidden="true"><use href="#i-menu"/></svg>Open drawer</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Overlays ═══ -->
+    <section id="overlays" class="cat-section" aria-labelledby="h-overlays">
+      <h2 class="mg-headline" id="h-overlays">Overlays</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Dialogs</h3>
+          <div class="row">
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="dlg-basic">Basic</button>
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="dlg-alert">Alert</button>
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="dlg-full">Full screen</button>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Sheets</h3>
+          <div class="row">
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="sheet-bottom">Bottom sheet</button>
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-dialog="sheet-side">Side sheet</button>
+          </div>
+          <p class="cat-note">Drag the handle down to dismiss.</p>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Menu and popover</h3>
+          <div class="row">
+            <button class="mg-btn mg-btn--glass" type="button" popovertarget="cat-menu">Sort by<svg aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+            <button class="mg-btn mg-btn--glass" type="button" popovertarget="cat-pop">Details</button>
+          </div>
+          <div class="mg-menu mg-glass-3" id="cat-menu" popover role="menu" aria-label="Sort by">
+            <div class="mg-menu__label">Sort by</div>
+            <button class="mg-menu__item" type="button" role="menuitemradio" aria-checked="true" data-menu-radio><svg aria-hidden="true"><use href="#i-clock"/></svg>Date added</button>
+            <button class="mg-menu__item" type="button" role="menuitemradio" aria-checked="false" data-menu-radio><svg aria-hidden="true"><use href="#i-star"/></svg>Rating</button>
+            <button class="mg-menu__item" type="button" role="menuitemradio" aria-checked="false" data-menu-radio><svg aria-hidden="true"><use href="#i-file"/></svg>Name</button>
+          </div>
+          <div class="mg-popover mg-glass-3" id="cat-pop" popover>
+            <b>Glass tier 3</b>
+            <p class="cat-note" style="margin:6px 0 0">Popovers sit on tier 3 and anchor to the control that opened them. They flip when there is no room below.</p>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Tooltips and command palette</h3>
+          <div class="row">
+            <button class="mg-icon-btn mg-glass-1" type="button" aria-label="Archive" data-mg-tooltip="Archive"><svg aria-hidden="true"><use href="#i-inbox"/></svg></button>
+            <button class="mg-btn mg-btn--outlined" type="button" data-mg-tooltip-target="rich-tip">Rich tooltip</button>
+            <button class="mg-btn mg-btn--tonal" type="button" data-open-command><svg aria-hidden="true"><use href="#i-search"/></svg>Commands <span class="mg-kbd">Ctrl K</span></button>
+          </div>
+          <div class="mg-tooltip-rich mg-glass-3" id="rich-tip" popover="manual" role="tooltip">
+            <p class="mg-tooltip-rich__title">Refraction</p>
+            Edges bend what's behind them in Chrome and Edge. Elsewhere, glass stays frosted.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Containment ═══ -->
+    <section id="containment" class="cat-section" aria-labelledby="h-containment">
+      <h2 class="mg-headline" id="h-containment">Containment</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2"><h4 class="mg-card__title">Glass card</h4><p class="mg-card__subtitle">.mg-card.mg-glass-2</p><p class="mg-card__body">The default. Pick any tier for elevation.</p><div class="mg-card__actions"><button class="mg-btn mg-btn--text" type="button">Later</button><button class="mg-btn" type="button">Open</button></div></div>
+        <div class="mg-card mg-card--elevated"><h4 class="mg-card__title">Elevated</h4><p class="mg-card__subtitle">Opaque, with a shadow</p><p class="mg-card__body">For dense layouts where glass would be noisy.</p></div>
+        <div class="mg-card mg-card--filled"><h4 class="mg-card__title">Filled</h4><p class="mg-card__subtitle">surface-container-highest</p><p class="mg-card__body">Calm and solid.</p></div>
+        <div class="mg-card mg-card--outlined"><h4 class="mg-card__title">Outlined</h4><p class="mg-card__subtitle">A quiet boundary</p><p class="mg-card__body">For grouping without weight.</p></div>
+        <div class="mg-card mg-card--media mg-glass-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><h4 class="mg-card__title">Media card</h4><p class="mg-card__subtitle">Image on top, content below</p></div>
+        <a class="mg-card mg-card--interactive mg-glass-2" href="#containment"><h4 class="mg-card__title">Interactive</h4><p class="mg-card__body">The whole card is a link. It lifts on hover and its glass climbs a tier.</p></a>
+        <div class="mg-card mg-card--horizontal mg-glass-2 cat-span-2"><div class="mg-card__media cat-media" role="img" aria-label="Abstract gradient artwork"></div><div><h4 class="mg-card__title">Horizontal card</h4><p class="mg-card__body">Media on the side for lists of articles or products.</p></div></div>
+        <div class="demo-card cat-span-2" style="padding:0">
+          <div class="mg-accordion">
+            <details class="mg-glass-1" open><summary>What is a glass tier?</summary><div class="mg-accordion__body">One of five translucent surfaces that replace Material's surface-container levels. Higher tiers blur more and glow brighter at the edge.</div></details>
+            <details class="mg-glass-1"><summary>Does it work in Safari and Firefox?</summary><div class="mg-accordion__body">Yes. Everything except edge refraction works everywhere. Refraction needs SVG filters in backdrop-filter, which only Chromium supports today.</div></details>
+            <details class="mg-glass-1"><summary>Is the text always readable?</summary><div class="mg-accordion__body">Every theme and text-safe glass preset is checked in CI against WCAG AA, with the glass composited over the theme's own backgrounds.</div></details>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Dividers</h3>
+          <hr class="mg-divider">
+          <hr class="mg-divider mg-divider--inset">
+          <hr class="mg-divider mg-divider--glass">
+          <div class="mg-divider mg-divider--label" role="separator">or</div>
+          <div class="row" style="align-items:stretch;height:32px">Left<div class="mg-divider mg-divider--vertical" role="separator" aria-orientation="vertical"></div>Right</div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card cat-span-2">
+          <h3>Split pane</h3>
+          <div class="mg-split" data-mg-split style="--split:38%;min-height:180px">
+            <div class="cat-pane">Drag the handle, or focus it and use the arrow keys.</div>
+            <div class="mg-split__handle" aria-label="Resize panes"></div>
+            <div class="cat-pane">Second pane</div>
+          </div>
+        </div>
+        <div class="demo-card cat-span-3" style="padding:0">
+          <div class="mg-carousel" data-mg-carousel aria-roledescription="carousel" aria-label="Featured">
+            <div class="mg-carousel__track">
+              <figure class="mg-carousel__item cat-slide-1"><figcaption class="mg-carousel__caption mg-glass-2">Night Drive</figcaption></figure>
+              <figure class="mg-carousel__item cat-slide-2"><figcaption class="mg-carousel__caption mg-glass-2">Glasswork</figcaption></figure>
+              <figure class="mg-carousel__item cat-slide-3"><figcaption class="mg-carousel__caption mg-glass-2">Tonal</figcaption></figure>
+              <figure class="mg-carousel__item cat-slide-4"><figcaption class="mg-carousel__caption mg-glass-2">Refract</figcaption></figure>
+              <figure class="mg-carousel__item cat-slide-5"><figcaption class="mg-carousel__caption mg-glass-2">Slow Light</figcaption></figure>
+            </div>
+            <div class="mg-carousel__dots mg-glass-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Feedback ═══ -->
+    <section id="feedback" class="cat-section" aria-labelledby="h-feedback">
+      <h2 class="mg-headline" id="h-feedback">Feedback</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Progress</h3>
+          <progress class="mg-progress" value="64" max="100" aria-label="Upload">64%</progress>
+          <progress class="mg-progress" aria-label="Loading"></progress>
+          <progress class="mg-progress mg-progress--wavy" value="48" max="100" aria-label="Playing">48%</progress>
+          <div class="row" style="align-items:center">
+            <div class="mg-progress-circle" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Storage" style="--value:72"></div>
+            <div class="mg-progress-circle mg-progress-circle--sm is-indeterminate" role="progressbar" aria-label="Loading"></div>
+            <div class="mg-progress-circle mg-progress-circle--lg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" aria-label="Goal" style="--value:35"></div>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Skeletons</h3>
+          <div class="row" style="flex-wrap:nowrap;align-items:center"><span class="mg-skeleton mg-skeleton--circle"></span><div style="flex:1"><span class="mg-skeleton mg-skeleton--title" style="width:60%"></span><span class="mg-skeleton" style="width:85%"></span></div></div>
+          <span class="mg-skeleton mg-skeleton--block"></span>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Toasts</h3>
+          <p class="cat-note">Stacked, swipe sideways to dismiss, at most three.</p>
+          <div class="row">
+            <button class="mg-btn mg-btn--tonal" type="button" data-show-snack="Saved to Library">Show toast</button>
+            <button class="mg-btn mg-btn--glass" type="button" data-toast-undo>With action</button>
+          </div>
+        </div>
+        <div class="mg-banner mg-glass-2 cat-span-2" role="status">
+          <svg aria-hidden="true"><use href="#i-info"/></svg>
+          <p>Refraction is on. It works in Chrome and Edge; other browsers show frosted glass instead.</p>
+          <div class="mg-banner__actions"><button class="mg-btn mg-btn--text" type="button">Dismiss</button><button class="mg-btn mg-btn--text" type="button">Learn more</button></div>
+        </div>
+        <div class="mg-banner mg-banner--error mg-glass-2" role="alert">
+          <svg aria-hidden="true"><use href="#i-warn"/></svg>
+          <p>Sync failed. Your last 3 changes are only on this device.</p>
+          <div class="mg-banner__actions"><button class="mg-btn mg-btn--text" type="button">Retry</button></div>
+        </div>
+        <div class="mg-card mg-glass-2 cat-span-2" style="padding:0">
+          <div class="mg-empty">
+            <div class="mg-empty__art"><svg aria-hidden="true"><use href="#i-inbox"/></svg></div>
+            <h3 class="mg-empty__title">Inbox zero</h3>
+            <p>Nothing needs you right now. New messages land here.</p>
+            <button class="mg-btn mg-btn--tonal" type="button">Compose</button>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card" style="position:relative;overflow:hidden">
+          <h3>Loading overlay</h3>
+          <p class="cat-note">Blurs and dims what's underneath while it works.</p>
+          <div class="row"><button class="mg-btn" type="button" data-overlay>Run for 2 seconds</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Data ═══ -->
+    <section id="data" class="cat-section" aria-labelledby="h-data">
+      <h2 class="mg-headline" id="h-data">Data</h2>
+      <div class="cat-grid">
+        <div class="mg-stat mg-glass-2"><span class="mg-stat__label">Revenue</span><span class="mg-stat__value">$48.2k</span><span class="mg-stat__delta">12.4% vs last week</span><div data-spark="12,14,13,17,16,19,22,21,24,27"></div></div>
+        <div class="mg-stat mg-glass-2"><span class="mg-stat__label">Active users</span><span class="mg-stat__value">8,914</span><span class="mg-stat__delta">3.1%</span><div data-spark="40,42,41,45,44,46,45,48,47,49" style="--c:var(--mg-chart-2)"></div></div>
+        <div class="mg-stat mg-glass-2"><span class="mg-stat__label">Churn</span><span class="mg-stat__value">2.3%</span><span class="mg-stat__delta mg-stat__delta--down">0.4 pts</span><div data-spark="3.1,3,2.9,2.8,2.9,2.7,2.6,2.5,2.4,2.3" style="--c:var(--mg-chart-4)"></div></div>
+        <div class="mg-card mg-glass-2 demo-card cat-span-2">
+          <h3>Sortable, resizable table</h3>
+          <div class="mg-table-wrap mg-table-wrap--scroll">
+            <table class="mg-table mg-table--sticky" data-mg-sortable data-mg-resizable>
+              <thead><tr><th scope="col">Theme</th><th scope="col">Seed</th><th scope="col" class="mg-table__num">Worst ratio</th><th scope="col">Status</th></tr></thead>
+              <tbody>
+                <tr><td>Sea Glass</td><td><code>#26A69A</code></td><td class="mg-table__num">4.63</td><td><span class="mg-badge mg-badge--tertiary">Hand-tuned</span></td></tr>
+                <tr><td>Prism</td><td><code>#4355B2</code></td><td class="mg-table__num">5.66</td><td><span class="mg-badge mg-badge--tertiary">Hand-tuned</span></td></tr>
+                <tr aria-selected="true"><td>Obsidian</td><td><code>#FFB300</code></td><td class="mg-table__num">5.03</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+                <tr><td>Frost</td><td><code>#2F6BFF</code></td><td class="mg-table__num">4.45</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+                <tr><td>Ember</td><td><code>#FF6F4F</code></td><td class="mg-table__num">4.60</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+                <tr><td>Aurora</td><td><code>#3DDC97</code></td><td class="mg-table__num">4.71</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+                <tr><td>Mono</td><td><code>#5F6368</code></td><td class="mg-table__num">4.18</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+                <tr><td>Sand</td><td><code>#C0623B</code></td><td class="mg-table__num">5.50</td><td><span class="mg-badge mg-badge--primary">Generated</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mg-table-footer"><span>8 themes</span></div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Description list</h3>
+          <dl class="mg-dl"><div><dt>Plan</dt><dd>Pro, yearly</dd></div><div><dt>Seats</dt><dd>12 of 20</dd></div><div><dt>Renews</dt><dd>14 March 2027</dd></div></dl>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card cat-span-2">
+          <h3>Bars and legend</h3>
+          <div class="mg-bars" role="img" aria-label="Tasks closed per day: Monday 12, Tuesday 18, Wednesday 15, Thursday 22, Friday 27, Saturday 9, Sunday 6">
+            <span style="--v:.44" data-label="Mon"></span><span style="--v:.67" data-label="Tue"></span><span style="--v:.56" data-label="Wed"></span><span style="--v:.81" data-label="Thu"></span><span style="--v:1" data-label="Fri"></span><span style="--v:.33;--c:var(--mg-chart-2)" data-label="Sat"></span><span style="--v:.22;--c:var(--mg-chart-2)" data-label="Sun"></span>
+          </div>
+          <ul class="mg-legend"><li>Weekday</li><li style="--c:var(--mg-chart-2)">Weekend</li></ul>
+          <ul class="mg-legend cat-chart-keys" aria-label="Chart palette"><li>1</li><li style="--c:var(--mg-chart-2)">2</li><li style="--c:var(--mg-chart-3)">3</li><li style="--c:var(--mg-chart-4)">4</li><li style="--c:var(--mg-chart-5)">5</li><li style="--c:var(--mg-chart-6)">6</li><li style="--c:var(--mg-chart-7)">7</li><li style="--c:var(--mg-chart-8)">8</li></ul>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Timeline</h3>
+          <ol class="mg-timeline">
+            <li><time>09:12</time><strong>Tokens built</strong><p>8 themes, 210 KB of CSS.</p></li>
+            <li style="--c:var(--mg-tertiary)"><time>09:13</time><strong>Contrast passed</strong><p>22,256 checks, 0 failures.</p></li>
+            <li style="--c:var(--mg-secondary)"><time>09:15</time><strong>Deployed</strong><p>Pages and CDN updated.</p></li>
+          </ol>
+        </div>
+        <div class="cat-span-3">
+          <div class="mg-kanban" data-mg-kanban>
+            <div class="mg-kanban__col mg-glass-1"><div class="mg-kanban__head">To do<span class="mg-kanban__count">2</span></div>
+              <div class="mg-kanban__card">Figma variables export<div class="mg-kanban__meta"><span class="mg-avatar mg-avatar--sm">DN</span>Design</div></div>
+              <div class="mg-kanban__card">Safari refraction fallback<div class="mg-kanban__meta"><span class="mg-avatar mg-avatar--sm mg-avatar--tertiary">AK</span>Research</div></div>
+            </div>
+            <div class="mg-kanban__col mg-glass-1"><div class="mg-kanban__head">In progress<span class="mg-kanban__count">1</span></div>
+              <div class="mg-kanban__card">React wrapper<div class="mg-kanban__meta"><span class="mg-avatar mg-avatar--sm mg-avatar--secondary">RV</span>Code</div></div>
+            </div>
+            <div class="mg-kanban__col mg-glass-1"><div class="mg-kanban__head">Done<span class="mg-kanban__count">2</span></div>
+              <div class="mg-kanban__card">Theme generator<div class="mg-kanban__meta"><span class="mg-badge mg-badge--tertiary">Shipped</span></div></div>
+              <div class="mg-kanban__card">Glass presets<div class="mg-kanban__meta"><span class="mg-badge mg-badge--tertiary">Shipped</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card cat-span-2">
+          <h3>Calendar · November 2026</h3>
+          <div class="mg-calendar" id="cat-calendar"></div>
+        </div>
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Tree</h3>
+          <div class="mg-tree" role="tree" aria-label="Files">
+            <details open><summary>src</summary><div>
+              <details open><summary>components</summary><div>
+                <a class="mg-tree__leaf" href="#data">core.css</a><a class="mg-tree__leaf" href="#data" aria-current="page">data.css</a><a class="mg-tree__leaf" href="#data">inputs.css</a>
+              </div></details>
+              <a class="mg-tree__leaf" href="#data">base.css</a><a class="mg-tree__leaf" href="#data">customize.css</a>
+            </div></details>
+            <details><summary>tokens</summary><div><a class="mg-tree__leaf" href="#data">material-glass.tokens.json</a></div></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Media ═══ -->
+    <section id="media" class="cat-section" aria-labelledby="h-media">
+      <h2 class="mg-headline" id="h-media">Media</h2>
+      <div class="cat-grid">
+        <div class="mg-card mg-glass-2 demo-card">
+          <h3>Avatars</h3>
+          <div class="row" style="align-items:center">
+            <span class="mg-avatar mg-avatar--sm">SM</span><span class="mg-avatar" data-status="online">MD</span><span class="mg-avatar mg-avatar--lg mg-avatar--tertiary" data-status="busy">LG</span><span class="mg-avatar mg-avatar--xl mg-avatar--secondary" data-status="away">XL</span>
+          </div>
+          <div class="mg-avatar-group" aria-label="Team of 7"><span class="mg-avatar">RV</span><span class="mg-avatar mg-avatar--tertiary">DN</span><span class="mg-avatar mg-avatar--secondary">AK</span><span class="mg-avatar">SY</span><span class="mg-avatar mg-avatar-group__more">+3</span></div>
+        </div>
+        <figure class="mg-figure cat-span-2"><div class="cat-figure-art" role="img" aria-label="Abstract gradient landscape"></div><figcaption class="mg-glass-2">A caption on glass sits over the image without hiding it.</figcaption></figure>
+        <div class="mg-player cat-span-2">
+          <div class="cat-video" role="img" aria-label="Video frame"></div>
+          <div class="mg-player__bar mg-glass-3">
+            <button class="mg-icon-btn" type="button" aria-label="Pause"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <span class="mg-player__time">1:24</span>
+            <input class="mg-slider mg-player__seek" type="range" min="0" max="100" value="38" aria-label="Seek">
+            <span class="mg-player__time">3:42</span>
+            <button class="mg-icon-btn" type="button" aria-label="Volume"><svg aria-hidden="true"><use href="#i-volume"/></svg></button>
+          </div>
+        </div>
+        <div class="mg-audio mg-glass-2">
+          <div class="mg-audio__art" aria-hidden="true"></div>
+          <div class="mg-audio__meta"><span class="mg-audio__title">Slow Light</span><span class="mg-audio__artist">Hollow Tide · <span class="mg-eq" aria-hidden="true"><span></span><span></span><span></span></span></span></div>
+          <div class="mg-audio__actions"><button class="mg-icon-btn" type="button" aria-label="Favourite" aria-pressed="true" data-toggle><svg aria-hidden="true"><use href="#i-heart"/></svg></button></div>
+          <div class="mg-audio__seek"><span>1:02</span><input class="mg-slider" type="range" min="0" max="100" value="28" aria-label="Seek"><span>3:58</span></div>
+          <div class="mg-audio__controls">
+            <button class="mg-icon-btn" type="button" aria-label="Shuffle"><svg aria-hidden="true"><use href="#i-shuffle"/></svg></button>
+            <button class="mg-icon-btn" type="button" aria-label="Previous"><svg aria-hidden="true"><use href="#i-prev"/></svg></button>
+            <button class="mg-fab mg-audio__play" type="button" aria-label="Pause"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="mg-icon-btn" type="button" aria-label="Next"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+            <button class="mg-icon-btn" type="button" aria-label="Repeat"><svg aria-hidden="true"><use href="#i-repeat"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Glass ═══ -->
+    <section id="glass" class="cat-section" aria-labelledby="h-glass">
+      <h2 class="mg-headline" id="h-glass">Glass and scenes</h2>
+      <div class="cat-grid">
+        <div class="cat-scene mg-scene cat-span-2"><div class="cat-scene__label mg-glass-2">Mesh</div><div class="cat-glass-row"><div class="mg-glass-1">G1</div><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div><div class="mg-glass-4">G4</div></div></div>
+        <div class="cat-scene mg-scene mg-scene--orbs"><div class="cat-scene__label mg-glass-2">Orbs</div><div class="cat-glass-row"><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div></div></div>
+        <div class="cat-scene mg-scene mg-scene--grid"><div class="cat-scene__label mg-glass-2">Grid</div><div class="cat-glass-row"><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div></div></div>
+        <div class="cat-scene mg-scene mg-scene--noise"><div class="cat-scene__label mg-glass-2">Noise</div><div class="cat-glass-row"><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div></div></div>
+        <div class="cat-scene mg-scene mg-scene--image cat-scene--img"><div class="cat-scene__label mg-glass-2">Image</div><div class="cat-glass-row"><div class="mg-glass-2">G2</div><div class="mg-glass-3">G3</div></div></div>
+        <div class="cat-scene mg-scene cat-span-3 cat-refract">
+          <div class="cat-scene__label mg-glass-2">Refraction profiles (Chromium)</div>
+          <div class="cat-refract__text" aria-hidden="true">GLASS BENDS LIGHT · GLASS BENDS LIGHT · GLASS BENDS LIGHT</div>
+          <div class="cat-glass-row">
+            <div class="mg-glass-1" data-mg-refract="30" data-mg-bezel="22">edge</div>
+            <div class="mg-glass-1" data-mg-refract="24" data-mg-refract-profile="lens">lens</div>
+            <div class="mg-glass-1" data-mg-refract="24" data-mg-refract-profile="ripple">ripple</div>
+            <div class="mg-glass-1" data-mg-refract="34" data-mg-bezel="24" data-mg-chroma="1">chroma</div>
+            <div class="mg-glass-2" data-mg-specular="pointer">pointer light</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Overlays used above -->
+<dialog class="mg-drawer mg-glass-3" id="drawer" aria-label="Navigation drawer">
+  <p class="mg-drawer__headline">Mail</p>
+  <a class="mg-drawer__item" href="#navigation" aria-current="page"><svg aria-hidden="true"><use href="#i-inbox"/></svg>Inbox<span class="mg-drawer__badge">24</span></a>
+  <a class="mg-drawer__item" href="#navigation"><svg aria-hidden="true"><use href="#i-star"/></svg>Starred</a>
+  <a class="mg-drawer__item" href="#navigation"><svg aria-hidden="true"><use href="#i-clock"/></svg>Snoozed</a>
+  <p class="mg-drawer__section">Labels</p>
+  <a class="mg-drawer__item" href="#navigation"><svg aria-hidden="true"><use href="#i-folder"/></svg>Design</a>
+  <a class="mg-drawer__item" href="#navigation"><svg aria-hidden="true"><use href="#i-folder"/></svg>Engineering</a>
+  <form method="dialog" style="margin-top:auto"><button class="mg-btn mg-btn--text" style="width:100%">Close</button></form>
+</dialog>
+
+<dialog class="mg-dialog mg-glass-3" id="dlg-basic" aria-labelledby="dlg-basic-t">
+  <h2 class="mg-dialog__title" id="dlg-basic-t">Rename theme</h2>
+  <p class="mg-dialog__body">Give your theme a short, memorable name.</p>
+  <label class="mg-field" style="margin-top:16px"><span class="mg-field__label">Name</span><input class="mg-field__input" value="Lagoon"></label>
+  <form method="dialog" class="mg-dialog__actions"><button class="mg-btn mg-btn--text">Cancel</button><button class="mg-btn">Save</button></form>
+</dialog>
+<dialog class="mg-dialog mg-dialog--alert mg-glass-3" id="dlg-alert" aria-labelledby="dlg-alert-t">
+  <svg class="mg-dialog__icon" aria-hidden="true"><use href="#i-trash"/></svg>
+  <h2 class="mg-dialog__title" id="dlg-alert-t">Delete theme?</h2>
+  <p class="mg-dialog__body">Lagoon and its 13-tone palettes will be removed.</p>
+  <form method="dialog" class="mg-dialog__actions"><button class="mg-btn mg-btn--text">Cancel</button><button class="mg-btn mg-btn--danger">Delete</button></form>
+</dialog>
+<dialog class="mg-dialog mg-dialog--fullscreen mg-glass-4" id="dlg-full" aria-labelledby="dlg-full-t">
+  <header class="mg-top-bar mg-glass-1"><div class="mg-top-bar__lead"><form method="dialog"><button class="mg-icon-btn" aria-label="Close"><svg aria-hidden="true"><use href="#i-close"/></svg></button></form></div><h2 class="mg-top-bar__title" id="dlg-full-t">New event</h2><div class="mg-top-bar__trail"><form method="dialog"><button class="mg-btn mg-btn--sm">Save</button></form></div></header>
+  <div class="mg-dialog__content stack" style="gap:12px;max-width:560px;margin:0 auto;width:100%">
+    <label class="mg-field"><span class="mg-field__label">Title</span><input class="mg-field__input" value="Design review"></label>
+    <label class="mg-field"><span class="mg-field__label">Notes</span><textarea class="mg-field__input" rows="3">Walk through the new glass presets.</textarea></label>
+  </div>
+</dialog>
+<dialog class="mg-sheet mg-glass-3" id="sheet-bottom" aria-labelledby="sheet-b-t">
+  <div class="mg-sheet__handle" aria-hidden="true"></div>
+  <h2 class="mg-sheet__title" id="sheet-b-t">Share</h2>
+  <ul class="mg-list">
+    <li class="mg-list-item mg-list-item--interactive" tabindex="0"><span class="mg-avatar">RV</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Ravi</span><span class="mg-list-item__supporting">ravi@example.com</span></span></li>
+    <li class="mg-list-item mg-list-item--interactive" tabindex="0"><span class="mg-avatar mg-avatar--tertiary">DN</span><span class="mg-list-item__text"><span class="mg-list-item__headline">Dana</span><span class="mg-list-item__supporting">dana@example.com</span></span></li>
+  </ul>
+  <form method="dialog" class="mg-dialog__actions"><button class="mg-btn mg-btn--text">Close</button></form>
+</dialog>
+<dialog class="mg-sheet mg-sheet--side mg-glass-3" id="sheet-side" aria-labelledby="sheet-s-t">
+  <h2 class="mg-sheet__title" id="sheet-s-t">Filters</h2>
+  <div class="stack" style="gap:12px">
+    <label class="mg-choice"><input class="mg-check" type="checkbox" checked>In stock</label>
+    <label class="mg-choice"><input class="mg-check" type="checkbox">On sale</label>
+    <label class="stack" style="gap:2px"><span class="control-label">Max price</span><input class="mg-slider" type="range" value="60"></label>
+  </div>
+  <form method="dialog" class="mg-dialog__actions"><button class="mg-btn mg-btn--text">Reset</button><button class="mg-btn">Apply</button></form>
+</dialog>
+
+<dialog class="mg-command mg-glass-4" data-mg-command aria-label="Command palette">
+  <label class="mg-command__search"><svg aria-hidden="true"><use href="#i-search"/></svg><input placeholder="Type a command or theme" aria-label="Command"></label>
+  <div class="mg-command__list" role="listbox" aria-label="Commands">
+    <div class="mg-menu__label">Themes</div>
+    <button class="mg-menu__item" type="button" data-cmd-theme="sea-glass"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Sea Glass</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="prism"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Prism</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="obsidian"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Obsidian</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="frost"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Frost</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="ember"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Ember</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="aurora"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Aurora</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="mono"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Mono</button>
+    <button class="mg-menu__item" type="button" data-cmd-theme="sand"><svg aria-hidden="true"><use href="#i-palette"/></svg>Theme: Sand</button>
+    <div class="mg-menu__label">Mode</div>
+    <button class="mg-menu__item" type="button" data-set="mode" data-value="light"><svg aria-hidden="true"><use href="#i-sun"/></svg>Light mode</button>
+    <button class="mg-menu__item" type="button" data-set="mode" data-value="dark"><svg aria-hidden="true"><use href="#i-moon"/></svg>Dark mode</button>
+    <div class="mg-menu__label">Jump to</div>
+    <a class="mg-menu__item" href="#pickers"><svg aria-hidden="true"><use href="#i-cal"/></svg>Pickers</a>
+    <a class="mg-menu__item" href="#data"><svg aria-hidden="true"><use href="#i-chart"/></svg>Data</a>
+    <a class="mg-menu__item" href="builder.html"><svg aria-hidden="true"><use href="#i-sparkle"/></svg>Theme builder</a>
+  </div>
+  <div class="mg-command__foot"><span><span class="mg-kbd">↑</span> <span class="mg-kbd">↓</span> move</span><span><span class="mg-kbd">Enter</span> run</span><span><span class="mg-kbd">Esc</span> close</span></div>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <span>Material Glass is an unofficial community project. It is not affiliated with or endorsed by Google or Apple.</span>
+    <span>MIT License · <a href="https://github.com/sky-five/material-glass">Source on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="demo/themes.js"></script>
+<script src="material-glass.js"></script>
+<script src="demo/controls.js"></script>
+<script src="demo/catalog.js"></script>
+</body>
+</html>

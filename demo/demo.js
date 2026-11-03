@@ -1,43 +1,8 @@
-/* Demo-site behaviour. Not part of the library. */
+/* Overview page behaviour. Not part of the library. Theme controls live in demo/controls.js. */
 (function () {
   'use strict';
   var html = document.documentElement;
-  var THEME_NAMES = { 'sea-glass': 'Sea Glass', prism: 'Prism' };
-
   function css(name) { return getComputedStyle(html).getPropertyValue(name).trim(); }
-  function save() {
-    try {
-      localStorage.setItem('mg-demo', JSON.stringify({
-        theme: html.getAttribute('data-mg-theme'),
-        mode: html.getAttribute('data-mg-mode') || 'auto',
-        reduced: html.getAttribute('data-mg-transparency') === 'reduced'
-      }));
-    } catch (e) {}
-  }
-
-  /* Theme controls */
-  function syncControls() {
-    var theme = html.getAttribute('data-mg-theme') || 'sea-glass';
-    var mode = html.getAttribute('data-mg-mode') || 'auto';
-    document.querySelectorAll('[data-theme]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.theme === theme)); });
-    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === mode)); });
-    document.querySelectorAll('[data-theme-name]').forEach(function (el) { el.textContent = THEME_NAMES[theme] || theme; });
-    document.getElementById('glass-switch').setAttribute('aria-checked', String(html.getAttribute('data-mg-transparency') !== 'reduced'));
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', css('--mg-scene-base'));
-  }
-  document.querySelectorAll('[data-theme]').forEach(function (b) {
-    b.addEventListener('click', function () { MaterialGlass.setTheme(b.dataset.theme); afterThemeChange(); });
-  });
-  document.querySelectorAll('[data-mode]').forEach(function (b) {
-    b.addEventListener('click', function () { MaterialGlass.setTheme(null, b.dataset.mode); afterThemeChange(); });
-  });
-  document.getElementById('glass-switch').addEventListener('click', function () {
-    if (html.getAttribute('data-mg-transparency') === 'reduced') html.removeAttribute('data-mg-transparency');
-    else html.setAttribute('data-mg-transparency', 'reduced');
-    afterThemeChange();
-  });
-  if (window.matchMedia) window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { afterThemeChange(); });
 
   /* Live palette, read from the CSS so it can never drift from the tokens */
   var ROLES = [
@@ -52,6 +17,7 @@
 
   function renderPalette() {
     var roles = document.getElementById('roles');
+    if (!roles) return;
     roles.textContent = '';
     ROLES.forEach(function (r) {
       var cell = document.createElement('div');
@@ -95,10 +61,7 @@
 
     document.querySelectorAll('[data-hex-of]').forEach(function (el) { el.textContent = css('--mg-' + el.dataset.hexOf); });
   }
-
-  function afterThemeChange() {
-    requestAnimationFrame(function () { syncControls(); renderPalette(); MaterialGlass.refresh(); save(); });
-  }
+  if (window.MGDemo) MGDemo.onChange(renderPalette);
 
   /* Small interactions */
   document.addEventListener('click', function (e) {
@@ -106,36 +69,23 @@
     if (t) t.setAttribute('aria-pressed', String(t.getAttribute('aria-pressed') !== 'true'));
     var s = e.target.closest('[data-toggle-switch]');
     if (s) s.setAttribute('aria-checked', String(s.getAttribute('aria-checked') !== 'true'));
+    var d = e.target.closest('[data-open-dialog]');
+    if (d) { var dlg = document.getElementById(d.getAttribute('data-open-dialog') || 'demo-dialog'); if (dlg && dlg.showModal) dlg.showModal(); }
+    var sn = e.target.closest('[data-show-snack]');
+    if (sn && window.MaterialGlass) MaterialGlass.toast(sn.getAttribute('data-show-snack') || 'Design review moved to Thursday', { action: 'Undo' });
   });
-
-  var dialog = document.getElementById('demo-dialog');
-  document.querySelector('[data-open-dialog]').addEventListener('click', function () {
-    if (dialog.showModal) dialog.showModal();
-  });
-
-  var snack = document.getElementById('snack');
-  var slot = snack.parentNode;
-  var snackTimer;
-  function hideSnack() { slot.classList.remove('is-open'); clearTimeout(snackTimer); }
-  document.querySelector('[data-show-snack]').addEventListener('click', function () {
-    snack.hidden = false;
-    requestAnimationFrame(function () { slot.classList.add('is-open'); });
-    clearTimeout(snackTimer);
-    snackTimer = setTimeout(hideSnack, 4000);
-  });
-  document.querySelector('[data-hide-snack]').addEventListener('click', hideSnack);
 
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var code = btn.parentNode.querySelector('code').textContent;
       if (navigator.clipboard) navigator.clipboard.writeText(code).then(function () {
         btn.setAttribute('aria-label', 'Copied');
+        if (window.MaterialGlass) MaterialGlass.toast('Copied to clipboard');
         setTimeout(function () { btn.setAttribute('aria-label', 'Copy code'); }, 1600);
       });
     });
   });
 
-  syncControls();
   renderPalette();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { MaterialGlass.refresh(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (window.MaterialGlass) MaterialGlass.refresh(); });
 })();

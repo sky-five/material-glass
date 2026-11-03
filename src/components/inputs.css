@@ -165,7 +165,7 @@ textarea.mg-field__input { resize: vertical; min-height: 66px; field-sizing: con
 .mg-datepicker__day:focus-visible { outline: 2px solid var(--mg-primary); outline-offset: 1px; }
 .mg-datepicker__day:active { transform: scale(calc(1 + 0.08 * var(--mg-motion-press))); }
 .mg-datepicker__day[aria-current="date"] { box-shadow: inset 0 0 0 1px var(--mg-primary); color: var(--mg-primary); font-weight: 700; }
-.mg-datepicker__day[aria-selected="true"] { background: var(--mg-primary); color: var(--mg-on-primary); font-weight: 600; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 4px 12px rgb(var(--mg-primary-rgb) / 0.35); }
+.mg-datepicker__day[aria-pressed="true"] { background: var(--mg-primary); color: var(--mg-on-primary); font-weight: 600; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 4px 12px rgb(var(--mg-primary-rgb) / 0.35); }
 .mg-datepicker__day.is-in-range { border-radius: 0; width: 100%; background: var(--mg-secondary-container); color: var(--mg-on-secondary-container); }
 .mg-datepicker__day.is-outside { color: var(--mg-on-surface-variant); opacity: 0.55; }
 .mg-datepicker__day:disabled { opacity: 0.3; cursor: default; }
@@ -361,7 +361,7 @@ textarea.mg-field__input { resize: vertical; min-height: 66px; field-sizing: con
 @media (forced-colors: active) {
   .mg-rating input:checked ~ label, .mg-rating label:hover, .mg-rating label:hover ~ label { background: Highlight; }
   .mg-rating label { background: CanvasText; }
-  .mg-datepicker__day[aria-selected="true"], .mg-timepicker__num[aria-pressed="true"] { outline: 2px solid Highlight; }
+  .mg-datepicker__day[aria-pressed="true"], .mg-timepicker__num[aria-pressed="true"] { outline: 2px solid Highlight; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mg-menu:popover-open { animation: none; }

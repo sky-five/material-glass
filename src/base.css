@@ -13,6 +13,9 @@
   }
 }
 
+/* The hidden attribute always wins over component display rules. */
+:where([class*="mg-"])[hidden] { display: none !important; }
+
 /* ─── Typography ─── */
 .mg-display, .mg-headline, .mg-title { font-family: var(--mg-font-display); }
 .mg-body, .mg-label { font-family: var(--mg-font-body); }

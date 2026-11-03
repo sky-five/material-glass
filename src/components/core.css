@@ -44,6 +44,7 @@
     inset 0 0 0 1px rgb(255 255 255 / var(--mg-glass-rim)),
     0 6px 20px rgb(var(--mg-shadow) / var(--mg-shadow-alpha));
 }
+.mg-btn:disabled, .mg-btn[aria-disabled="true"], .mg-icon-btn:disabled, .mg-fab:disabled, .mg-chip:disabled { opacity: 0.38; cursor: default; box-shadow: none; pointer-events: none; }
 .mg-btn--sm { min-height: calc(36px + var(--mg-density-step)); padding: 0 16px; }
 .mg-btn--lg { min-height: calc(52px + var(--mg-density-step)); padding: 0 28px; font-size: 16px; }
 

@@ -1,0 +1,91 @@
+<header class="topbar wrap">
+  <div class="topbar__inner mg-glass-3" data-mg-refract="22" data-mg-bezel="14">
+    <a class="brand" href="{{base}}index.html" aria-label="Material Glass home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Material Glass</span>
+    </a>
+    <nav class="topnav" aria-label="Site">
+      <a href="{{base}}index.html" data-page="home">Overview</a>
+      <a href="{{base}}components.html" data-page="components">Components</a>
+      <a href="{{base}}builder.html" data-page="builder">Theme builder</a>
+      <a href="{{base}}examples/index.html" data-page="examples">Examples</a>
+    </nav>
+    <div class="controls">
+      <button class="mg-btn mg-btn--glass mg-btn--sm theme-btn" type="button" popovertarget="theme-menu" aria-haspopup="menu" aria-expanded="false">
+        <span class="theme-btn__dot" aria-hidden="true"></span><span data-theme-name>Sea Glass</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5"/></svg>
+      </button>
+      <div class="mg-menu mg-glass-3 theme-menu" id="theme-menu" popover role="menu" aria-label="Theme"></div>
+      <div class="mg-segmented mg-glass-1 mode-switch" data-mg-liquid="manual" role="group" aria-label="Color mode">
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="auto" aria-pressed="false">Auto</button>
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="light" aria-pressed="false">Light</button>
+        <button class="mg-segmented__item" type="button" data-set="mode" data-value="dark" aria-pressed="true">Dark</button>
+      </div>
+      <span class="mg-badge-anchor">
+        <button class="mg-icon-btn mg-glass-1" type="button" popovertarget="customize" aria-label="Customize" data-mg-tooltip="Customize" data-mg-tooltip-pos="bottom"><svg aria-hidden="true"><use href="#i-tune"/></svg></button>
+        <span class="mg-badge mg-badge--dot" data-customized-dot hidden></span>
+      </span>
+      <a class="mg-icon-btn mg-glass-1" href="https://github.com/sky-five/material-glass" aria-label="Source on GitHub" data-mg-tooltip="GitHub" data-mg-tooltip-pos="bottom"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
+    </div>
+  </div>
+  <div class="mg-popover mg-glass-4 customize" id="customize" popover data-mg-align="end" aria-label="Customize">
+    <div class="customize__head">
+      <b>Customize</b>
+      <button class="mg-btn mg-btn--text mg-btn--sm" type="button" data-reset-custom>Reset</button>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-glass">Glass</span>
+      <div class="mg-segmented mg-glass-1 customize__seg" data-mg-liquid="manual" role="group" aria-labelledby="c-glass">
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="frosted">Frosted</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="milk">Milk</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="smoked">Smoked</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="crystal">Crystal</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="clear">Clear</button>
+        <button class="mg-segmented__item" type="button" data-set="glass" data-value="paper">Paper</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-density">Density</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-density">
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="comfortable">Comfortable</button>
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="compact">Compact</button>
+        <button class="mg-segmented__item" type="button" data-set="density" data-value="dense">Dense</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-shape">Shape</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-shape">
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="sharp">Sharp</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="soft">Soft</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="round">Round</button>
+        <button class="mg-segmented__item" type="button" data-set="shape" data-value="squircle">Squircle</button>
+      </div>
+    </div>
+    <div class="customize__row">
+      <span class="control-label" id="c-motion">Motion</span>
+      <div class="mg-segmented mg-glass-1" data-mg-liquid="manual" role="group" aria-labelledby="c-motion">
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="none">None</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="calm">Calm</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="standard">Standard</button>
+        <button class="mg-segmented__item" type="button" data-set="motion" data-value="expressive">Expressive</button>
+      </div>
+    </div>
+    <div class="customize__row customize__row--split">
+      <label class="customize__font"><span class="control-label">Font</span>
+        <select class="mg-select" data-set-select="font">
+          <option value="default">Figtree + Inter</option>
+          <option value="system">System UI</option>
+          <option value="inter">Inter</option>
+          <option value="geist">Geist</option>
+          <option value="jakarta">Plus Jakarta Sans</option>
+          <option value="serif">Fraunces + Inter</option>
+          <option value="mono">JetBrains Mono</option>
+        </select>
+      </label>
+      <span class="glass-toggle">
+        <button class="mg-switch" type="button" role="switch" aria-checked="true" id="glass-switch" aria-labelledby="glass-switch-label"></button>
+        <span class="control-label" id="glass-switch-label">Transparency</span>
+      </span>
+    </div>
+  </div>
+</header>
