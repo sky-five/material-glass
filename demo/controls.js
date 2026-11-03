@@ -18,6 +18,8 @@
   function save() {
     var s = { reduced: html.getAttribute('data-mg-transparency') === 'reduced' };
     ['theme', 'mode'].concat(Object.keys(CUSTOM)).forEach(function (k) { s[k] = get(k); });
+    // Only remember real themes (the builder previews under a temporary name).
+    if (!THEMES.some(function (t) { return t.id === s.theme; })) { try { s.theme = JSON.parse(localStorage.getItem('mg-demo') || '{}').theme; } catch (e) { delete s.theme; } }
     try { localStorage.setItem('mg-demo', JSON.stringify(s)); } catch (e) {}
   }
   function set(k, v) {

@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { themeToCss } from '../src/theme-core.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => readFileSync(join(root, p), 'utf8');
@@ -19,55 +20,13 @@ const LAYERS = '@layer mg.tokens, mg.base, mg.components, mg.customize, mg.a11y;
 // Component files in gallery order. core.css holds the v0.1 set.
 const COMPONENT_ORDER = ['core', 'navigation', 'inputs', 'feedback', 'containment', 'data', 'media', 'layout'];
 
-const rgb = (hex) => {
-  const h = hex.replace('#', '');
-  return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)).join(' ');
-};
 const indent = (s, n = 2) => s.replace(/^(?=.)/gm, ' '.repeat(n));
 
-/* ─── Theme tokens ─── */
-function modeVars(mode, name) {
-  const out = [`color-scheme: ${name};`];
-  for (const [role, hex] of Object.entries(mode.color)) {
-    out.push(`--mg-${role}: ${hex};`);
-    out.push(`--mg-${role}-rgb: ${rgb(hex)};`);
-  }
-  const g = mode.glass;
-  out.push(`--mg-glass-base: ${rgb(g.base)};`);
-  out.push(`--mg-glass-tint: ${rgb(g.tint)};`);
-  out.push(`--mg-glass-tint-alpha: ${g['tint-alpha']};`);
-  g.alpha.forEach((a, i) => out.push(`--mg-glass-alpha-${i}: ${a};`));
-  if (g.blur) g.blur.forEach((v, i) => out.push(`--mg-glass-blur-${i}: ${v}px;`));
-  out.push(`--mg-glass-specular: ${g.specular};`);
-  out.push(`--mg-glass-rim: ${g.rim};`);
-  out.push(`--mg-glass-saturate: ${g.saturate};`);
-  out.push(`--mg-shadow: ${rgb(g.shadow)};`);
-  out.push(`--mg-shadow-alpha: ${g['shadow-alpha']};`);
-  return out.join('\n');
-}
-
-function paletteVars(palette) {
-  const out = [];
-  for (const [key, tones] of Object.entries(palette)) for (const [tone, hex] of Object.entries(tones)) out.push(`--mg-ref-${key}-${tone}: ${hex};`);
-  return out.join('\n');
-}
-
-const rule = (sel, body) => `${sel} {\n${indent(body)}\n}`;
-
-function themeBlocks(name, theme) {
-  const isDefault = name === DEFAULT_THEME;
-  const t = `[data-mg-theme="${name}"]`;
-  const d = ':root:not([data-mg-theme])';
-  const light = isDefault ? `${d},\n${t}` : t;
-  const darkExplicit = isDefault ? `${d}[data-mg-mode="dark"],\n${t}[data-mg-mode="dark"]` : `${t}[data-mg-mode="dark"]`;
-  const darkAuto = isDefault ? `${d}:not([data-mg-mode="light"]),\n${t}:not([data-mg-mode="light"])` : `${t}:not([data-mg-mode="light"])`;
-  return [
-    `/* ── Theme: ${name} ── ${theme.$description || ''} */`,
-    rule(light, `${paletteVars(theme.palette)}\n${modeVars(theme.light, 'light')}`),
-    `@media (prefers-color-scheme: dark) {\n${indent(rule(darkAuto, modeVars(theme.dark, 'dark')))}\n}`,
-    rule(darkExplicit, modeVars(theme.dark, 'dark'))
-  ].join('\n\n');
-}
+/* ─── Theme tokens (CSS generation shared with the browser builder) ─── */
+const rule = (sel, body) => `${sel} {
+${indent(body)}
+}`;
+const themeBlocks = (name, theme) => themeToCss(name, theme, name === DEFAULT_THEME);
 
 function globalVars() {
   const tier = tokens['glass-tier'];

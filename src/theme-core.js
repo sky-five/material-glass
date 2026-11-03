@@ -231,3 +231,50 @@ export function checkMode({ color: c, glass: g }, extraBackdrops = []) {
   }
   return { checks, failures, worst };
 }
+
+// ── Theme → CSS ──
+// Shared by scripts/build.mjs and the browser theme builder, so both emit identical CSS.
+const rgbTriplet = (hex) => toRgb(hex).join(' ');
+const indentCss = (s, n = 2) => s.replace(/^(?=.)/gm, ' '.repeat(n));
+const cssRule = (sel, body) => `${sel} {\n${indentCss(body)}\n}`;
+
+export function modeVars(mode, scheme) {
+  const out = [`color-scheme: ${scheme};`];
+  for (const [role, hex] of Object.entries(mode.color)) {
+    out.push(`--mg-${role}: ${hex};`);
+    out.push(`--mg-${role}-rgb: ${rgbTriplet(hex)};`);
+  }
+  const g = mode.glass;
+  out.push(`--mg-glass-base: ${rgbTriplet(g.base)};`);
+  out.push(`--mg-glass-tint: ${rgbTriplet(g.tint)};`);
+  out.push(`--mg-glass-tint-alpha: ${g['tint-alpha']};`);
+  g.alpha.forEach((a, i) => out.push(`--mg-glass-alpha-${i}: ${a};`));
+  if (g.blur) g.blur.forEach((v, i) => out.push(`--mg-glass-blur-${i}: ${v}px;`));
+  out.push(`--mg-glass-specular: ${g.specular};`);
+  out.push(`--mg-glass-rim: ${g.rim};`);
+  out.push(`--mg-glass-saturate: ${g.saturate};`);
+  out.push(`--mg-shadow: ${rgbTriplet(g.shadow)};`);
+  out.push(`--mg-shadow-alpha: ${g['shadow-alpha']};`);
+  return out.join('\n');
+}
+
+export function paletteVars(palette) {
+  const out = [];
+  for (const [key, tones] of Object.entries(palette)) for (const [tone, hex] of Object.entries(tones)) out.push(`--mg-ref-${key}-${tone}: ${hex};`);
+  return out.join('\n');
+}
+
+/** CSS for one theme: light block, auto-dark media block, explicit dark block. */
+export function themeToCss(name, theme, isDefault = false) {
+  const t = `[data-mg-theme="${name}"]`;
+  const d = ':root:not([data-mg-theme])';
+  const light = isDefault ? `${d},\n${t}` : t;
+  const darkExplicit = isDefault ? `${d}[data-mg-mode="dark"],\n${t}[data-mg-mode="dark"]` : `${t}[data-mg-mode="dark"]`;
+  const darkAuto = isDefault ? `${d}:not([data-mg-mode="light"]),\n${t}:not([data-mg-mode="light"])` : `${t}:not([data-mg-mode="light"])`;
+  return [
+    `/* ── Theme: ${name} ── ${theme.$description || ''} */`,
+    cssRule(light, `${paletteVars(theme.palette)}\n${modeVars(theme.light, 'light')}`),
+    `@media (prefers-color-scheme: dark) {\n${indentCss(cssRule(darkAuto, modeVars(theme.dark, 'dark')))}\n}`,
+    cssRule(darkExplicit, modeVars(theme.dark, 'dark'))
+  ].join('\n\n');
+}
