@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-mg-theme="sea-glass" data-mg-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Material Glass starter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sky-five/material-glass@main/material-glass.min.css">
+<script defer src="https://cdn.jsdelivr.net/gh/sky-five/material-glass@main/material-glass.min.js"></script>
+<style>
+  body { margin: 0; min-height: 100vh; font-family: var(--mg-font-body); display: grid; place-items: center; padding: 24px; box-sizing: border-box; }
+  main { width: min(420px, 100%); display: grid; gap: 16px; }
+</style>
+</head>
+<body class="mg-scene mg-scene--orbs">
+<main>
+  <div class="mg-card mg-glass-2">
+    <h1 class="mg-card__title">Hello, glass</h1>
+    <p class="mg-card__body">Edit this file, change <code>data-mg-theme</code> on &lt;html&gt;, or add <code>data-mg-glass="milk"</code>.</p>
+    <div class="mg-card__actions">
+      <button class="mg-btn mg-btn--text" type="button" onclick="MaterialGlass.setTheme('aurora', null, { transition: true })">Aurora</button>
+      <button class="mg-btn" type="button" onclick="MaterialGlass.toast('It works', { action: 'Nice' })">Toast</button>
+    </div>
+  </div>
+  <label class="mg-field"><span class="mg-field__label">Name</span><input class="mg-field__input" placeholder="Ada Lovelace"></label>
+  <nav class="mg-nav mg-glass-3" data-mg-liquid data-mg-refract aria-label="Example">
+    <button class="mg-nav__item" type="button" aria-current="page">Home</button>
+    <button class="mg-nav__item" type="button">Search</button>
+    <button class="mg-nav__item" type="button">Library</button>
+  </nav>
+</main>
+</body>
+</html>

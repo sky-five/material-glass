@@ -1,0 +1,20 @@
+{
+  "name": "material-glass-snippets",
+  "displayName": "Material Glass snippets",
+  "description": "Snippets for Material Glass components: type mg- in HTML, JSX, Vue or Svelte.",
+  "version": "0.2.0",
+  "publisher": "sky-five",
+  "license": "MIT",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Snippets"],
+  "repository": { "type": "git", "url": "https://github.com/sky-five/material-glass" },
+  "contributes": {
+    "snippets": [
+      { "language": "html", "path": "./snippets/material-glass.code-snippets" },
+      { "language": "javascriptreact", "path": "./snippets/material-glass.code-snippets" },
+      { "language": "typescriptreact", "path": "./snippets/material-glass.code-snippets" },
+      { "language": "vue", "path": "./snippets/material-glass.code-snippets" },
+      { "language": "svelte", "path": "./snippets/material-glass.code-snippets" }
+    ]
+  }
+}
