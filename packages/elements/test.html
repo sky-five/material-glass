@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>@material-glass/elements test</title>
+<link rel="stylesheet" href="../../material-glass.css">
+<script src="../../material-glass.js" defer></script>
+<script type="module" src="./src/index.js"></script>
+</head>
+<body class="mg-scene" style="padding:24px;display:grid;gap:16px">
+  <mg-theme theme="ember" mode="dark" id="theme">
+    <mg-card tier="2" headline="Elements" id="card">
+      <form id="form">
+        <mg-button id="save" type="submit" icon="i-plus">Save</mg-button>
+        <mg-button variant="tonal" id="tonal">Tonal</mg-button>
+        <mg-button variant="glass" href="#x" id="link">Link</mg-button>
+        <mg-icon-button id="fav" icon="i-heart" label="Favourite" toggle></mg-icon-button>
+        <mg-chip id="chip">Design</mg-chip>
+        <mg-switch id="sw" name="wifi" label="Wi-Fi"></mg-switch>
+        <mg-slider id="sl" min="0" max="10" value="4" label="Level" name="level"></mg-slider>
+        <mg-text-field id="tf" label="Email" type="email" name="email" value="a@b.co" supporting="We never share it"></mg-text-field>
+        <mg-text-field id="tf2" label="Name" error="Required"></mg-text-field>
+      </form>
+      <mg-segmented id="seg" label="View" value="week"><mg-segment value="day">Day</mg-segment><mg-segment value="week">Week</mg-segment><mg-segment value="month">Month</mg-segment></mg-segmented>
+      <mg-tabs id="tabs" label="Library"><mg-tab panel="p1">Songs</mg-tab><mg-tab panel="p2">Albums</mg-tab></mg-tabs>
+      <div id="p1">Songs panel</div><div id="p2">Albums panel</div>
+      <mg-nav id="nav" label="Main"><mg-nav-item icon="i-home" current>Home</mg-nav-item><mg-nav-item icon="i-search">Search</mg-nav-item></mg-nav>
+      <mg-fab id="fab" icon="i-plus" label="Create"></mg-fab>
+    </mg-card>
+  </mg-theme>
+  <mg-dialog id="dlg" headline="Discard?">Your changes will be lost.<div slot="actions"><button class="mg-btn mg-btn--text" value="no" onclick="this.closest('mg-dialog').close('no')">Keep</button></div></mg-dialog>
+</body>
+</html>

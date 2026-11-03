@@ -1,0 +1,21 @@
+{
+  "name": "@material-glass/svelte",
+  "version": "0.2.0",
+  "description": "Svelte 5 components for Material Glass, with bindable props and a use:liquid action.",
+  "license": "MIT",
+  "type": "module",
+  "svelte": "./src/index.js",
+  "exports": {
+    ".": { "svelte": "./src/index.js", "default": "./src/index.js" },
+    "./package.json": "./package.json"
+  },
+  "files": ["src/", "README.md"],
+  "sideEffects": false,
+  "repository": { "type": "git", "url": "git+https://github.com/sky-five/material-glass.git", "directory": "packages/svelte" },
+  "homepage": "https://sky-five.github.io/material-glass/",
+  "keywords": ["svelte", "svelte5", "components", "material-3", "glassmorphism", "liquid-glass"],
+  "scripts": { "test": "node test.mjs" },
+  "peerDependencies": { "material-glass": "^0.2.0", "svelte": "^5.0.0" },
+  "peerDependenciesMeta": { "material-glass": { "optional": true } },
+  "devDependencies": { "svelte": "5.57.3" }
+}

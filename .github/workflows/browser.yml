@@ -24,6 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Framework packages (Tailwind v3 + v4, Web Components, React, Vue, Svelte)
+        run: npm run build:packages && npm run test:packages
       - name: Accessibility (axe-core)
         run: node scripts/test-a11y.mjs
       - name: Interaction and page errors

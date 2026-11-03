@@ -25,6 +25,7 @@ jobs:
       - name: Built files match the tag
         run: git diff --exit-code -- material-glass.css material-glass.min.css material-glass.min.js dist/
       - run: npm test
+      - run: npm run build:packages && npm run test:packages
       - name: Version matches tag
         run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
       - name: Release notes from CHANGELOG
@@ -41,3 +42,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: env.NODE_AUTH_TOKEN != ''
         run: npm publish --provenance --access public
+      - name: Publish framework packages to npm (needs the @material-glass npm org)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NODE_AUTH_TOKEN != ''
+        run: npm publish --workspaces --provenance --access public

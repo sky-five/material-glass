@@ -1,0 +1,18 @@
+{
+  "name": "@material-glass/elements",
+  "version": "0.2.0",
+  "description": "Web Components for Material Glass. Light DOM, no dependencies, real native controls inside.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": { ".": "./src/index.js", "./package.json": "./package.json" },
+  "files": ["src/", "README.md"],
+  "sideEffects": ["./src/index.js"],
+  "repository": { "type": "git", "url": "git+https://github.com/sky-five/material-glass.git", "directory": "packages/elements" },
+  "homepage": "https://sky-five.github.io/material-glass/",
+  "keywords": ["web-components", "custom-elements", "material-3", "glassmorphism", "liquid-glass"],
+  "scripts": { "test": "node test.mjs" },
+  "peerDependencies": { "material-glass": "^0.2.0" },
+  "peerDependenciesMeta": { "material-glass": { "optional": true } }
+}

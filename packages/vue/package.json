@@ -1,0 +1,19 @@
+{
+  "name": "@material-glass/vue",
+  "version": "0.2.0",
+  "description": "Vue 3 components for Material Glass, with v-model and a v-mg-liquid directive.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": { ".": "./src/index.js", "./package.json": "./package.json" },
+  "files": ["src/", "README.md"],
+  "sideEffects": false,
+  "repository": { "type": "git", "url": "git+https://github.com/sky-five/material-glass.git", "directory": "packages/vue" },
+  "homepage": "https://sky-five.github.io/material-glass/",
+  "keywords": ["vue", "vue3", "components", "material-3", "glassmorphism", "liquid-glass"],
+  "scripts": { "test": "node test.mjs" },
+  "peerDependencies": { "material-glass": "^0.2.0", "vue": "^3.3.0" },
+  "peerDependenciesMeta": { "material-glass": { "optional": true } },
+  "devDependencies": { "vue": "3.5.44" }
+}

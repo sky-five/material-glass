@@ -73,7 +73,9 @@
     "test:a11y": "node scripts/test-a11y.mjs",
     "test:interaction": "node scripts/test-interaction.mjs",
     "test:visual": "node scripts/test-visual.mjs",
-    "test:browser": "node scripts/test-a11y.mjs && node scripts/test-interaction.mjs && node scripts/test-visual.mjs"
+    "test:browser": "node scripts/test-a11y.mjs && node scripts/test-interaction.mjs && node scripts/test-visual.mjs",
+    "build:packages": "npm run build --workspaces --if-present",
+    "test:packages": "npm test --workspaces --if-present"
   },
   "devDependencies": {
     "@material/material-color-utilities": "^0.3.0",
@@ -83,5 +85,8 @@
     "lightningcss": "^1.28.2",
     "pngjs": "^7.0.0",
     "puppeteer-core": "^23.11.1"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

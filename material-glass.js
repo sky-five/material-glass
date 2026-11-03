@@ -303,6 +303,7 @@
       requestAnimationFrame(show);
     });
     list.addEventListener('keydown', (e) => {
+      if (e.defaultPrevented) return; // a framework wrapper already handled this key
       const tabsArr = all();
       const i = tabsArr.indexOf(doc.activeElement);
       if (i < 0) return;

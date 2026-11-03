@@ -1,0 +1,56 @@
+{
+  "name": "@material-glass/tailwind",
+  "version": "0.2.0",
+  "description": "Tailwind CSS preset (v3) and theme (v4) for Material Glass: Material 3 colour roles, glass tiers and motion as utilities.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./theme.css": "./theme.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "theme.css",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky-five/material-glass.git",
+    "directory": "packages/tailwind"
+  },
+  "homepage": "https://sky-five.github.io/material-glass/",
+  "keywords": [
+    "tailwindcss",
+    "tailwind-preset",
+    "material-3",
+    "glassmorphism",
+    "liquid-glass",
+    "design-tokens"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node test.mjs",
+    "prepublishOnly": "node build.mjs"
+  },
+  "peerDependencies": {
+    "material-glass": "^0.2.0",
+    "tailwindcss": ">=3.4"
+  },
+  "devDependencies": {
+    "postcss": "8.5.6",
+    "tailwindcss": "3.4.19",
+    "tailwindcss-v4": "npm:tailwindcss@^4.1.18"
+  },
+  "peerDependenciesMeta": {
+    "material-glass": {
+      "optional": true
+    }
+  }
+}

@@ -6,3 +6,6 @@ Thumbs.db
 test/__screenshots__/win32/
 test/__screenshots__/darwin/
 test/__diff__/
+# Package build and test output
+packages/react/dist/
+packages/*/test/app.bundle.js
