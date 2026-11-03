@@ -1,0 +1,102 @@
+/* Weather example */
+body { background: var(--mg-scene-base); overflow-x: hidden; }
+
+/* ── Sky: drawn from the theme's palette, re-lit per condition ── */
+.wx-sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; transition: background 900ms ease; }
+.wx-sky[data-cond="clear"] { background: linear-gradient(180deg, var(--mg-ref-secondary-70), var(--mg-ref-primary-90) 60%, var(--mg-ref-tertiary-95)); }
+.wx-sky[data-cond="clouds"] { background: linear-gradient(180deg, var(--mg-ref-neutral-70), var(--mg-ref-secondary-90) 55%, var(--mg-ref-neutral-95)); }
+.wx-sky[data-cond="rain"] { background: linear-gradient(180deg, var(--mg-ref-neutral-40), var(--mg-ref-secondary-60) 60%, var(--mg-ref-neutral-80)); }
+.wx-sky[data-cond="night"] { background: linear-gradient(180deg, var(--mg-ref-primary-10), var(--mg-ref-secondary-20) 60%, var(--mg-ref-tertiary-30)); }
+[data-mg-mode="dark"] .wx-sky[data-cond="clear"] { background: linear-gradient(180deg, var(--mg-ref-secondary-30), var(--mg-ref-primary-20) 60%, var(--mg-ref-tertiary-10)); }
+[data-mg-mode="dark"] .wx-sky[data-cond="clouds"] { background: linear-gradient(180deg, var(--mg-ref-neutral-30), var(--mg-ref-secondary-20) 60%, var(--mg-ref-neutral-10)); }
+[data-mg-mode="dark"] .wx-sky[data-cond="rain"] { background: linear-gradient(180deg, var(--mg-ref-neutral-20), var(--mg-ref-secondary-10) 60%, var(--mg-ref-neutral-10)); }
+.wx-sky > i { position: absolute; display: block; opacity: 0; transition: opacity 900ms ease, transform 1200ms ease; }
+.wx-sun { width: 60vmin; height: 60vmin; right: -14vmin; top: -16vmin; border-radius: 50%; background: radial-gradient(circle, rgb(255 236 170 / 0.95), rgb(255 200 120 / 0.5) 35%, transparent 68%); }
+.wx-sky[data-cond="clear"] .wx-sun { opacity: 1; }
+.wx-sky[data-cond="clouds"] .wx-sun { opacity: 0.45; transform: scale(0.8); }
+.wx-cloud { width: 70vmin; height: 26vmin; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 255 255 / 0.85), rgb(255 255 255 / 0)); filter: blur(10px); animation: wx-drift 60s linear infinite; }
+.wx-cloud--1 { top: 10vh; left: -10vmin; }
+.wx-cloud--2 { top: 34vh; left: 40vw; width: 54vmin; animation-duration: 80s; animation-delay: -30s; }
+.wx-sky:is([data-cond="clouds"], [data-cond="rain"]) .wx-cloud { opacity: 0.9; }
+.wx-sky[data-cond="rain"] .wx-cloud { filter: blur(10px) brightness(0.75); }
+.wx-rain { inset: -20% 0 0; background: repeating-linear-gradient(105deg, transparent 0 22px, rgb(255 255 255 / 0.35) 22px 23px, transparent 23px 46px); background-size: 46px 120px; animation: wx-rain 0.5s linear infinite; }
+.wx-sky[data-cond="rain"] .wx-rain { opacity: 0.6; }
+.wx-stars { inset: 0; background-image: radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 20%, #fff, transparent), radial-gradient(1.5px 1.5px at 40% 70%, #fff, transparent), radial-gradient(1px 1px at 85% 55%, #fff, transparent), radial-gradient(1px 1px at 12% 80%, #fff, transparent), radial-gradient(1.5px 1.5px at 55% 45%, #fff, transparent); background-size: 340px 340px; }
+.wx-sky[data-cond="night"] .wx-stars { opacity: 0.9; }
+@keyframes wx-drift { from { transform: translateX(-30vw); } to { transform: translateX(80vw); } }
+@keyframes wx-rain { to { background-position: -12px 120px; } }
+@media (prefers-reduced-motion: reduce) { .wx-cloud, .wx-rain { animation: none; } }
+
+/* Text over a dark sky reads light. */
+.wx-sky[data-cond="night"] ~ .wx .wx-now, .wx-sky[data-cond="rain"] ~ .wx .wx-now,
+.wx-sky[data-cond="night"] ~ .wx .wx-head__text, .wx-sky[data-cond="rain"] ~ .wx .wx-head__text { color: #fff; text-shadow: 0 1px 12px rgb(0 0 0 / 0.35); }
+[data-mg-mode="dark"] .wx .wx-now, [data-mg-mode="dark"] .wx .wx-head__text { color: var(--mg-on-surface); }
+
+/* ── Layout ── */
+.wx { width: min(460px, 100%); margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 16px 120px; display: flex; flex-direction: column; gap: 14px; }
+.wx-head { display: flex; align-items: center; gap: 12px; }
+.wx-head__text { flex: 1; text-align: center; }
+.wx-city { margin: 0; font-family: var(--mg-font-display); font-size: 22px; font-weight: 700; }
+.wx-time { margin: 2px 0 0; font-size: 13px; opacity: 0.8; }
+.wx-now { text-align: center; padding: 8px 0 4px; }
+.wx-temp { margin: 0; font-family: var(--mg-font-display); font-weight: 300; font-size: 128px; line-height: 1; letter-spacing: -0.06em; }
+.wx-temp sup { font-size: 0.45em; vertical-align: top; position: relative; top: 0.25em; margin-left: 0.04em; }
+.wx-cond { margin: 4px 0 6px; font-size: 20px; font-weight: 600; }
+.wx-range { display: flex; justify-content: center; gap: 16px; margin: 0; font-size: 15px; opacity: 0.85; }
+.wx-switch { align-self: center; }
+.wx-switch .mg-segmented__item { display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; }
+
+.wx-card { padding: 14px 16px 16px; border-radius: 28px; }
+.wx-card__title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mg-on-surface-variant); }
+.wx-card__title svg { width: 16px; height: 16px; }
+.wx-card__hint { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 500; }
+
+.wx-hours { list-style: none; margin: 0 -16px; padding: 0 16px 4px; display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.wx-hours::-webkit-scrollbar { display: none; }
+.wx-hours li { flex: none; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 58px; padding: 10px 0; border-radius: 999px; font-size: 13px; }
+.wx-hours li svg { width: 24px; height: 24px; color: var(--mg-primary); }
+.wx-hours li b { font-size: 16px; }
+.wx-hours li.is-now { background: linear-gradient(180deg, rgb(255 255 255 / calc(0.1 + 0.8 * var(--mg-glass-specular))), rgb(255 255 255 / calc(0.5 * var(--mg-glass-specular)))); box-shadow: inset 0 1px 0 rgb(255 255 255 / calc(0.2 + 0.8 * var(--mg-glass-specular))), 0 2px 10px rgb(var(--mg-shadow) / var(--mg-shadow-alpha)); }
+.wx-hours small { color: var(--mg-on-surface-variant); font-size: 11px; }
+
+.wx-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wx-tile { display: flex; flex-direction: column; gap: 8px; min-height: 160px; padding: 14px 16px; border-radius: 26px; }
+.wx-tile__h { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mg-on-surface-variant); }
+.wx-tile__h svg { width: 15px; height: 15px; }
+.wx-tile__big { margin: 0; font-family: var(--mg-font-display); font-size: 40px; font-weight: 500; line-height: 1.1; }
+.wx-tile__note { margin: auto 0 0; font-size: 13px; line-height: 18px; color: var(--mg-on-surface-variant); }
+.wx-tile__note b { color: var(--mg-on-surface); }
+.wx-ring { position: relative; align-self: center; display: grid; place-items: center; }
+.wx-ring b { position: absolute; font-family: var(--mg-font-display); font-size: 18px; }
+.wx-compass { position: relative; align-self: center; width: 72px; height: 72px; border-radius: 50%; border: 2px solid rgb(var(--mg-outline-rgb) / 0.5); display: grid; place-items: start center; }
+.wx-compass span { margin-top: 2px; font-size: 10px; font-weight: 700; color: var(--mg-on-surface-variant); }
+.wx-compass i { position: absolute; left: 50%; top: 50%; width: 4px; height: 30px; margin: -30px 0 0 -2px; border-radius: 2px; transform-origin: 50% 100%; rotate: var(--deg); background: linear-gradient(var(--mg-primary), var(--mg-primary) 60%, transparent); transition: rotate 900ms var(--mg-spring); }
+.wx-uv { position: relative; height: 6px; border-radius: 3px; background: linear-gradient(90deg, #4CAF50, #FFEB3B, #FF9800, #F44336, #9C27B0); }
+.wx-uv i { position: absolute; top: 50%; left: calc(var(--uv) * 100%); width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--mg-on-surface), 0 2px 6px rgb(0 0 0 / 0.3); transition: left 700ms var(--mg-spring); }
+
+.wx-days { list-style: none; margin: 0; padding: 0; }
+.wx-days li { display: grid; grid-template-columns: 56px 28px 34px 1fr 34px; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid rgb(var(--mg-outline-variant-rgb) / 0.6); font-size: 15px; }
+.wx-days li:first-child { border-top: 0; }
+.wx-days svg { width: 22px; height: 22px; color: var(--mg-primary); }
+.wx-days .lo { color: var(--mg-on-surface-variant); text-align: right; }
+.wx-days .hi { font-weight: 600; }
+.wx-bar { position: relative; height: 6px; border-radius: 3px; background: rgb(var(--mg-on-surface-rgb) / 0.12); }
+.wx-bar i { position: absolute; top: 0; bottom: 0; left: var(--a); right: calc(100% - var(--b)); border-radius: 3px; background: linear-gradient(90deg, var(--mg-secondary), var(--mg-tertiary)); }
+
+.wx-map { position: relative; height: 240px; border-radius: 20px; overflow: hidden; background: var(--mg-ref-neutral-90); }
+[data-mg-mode="dark"] .wx-map { background: var(--mg-ref-neutral-20); }
+.wx-map__land { position: absolute; inset: 0; background:
+  radial-gradient(40% 50% at 20% 40%, var(--mg-ref-tertiary-80), transparent 70%),
+  radial-gradient(35% 40% at 70% 70%, var(--mg-ref-tertiary-70), transparent 70%),
+  repeating-linear-gradient(0deg, rgb(var(--mg-outline-rgb) / 0.18) 0 1px, transparent 1px 24px),
+  repeating-linear-gradient(90deg, rgb(var(--mg-outline-rgb) / 0.18) 0 1px, transparent 1px 24px); }
+.wx-map__rain { position: absolute; inset: 0; background:
+  radial-gradient(18% 22% at 58% 38%, rgb(30 120 255 / 0.65), transparent 70%),
+  radial-gradient(12% 16% at 64% 44%, rgb(80 220 120 / 0.7), transparent 70%),
+  radial-gradient(6% 8% at 62% 41%, rgb(255 210 60 / 0.8), transparent 70%),
+  radial-gradient(22% 18% at 30% 70%, rgb(30 120 255 / 0.45), transparent 70%); }
+.wx-map__pin { position: absolute; left: 44%; top: 52%; padding: 4px 10px; border-radius: 999px; background: var(--mg-primary); color: var(--mg-on-primary); font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgb(0 0 0 / 0.25); }
+.wx-lens { position: absolute; left: 52%; top: 18%; width: 120px; height: 120px; }
+
+.wx-nav { position: fixed; z-index: 50; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); translate: -50% 0; width: min(380px, calc(100% - 32px)); }
+@media (min-width: 761px) { .wx-nav { bottom: 24px; } }

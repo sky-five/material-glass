@@ -1,0 +1,41 @@
+/* Dashboard example */
+.db-main { display: flex; flex-direction: column; gap: 16px; }
+.mg-shell__top .mg-top-bar__title { font-size: 20px; }
+.db-range .mg-segmented__item { padding: 0 12px; }
+.db-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.db-row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 16px; }
+.db-row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .db-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .db-row, .db-row--3 { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .db-kpis { grid-template-columns: minmax(0, 1fr); } .db-range { display: none; } }
+.db-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
+.mg-card > .mg-card__title { margin-bottom: 14px; }
+
+.db-chart { display: block; width: 100%; height: 240px; overflow: visible; }
+.db-chart .grid { stroke: rgb(var(--mg-outline-variant-rgb) / 0.7); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.db-chart .area { fill: url(#db-fill); }
+.db-chart .line { fill: none; stroke: var(--mg-chart-1); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; filter: drop-shadow(0 4px 10px rgb(var(--mg-primary-rgb) / 0.45)); }
+.db-chart .prior { fill: none; stroke: var(--mg-chart-7); stroke-width: 1.5; stroke-dasharray: 4 5; vector-effect: non-scaling-stroke; }
+.db-chart .dot { fill: var(--mg-chart-1); stroke: var(--mg-surface); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.db-axis { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11px; font-weight: 600; color: var(--mg-on-surface-variant); }
+
+.db-donut-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; }
+.db-donut { position: relative; width: 168px; height: 168px; border-radius: 50%; display: grid; place-content: center; text-align: center;
+  background: conic-gradient(var(--mg-chart-1) 0 46%, var(--mg-chart-2) 46% 74%, var(--mg-chart-3) 74% 91%, var(--mg-chart-5) 91% 100%); }
+.db-donut::before { content: ""; position: absolute; inset: 22px; border-radius: 50%; background: rgb(var(--mg-glass-base) / 0.94); box-shadow: inset 0 1px 0 rgb(255 255 255 / calc(0.6 * var(--mg-glass-specular))); }
+.db-donut b, .db-donut span { position: relative; }
+.db-donut b { font-family: var(--mg-font-display); font-size: 22px; }
+.db-donut span { font-size: 12px; color: var(--mg-on-surface-variant); }
+.db-donut-legend { flex-direction: column; gap: 8px; font-size: 13px; }
+.db-donut-legend b { margin-left: 6px; color: var(--mg-on-surface); }
+
+.db-hbars { gap: 12px; padding-right: 110px; }
+.db-vbars { --h: 150px; }
+.db-goal { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+.db-goal__ring { --size: 96px; --track: 10px; }
+.db-goal__pct { font-family: var(--mg-font-display); font-size: 34px; }
+.db-goal__note { margin: 2px 0 0; font-size: 13px; line-height: 19px; color: var(--mg-on-surface-variant); }
+
+.db-filter { min-height: 40px; width: 220px; }
+.db-trendcell { width: 110px; }
+.db-trendcell .mg-spark { height: 26px; }
+.db-filters { display: flex; flex-direction: column; gap: 18px; }

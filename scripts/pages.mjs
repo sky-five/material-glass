@@ -26,7 +26,7 @@ for (const page of pages) {
   const current = page === 'index.html' ? 'home' : page.startsWith('examples') ? 'examples' : page.replace('.html', '');
   let html = readFileSync(file, 'utf8');
   const before = html;
-  for (const name of ['topbar', 'sprite']) {
+  for (const name of ['topbar', 'sprite', 'examplebar']) {
     const re = new RegExp(`<!-- @${name} -->[\\s\\S]*?<!-- /@${name} -->`);
     if (!re.test(html)) continue;
     let body = partial(name).replaceAll('{{base}}', base);

@@ -35,6 +35,9 @@
   },
   "devDependencies": {
     "@material/material-color-utilities": "^0.3.0",
-    "lightningcss": "^1.28.2"
+    "axe-core": "^4.10.2",
+    "lightningcss": "^1.28.2",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^23.11.1"
   }
 }
