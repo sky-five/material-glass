@@ -1,0 +1,213 @@
+{
+  "$description": "Specs for generated themes. scripts/theme.mjs turns each into a full theme in material-glass.tokens.json. Sea Glass and Prism are hand-tuned and not listed here.",
+  "themes": {
+    "obsidian": {
+      "description": "Near-black and amber. Cool grey glass, strong specular. For dashboards and dev tools.",
+      "seed": "#FFB300",
+      "variant": "tonal-spot",
+      "secondary": {
+        "hue": 255,
+        "chroma": 10
+      },
+      "tertiary": "#7FB3FF",
+      "neutral": {
+        "hue": 255,
+        "chroma": 3
+      },
+      "glass": {
+        "light": {
+          "alpha": [
+            0.4,
+            0.52,
+            0.64,
+            0.76,
+            0.86
+          ],
+          "rim": 0.7
+        },
+        "dark": {
+          "alpha": [
+            0.3,
+            0.42,
+            0.54,
+            0.64,
+            0.74
+          ],
+          "specular": 0.34,
+          "rim": 0.16,
+          "saturate": 1.2,
+          "tint-alpha": 0.08
+        }
+      },
+      "scene": {
+        "dark": {
+          "scene-1": "#8A5A00",
+          "scene-2": "#2C3A55",
+          "scene-3": "#3A4A66",
+          "scene-base": "#050608"
+        }
+      }
+    },
+    "frost": {
+      "description": "Light-first cobalt and lilac. High blur, low tint. For productivity apps.",
+      "seed": "#2F6BFF",
+      "variant": "tonal-spot",
+      "tertiary": "#A58BFF",
+      "neutral": {
+        "hue": 250,
+        "chroma": 5
+      },
+      "glass": {
+        "light": {
+          "tint-alpha": 0.06,
+          "blur": [
+            12,
+            20,
+            28,
+            38,
+            48
+          ],
+          "rim": 0.75,
+          "saturate": 1.8
+        },
+        "dark": {
+          "blur": [
+            12,
+            20,
+            28,
+            38,
+            48
+          ],
+          "tint-alpha": 0.12
+        }
+      }
+    },
+    "ember": {
+      "description": "Warm coral and gold on charcoal, with a sage accent. For media and food apps.",
+      "seed": "#FF6F4F",
+      "variant": "tonal-spot",
+      "secondary": "#E0A526",
+      "tertiary": "#8DAA7C",
+      "neutral": {
+        "hue": 30,
+        "chroma": 5
+      },
+      "glass": {
+        "light": {
+          "tint-alpha": 0.12,
+          "saturate": 1.5
+        },
+        "dark": {
+          "tint-alpha": 0.18,
+          "saturate": 1.5
+        }
+      }
+    },
+    "aurora": {
+      "description": "Mint, violet and magenta. Gradient-forward and saturated. For landing pages and portfolios.",
+      "seed": "#3DDC97",
+      "variant": "vibrant",
+      "secondary": "#9B5CFF",
+      "tertiary": "#FF4FB8",
+      "glass": {
+        "light": {
+          "saturate": 1.9,
+          "tint-alpha": 0.06
+        },
+        "dark": {
+          "saturate": 1.8,
+          "tint-alpha": 0.1
+        }
+      },
+      "scene": {
+        "light": {
+          "scene-1": "#7FF0C4",
+          "scene-2": "#C9A8FF",
+          "scene-3": "#FFA8D9"
+        },
+        "dark": {
+          "scene-1": "#00806A",
+          "scene-2": "#5B2DB0",
+          "scene-3": "#A0236E",
+          "scene-base": "#06040C"
+        }
+      }
+    },
+    "mono": {
+      "description": "Achromatic greyscale. Proves the system works with no hue. The safe enterprise theme.",
+      "seed": "#5F6368",
+      "variant": "monochrome",
+      "glass": {
+        "light": {
+          "tint-alpha": 0,
+          "saturate": 1
+        },
+        "dark": {
+          "tint-alpha": 0,
+          "saturate": 1
+        }
+      },
+      "roles": {
+        "light": {
+          "primary-container": "primary:90",
+          "on-primary-container": "primary:10",
+          "tertiary-container": "tertiary:90",
+          "on-tertiary-container": "tertiary:10"
+        },
+        "dark": {
+          "primary-container": "primary:30",
+          "on-primary-container": "primary:90",
+          "tertiary-container": "tertiary:30",
+          "on-tertiary-container": "tertiary:90"
+        }
+      }
+    },
+    "sand": {
+      "description": "Paper-toned neutrals, terracotta, olive and denim. Low blur, high opacity, closest to classic Material. For reading apps.",
+      "seed": "#C0623B",
+      "variant": "tonal-spot",
+      "secondary": "#7D8A3C",
+      "tertiary": "#4A6FA5",
+      "neutral": {
+        "hue": 70,
+        "chroma": 6
+      },
+      "glass": {
+        "light": {
+          "alpha": [
+            0.5,
+            0.62,
+            0.74,
+            0.84,
+            0.92
+          ],
+          "blur": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "saturate": 1.2
+        },
+        "dark": {
+          "alpha": [
+            0.48,
+            0.6,
+            0.72,
+            0.82,
+            0.9
+          ],
+          "blur": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "saturate": 1.15
+        }
+      }
+    }
+  }
+}

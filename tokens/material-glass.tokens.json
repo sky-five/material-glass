@@ -4,88 +4,1916 @@
     "sea-glass": {
       "$description": "Dark-first teal theme. Seed #26A69A.",
       "palette": {
-        "primary":   { "0": "#000000", "10": "#00201D", "20": "#003733", "30": "#00504A", "40": "#006A62", "50": "#00867C", "60": "#22A296", "70": "#4DBEB1", "80": "#6FDACC", "90": "#8DF6E8", "95": "#B4FFF4", "99": "#F2FFFC", "100": "#FFFFFF" },
-        "secondary": { "0": "#000000", "10": "#001E2C", "20": "#003549", "30": "#004C68", "40": "#006688", "50": "#0080AA", "60": "#2E9BC7", "70": "#54B6E3", "80": "#81CFF7", "90": "#C4E7FF", "95": "#E3F3FF", "99": "#FBFCFF", "100": "#FFFFFF" },
-        "tertiary":  { "0": "#000000", "10": "#002111", "20": "#00391F", "30": "#0E5131", "40": "#2B6A47", "50": "#45845E", "60": "#5F9E77", "70": "#79BA90", "80": "#93D6AA", "90": "#AEF2C5", "95": "#C5FFD8", "99": "#F5FFF5", "100": "#FFFFFF" },
-        "neutral":   { "0": "#000000", "10": "#161D1C", "20": "#2B3231", "30": "#414948", "40": "#59605F", "50": "#717978", "60": "#8B9391", "70": "#A5ADAB", "80": "#C1C8C6", "90": "#DDE4E2", "95": "#EBF2F0", "99": "#FAFDFB", "100": "#FFFFFF" },
-        "error":     { "0": "#000000", "10": "#410002", "20": "#690005", "30": "#93000A", "40": "#BA1A1A", "50": "#DE3730", "60": "#FF5449", "70": "#FF897D", "80": "#FFB4AB", "90": "#FFDAD6", "95": "#FFEDEA", "99": "#FFFBFF", "100": "#FFFFFF" }
+        "primary": {
+          "0": "#000000",
+          "10": "#00201D",
+          "20": "#003733",
+          "30": "#00504A",
+          "40": "#006A62",
+          "50": "#00867C",
+          "60": "#22A296",
+          "70": "#4DBEB1",
+          "80": "#6FDACC",
+          "90": "#8DF6E8",
+          "95": "#B4FFF4",
+          "99": "#F2FFFC",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#001E2C",
+          "20": "#003549",
+          "30": "#004C68",
+          "40": "#006688",
+          "50": "#0080AA",
+          "60": "#2E9BC7",
+          "70": "#54B6E3",
+          "80": "#81CFF7",
+          "90": "#C4E7FF",
+          "95": "#E3F3FF",
+          "99": "#FBFCFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#002111",
+          "20": "#00391F",
+          "30": "#0E5131",
+          "40": "#2B6A47",
+          "50": "#45845E",
+          "60": "#5F9E77",
+          "70": "#79BA90",
+          "80": "#93D6AA",
+          "90": "#AEF2C5",
+          "95": "#C5FFD8",
+          "99": "#F5FFF5",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#161D1C",
+          "20": "#2B3231",
+          "30": "#414948",
+          "40": "#59605F",
+          "50": "#717978",
+          "60": "#8B9391",
+          "70": "#A5ADAB",
+          "80": "#C1C8C6",
+          "90": "#DDE4E2",
+          "95": "#EBF2F0",
+          "99": "#FAFDFB",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
       },
       "light": {
         "color": {
-          "primary": "#006A62", "on-primary": "#FFFFFF", "primary-container": "#8DF6E8", "on-primary-container": "#00201D",
-          "secondary": "#006688", "on-secondary": "#FFFFFF", "secondary-container": "#C4E7FF", "on-secondary-container": "#001E2C",
-          "tertiary": "#2B6A47", "on-tertiary": "#FFFFFF", "tertiary-container": "#AEF2C5", "on-tertiary-container": "#002111",
-          "error": "#BA1A1A", "on-error": "#FFFFFF", "error-container": "#FFDAD6", "on-error-container": "#410002",
-          "surface": "#F4FBF9", "on-surface": "#161D1C", "on-surface-variant": "#3F4948",
-          "surface-container-lowest": "#FFFFFF", "surface-container-low": "#EEF5F3", "surface-container": "#E9EFED", "surface-container-high": "#E3EAE8", "surface-container-highest": "#DDE4E2",
-          "outline": "#6F7978", "outline-variant": "#BEC9C7",
-          "inverse-surface": "#2B3231", "inverse-on-surface": "#ECF2F0", "inverse-primary": "#6FDACC",
-          "scene-1": "#6FDACC", "scene-2": "#81CFF7", "scene-3": "#93D6AA", "scene-base": "#E3EFEC"
+          "primary": "#006A62",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#8DF6E8",
+          "on-primary-container": "#00201D",
+          "secondary": "#006688",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#C4E7FF",
+          "on-secondary-container": "#001E2C",
+          "tertiary": "#2B6A47",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#AEF2C5",
+          "on-tertiary-container": "#002111",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#410002",
+          "surface": "#F4FBF9",
+          "on-surface": "#161D1C",
+          "on-surface-variant": "#3F4948",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#EEF5F3",
+          "surface-container": "#E9EFED",
+          "surface-container-high": "#E3EAE8",
+          "surface-container-highest": "#DDE4E2",
+          "outline": "#6F7978",
+          "outline-variant": "#BEC9C7",
+          "inverse-surface": "#2B3231",
+          "inverse-on-surface": "#ECF2F0",
+          "inverse-primary": "#6FDACC",
+          "scene-1": "#6FDACC",
+          "scene-2": "#81CFF7",
+          "scene-3": "#93D6AA",
+          "scene-base": "#E3EFEC"
         },
-        "glass": { "base": "#FFFFFF", "tint": "#6FDACC", "tint-alpha": 0.10, "alpha": [0.36, 0.48, 0.60, 0.72, 0.84], "specular": 1, "rim": 0.60, "saturate": 1.6, "shadow": "#00201D", "shadow-alpha": 0.14 }
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#6FDACC",
+          "tint-alpha": 0.1,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1.6,
+          "shadow": "#00201D",
+          "shadow-alpha": 0.14
+        }
       },
       "dark": {
         "color": {
-          "primary": "#6FDACC", "on-primary": "#003733", "primary-container": "#00504A", "on-primary-container": "#8DF6E8",
-          "secondary": "#81CFF7", "on-secondary": "#003549", "secondary-container": "#004C68", "on-secondary-container": "#C4E7FF",
-          "tertiary": "#93D6AA", "on-tertiary": "#00391F", "tertiary-container": "#0E5131", "on-tertiary-container": "#AEF2C5",
-          "error": "#FFB4AB", "on-error": "#690005", "error-container": "#93000A", "on-error-container": "#FFDAD6",
-          "surface": "#0E1514", "on-surface": "#DDE4E2", "on-surface-variant": "#BEC9C7",
-          "surface-container-lowest": "#090F0E", "surface-container-low": "#161D1C", "surface-container": "#1A2120", "surface-container-high": "#252B2A", "surface-container-highest": "#2F3635",
-          "outline": "#899392", "outline-variant": "#3F4948",
-          "inverse-surface": "#DDE4E2", "inverse-on-surface": "#2B3231", "inverse-primary": "#006A62",
-          "scene-1": "#00867C", "scene-2": "#006688", "scene-3": "#2B6A47", "scene-base": "#070C0C"
+          "primary": "#6FDACC",
+          "on-primary": "#003733",
+          "primary-container": "#00504A",
+          "on-primary-container": "#8DF6E8",
+          "secondary": "#81CFF7",
+          "on-secondary": "#003549",
+          "secondary-container": "#004C68",
+          "on-secondary-container": "#C4E7FF",
+          "tertiary": "#93D6AA",
+          "on-tertiary": "#00391F",
+          "tertiary-container": "#0E5131",
+          "on-tertiary-container": "#AEF2C5",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#0E1514",
+          "on-surface": "#DDE4E2",
+          "on-surface-variant": "#BEC9C7",
+          "surface-container-lowest": "#090F0E",
+          "surface-container-low": "#161D1C",
+          "surface-container": "#1A2120",
+          "surface-container-high": "#252B2A",
+          "surface-container-highest": "#2F3635",
+          "outline": "#899392",
+          "outline-variant": "#3F4948",
+          "inverse-surface": "#DDE4E2",
+          "inverse-on-surface": "#2B3231",
+          "inverse-primary": "#006A62",
+          "scene-1": "#00867C",
+          "scene-2": "#006688",
+          "scene-3": "#2B6A47",
+          "scene-base": "#070C0C"
         },
-        "glass": { "base": "#141B1A", "tint": "#00504A", "tint-alpha": 0.16, "alpha": [0.34, 0.46, 0.58, 0.68, 0.78], "specular": 0.26, "rim": 0.13, "saturate": 1.4, "shadow": "#000000", "shadow-alpha": 0.45 }
+        "glass": {
+          "base": "#141B1A",
+          "tint": "#00504A",
+          "tint-alpha": 0.16,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.4,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
       }
     },
     "prism": {
       "$description": "Light-first indigo and coral theme. Seed #4355B2.",
       "palette": {
-        "primary":   { "0": "#000000", "10": "#00105C", "20": "#0F2380", "30": "#2A3C98", "40": "#4355B2", "50": "#5D6FCC", "60": "#7789E7", "70": "#92A4FF", "80": "#B8C3FF", "90": "#DEE0FF", "95": "#F0EFFF", "99": "#FFFBFF", "100": "#FFFFFF" },
-        "secondary": { "0": "#000000", "10": "#0A1D28", "20": "#20323E", "30": "#374955", "40": "#4F616D", "50": "#687A86", "60": "#8294A0", "70": "#9CAEBB", "80": "#B6C9D8", "90": "#D2E5F5", "95": "#E4F3FF", "99": "#F9FCFF", "100": "#FFFFFF" },
-        "tertiary":  { "0": "#000000", "10": "#3A0B06", "20": "#5E1E14", "30": "#7A3428", "40": "#984A3D", "50": "#B56253", "60": "#D47B6B", "70": "#F29584", "80": "#FFB4A5", "90": "#FFDAD3", "95": "#FFEDE9", "99": "#FFFBFF", "100": "#FFFFFF" },
-        "neutral":   { "0": "#000000", "10": "#1B1B23", "20": "#303038", "30": "#46464F", "40": "#5E5E67", "50": "#777680", "60": "#91909A", "70": "#ACAAB4", "80": "#C7C5D0", "90": "#E4E1EC", "95": "#F3F0FB", "99": "#FCF8FF", "100": "#FFFFFF" },
-        "error":     { "0": "#000000", "10": "#410002", "20": "#690005", "30": "#93000A", "40": "#BA1A1A", "50": "#DE3730", "60": "#FF5449", "70": "#FF897D", "80": "#FFB4AB", "90": "#FFDAD6", "95": "#FFEDEA", "99": "#FFFBFF", "100": "#FFFFFF" }
+        "primary": {
+          "0": "#000000",
+          "10": "#00105C",
+          "20": "#0F2380",
+          "30": "#2A3C98",
+          "40": "#4355B2",
+          "50": "#5D6FCC",
+          "60": "#7789E7",
+          "70": "#92A4FF",
+          "80": "#B8C3FF",
+          "90": "#DEE0FF",
+          "95": "#F0EFFF",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#0A1D28",
+          "20": "#20323E",
+          "30": "#374955",
+          "40": "#4F616D",
+          "50": "#687A86",
+          "60": "#8294A0",
+          "70": "#9CAEBB",
+          "80": "#B6C9D8",
+          "90": "#D2E5F5",
+          "95": "#E4F3FF",
+          "99": "#F9FCFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#3A0B06",
+          "20": "#5E1E14",
+          "30": "#7A3428",
+          "40": "#984A3D",
+          "50": "#B56253",
+          "60": "#D47B6B",
+          "70": "#F29584",
+          "80": "#FFB4A5",
+          "90": "#FFDAD3",
+          "95": "#FFEDE9",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#1B1B23",
+          "20": "#303038",
+          "30": "#46464F",
+          "40": "#5E5E67",
+          "50": "#777680",
+          "60": "#91909A",
+          "70": "#ACAAB4",
+          "80": "#C7C5D0",
+          "90": "#E4E1EC",
+          "95": "#F3F0FB",
+          "99": "#FCF8FF",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
       },
       "light": {
         "color": {
-          "primary": "#4355B2", "on-primary": "#FFFFFF", "primary-container": "#DEE0FF", "on-primary-container": "#00105C",
-          "secondary": "#4F616D", "on-secondary": "#FFFFFF", "secondary-container": "#D2E5F5", "on-secondary-container": "#0A1D28",
-          "tertiary": "#984A3D", "on-tertiary": "#FFFFFF", "tertiary-container": "#FFDAD3", "on-tertiary-container": "#3A0B06",
-          "error": "#BA1A1A", "on-error": "#FFFFFF", "error-container": "#FFDAD6", "on-error-container": "#410002",
-          "surface": "#FCF8FF", "on-surface": "#1B1B23", "on-surface-variant": "#46464F",
-          "surface-container-lowest": "#FFFFFF", "surface-container-low": "#F6F2FD", "surface-container": "#F0ECF7", "surface-container-high": "#EAE7F1", "surface-container-highest": "#E4E1EC",
-          "outline": "#777680", "outline-variant": "#C7C5D0",
-          "inverse-surface": "#303038", "inverse-on-surface": "#F3F0FB", "inverse-primary": "#B8C3FF",
-          "scene-1": "#B8C3FF", "scene-2": "#FFB4A5", "scene-3": "#B6C9D8", "scene-base": "#F1EEFB"
+          "primary": "#4355B2",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#DEE0FF",
+          "on-primary-container": "#00105C",
+          "secondary": "#4F616D",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#D2E5F5",
+          "on-secondary-container": "#0A1D28",
+          "tertiary": "#984A3D",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#FFDAD3",
+          "on-tertiary-container": "#3A0B06",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#410002",
+          "surface": "#FCF8FF",
+          "on-surface": "#1B1B23",
+          "on-surface-variant": "#46464F",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#F6F2FD",
+          "surface-container": "#F0ECF7",
+          "surface-container-high": "#EAE7F1",
+          "surface-container-highest": "#E4E1EC",
+          "outline": "#777680",
+          "outline-variant": "#C7C5D0",
+          "inverse-surface": "#303038",
+          "inverse-on-surface": "#F3F0FB",
+          "inverse-primary": "#B8C3FF",
+          "scene-1": "#B8C3FF",
+          "scene-2": "#FFB4A5",
+          "scene-3": "#B6C9D8",
+          "scene-base": "#F1EEFB"
         },
-        "glass": { "base": "#FFFFFF", "tint": "#B8C3FF", "tint-alpha": 0.10, "alpha": [0.36, 0.48, 0.60, 0.72, 0.84], "specular": 1, "rim": 0.60, "saturate": 1.6, "shadow": "#00105C", "shadow-alpha": 0.14 }
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#B8C3FF",
+          "tint-alpha": 0.1,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1.6,
+          "shadow": "#00105C",
+          "shadow-alpha": 0.14
+        }
       },
       "dark": {
         "color": {
-          "primary": "#B8C3FF", "on-primary": "#0F2380", "primary-container": "#2A3C98", "on-primary-container": "#DEE0FF",
-          "secondary": "#B6C9D8", "on-secondary": "#20323E", "secondary-container": "#374955", "on-secondary-container": "#D2E5F5",
-          "tertiary": "#FFB4A5", "on-tertiary": "#5E1E14", "tertiary-container": "#7A3428", "on-tertiary-container": "#FFDAD3",
-          "error": "#FFB4AB", "on-error": "#690005", "error-container": "#93000A", "on-error-container": "#FFDAD6",
-          "surface": "#121219", "on-surface": "#E4E1EC", "on-surface-variant": "#C7C5D0",
-          "surface-container-lowest": "#0D0D15", "surface-container-low": "#1B1B23", "surface-container": "#1F1F27", "surface-container-high": "#2A2931", "surface-container-highest": "#35343C",
-          "outline": "#91909A", "outline-variant": "#46464F",
-          "inverse-surface": "#E4E1EC", "inverse-on-surface": "#303038", "inverse-primary": "#4355B2",
-          "scene-1": "#4355B2", "scene-2": "#984A3D", "scene-3": "#4F616D", "scene-base": "#0B0B12"
+          "primary": "#B8C3FF",
+          "on-primary": "#0F2380",
+          "primary-container": "#2A3C98",
+          "on-primary-container": "#DEE0FF",
+          "secondary": "#B6C9D8",
+          "on-secondary": "#20323E",
+          "secondary-container": "#374955",
+          "on-secondary-container": "#D2E5F5",
+          "tertiary": "#FFB4A5",
+          "on-tertiary": "#5E1E14",
+          "tertiary-container": "#7A3428",
+          "on-tertiary-container": "#FFDAD3",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#121219",
+          "on-surface": "#E4E1EC",
+          "on-surface-variant": "#C7C5D0",
+          "surface-container-lowest": "#0D0D15",
+          "surface-container-low": "#1B1B23",
+          "surface-container": "#1F1F27",
+          "surface-container-high": "#2A2931",
+          "surface-container-highest": "#35343C",
+          "outline": "#91909A",
+          "outline-variant": "#46464F",
+          "inverse-surface": "#E4E1EC",
+          "inverse-on-surface": "#303038",
+          "inverse-primary": "#4355B2",
+          "scene-1": "#4355B2",
+          "scene-2": "#984A3D",
+          "scene-3": "#4F616D",
+          "scene-base": "#0B0B12"
         },
-        "glass": { "base": "#1B1B25", "tint": "#2A3C98", "tint-alpha": 0.16, "alpha": [0.34, 0.46, 0.58, 0.68, 0.78], "specular": 0.26, "rim": 0.13, "saturate": 1.4, "shadow": "#000000", "shadow-alpha": 0.5 }
+        "glass": {
+          "base": "#1B1B25",
+          "tint": "#2A3C98",
+          "tint-alpha": 0.16,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.4,
+          "shadow": "#000000",
+          "shadow-alpha": 0.5
+        }
+      }
+    },
+    "obsidian": {
+      "$description": "Near-black and amber. Cool grey glass, strong specular. For dashboards and dev tools.",
+      "$source": {
+        "seed": "#FFB300",
+        "variant": "tonal-spot",
+        "secondary": {
+          "hue": 255,
+          "chroma": 10
+        },
+        "tertiary": "#7FB3FF",
+        "neutral": {
+          "hue": 255,
+          "chroma": 3
+        },
+        "scene": {
+          "dark": {
+            "scene-1": "#8A5A00",
+            "scene-2": "#2C3A55",
+            "scene-3": "#3A4A66",
+            "scene-base": "#050608"
+          }
+        },
+        "glass": {
+          "light": {
+            "alpha": [
+              0.4,
+              0.52,
+              0.64,
+              0.76,
+              0.86
+            ],
+            "rim": 0.7
+          },
+          "dark": {
+            "alpha": [
+              0.3,
+              0.42,
+              0.54,
+              0.64,
+              0.74
+            ],
+            "specular": 0.34,
+            "rim": 0.16,
+            "saturate": 1.2,
+            "tint-alpha": 0.08
+          }
+        },
+        "description": "Near-black and amber. Cool grey glass, strong specular. For dashboards and dev tools."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#281900",
+          "20": "#432C00",
+          "30": "#604100",
+          "40": "#7D570D",
+          "50": "#987027",
+          "60": "#B5893E",
+          "70": "#D2A355",
+          "80": "#F0BE6D",
+          "90": "#FFDEAC",
+          "95": "#FFEEDA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#161C24",
+          "20": "#2B313A",
+          "30": "#414750",
+          "40": "#595F68",
+          "50": "#717782",
+          "60": "#8B919C",
+          "70": "#A6ABB6",
+          "80": "#C1C7D2",
+          "90": "#DDE3EE",
+          "95": "#EBF1FD",
+          "99": "#FDFCFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#001C3B",
+          "20": "#00315F",
+          "30": "#004787",
+          "40": "#225FA5",
+          "50": "#4178C0",
+          "60": "#5D92DC",
+          "70": "#79ADF9",
+          "80": "#A6C8FF",
+          "90": "#D5E3FF",
+          "95": "#EBF1FF",
+          "99": "#FDFBFF",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#1B1C1D",
+          "20": "#303032",
+          "30": "#464749",
+          "40": "#5E5E60",
+          "50": "#777779",
+          "60": "#919093",
+          "70": "#ABABAD",
+          "80": "#C7C6C8",
+          "90": "#E3E2E4",
+          "95": "#F2F0F3",
+          "99": "#FDFCFE",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#7D570D",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#FFDEAC",
+          "on-primary-container": "#604100",
+          "secondary": "#595F68",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#DDE3EE",
+          "on-secondary-container": "#414750",
+          "tertiary": "#225FA5",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#D5E3FF",
+          "on-tertiary-container": "#004787",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#93000A",
+          "surface": "#FAF9FB",
+          "on-surface": "#1B1C1D",
+          "on-surface-variant": "#43474D",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#F5F3F5",
+          "surface-container": "#EFEDF0",
+          "surface-container-high": "#E9E7EA",
+          "surface-container-highest": "#E3E2E4",
+          "outline": "#74777E",
+          "outline-variant": "#C4C6CE",
+          "inverse-surface": "#303032",
+          "inverse-on-surface": "#F2F0F3",
+          "inverse-primary": "#F0BE6D",
+          "scene-1": "#F0BE6D",
+          "scene-2": "#C1C7D2",
+          "scene-3": "#A6C8FF",
+          "scene-base": "#F7E9D7"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#F0BE6D",
+          "tint-alpha": 0.1,
+          "alpha": [
+            0.4,
+            0.52,
+            0.64,
+            0.76,
+            0.86
+          ],
+          "specular": 1,
+          "rim": 0.7,
+          "saturate": 1.6,
+          "shadow": "#281900",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#F0BE6D",
+          "on-primary": "#432C00",
+          "primary-container": "#604100",
+          "on-primary-container": "#FFDEAC",
+          "secondary": "#C1C7D2",
+          "on-secondary": "#2B313A",
+          "secondary-container": "#414750",
+          "on-secondary-container": "#DDE3EE",
+          "tertiary": "#A6C8FF",
+          "on-tertiary": "#00315F",
+          "tertiary-container": "#004787",
+          "on-tertiary-container": "#D5E3FF",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#121315",
+          "on-surface": "#E3E2E4",
+          "on-surface-variant": "#C4C6CE",
+          "surface-container-lowest": "#0D0E10",
+          "surface-container-low": "#1B1C1D",
+          "surface-container": "#1F2022",
+          "surface-container-high": "#292A2C",
+          "surface-container-highest": "#343537",
+          "outline": "#8E9198",
+          "outline-variant": "#43474D",
+          "inverse-surface": "#E3E2E4",
+          "inverse-on-surface": "#303032",
+          "inverse-primary": "#7D570D",
+          "scene-1": "#8A5A00",
+          "scene-2": "#2C3A55",
+          "scene-3": "#3A4A66",
+          "scene-base": "#050608"
+        },
+        "glass": {
+          "base": "#1B1C1D",
+          "tint": "#604100",
+          "tint-alpha": 0.08,
+          "alpha": [
+            0.3,
+            0.42,
+            0.54,
+            0.64,
+            0.74
+          ],
+          "specular": 0.34,
+          "rim": 0.16,
+          "saturate": 1.2,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
+      }
+    },
+    "frost": {
+      "$description": "Light-first cobalt and lilac. High blur, low tint. For productivity apps.",
+      "$source": {
+        "seed": "#2F6BFF",
+        "variant": "tonal-spot",
+        "tertiary": "#A58BFF",
+        "neutral": {
+          "hue": 250,
+          "chroma": 5
+        },
+        "glass": {
+          "light": {
+            "tint-alpha": 0.06,
+            "blur": [
+              12,
+              20,
+              28,
+              38,
+              48
+            ],
+            "rim": 0.75,
+            "saturate": 1.8
+          },
+          "dark": {
+            "blur": [
+              12,
+              20,
+              28,
+              38,
+              48
+            ],
+            "tint-alpha": 0.12
+          }
+        },
+        "description": "Light-first cobalt and lilac. High blur, low tint. For productivity apps."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#02174B",
+          "20": "#1C2D61",
+          "30": "#334479",
+          "40": "#4C5C92",
+          "50": "#6475AD",
+          "60": "#7E8FC8",
+          "70": "#99A9E4",
+          "80": "#B5C4FF",
+          "90": "#DBE1FF",
+          "95": "#EFF0FF",
+          "99": "#FEFBFF",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#161B2C",
+          "20": "#2B3042",
+          "30": "#414659",
+          "40": "#595E72",
+          "50": "#72768B",
+          "60": "#8B90A5",
+          "70": "#A6AAC1",
+          "80": "#C1C5DD",
+          "90": "#DDE1F9",
+          "95": "#EFF0FF",
+          "99": "#FEFBFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#1F005F",
+          "20": "#36108A",
+          "30": "#4D30A1",
+          "40": "#654ABA",
+          "50": "#7E64D5",
+          "60": "#987EF1",
+          "70": "#B39DFF",
+          "80": "#CDBDFF",
+          "90": "#E7DEFF",
+          "95": "#F5EEFF",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#191C1F",
+          "20": "#2E3134",
+          "30": "#44474B",
+          "40": "#5C5E62",
+          "50": "#75777B",
+          "60": "#8F9195",
+          "70": "#AAABAF",
+          "80": "#C5C6CB",
+          "90": "#E1E2E7",
+          "95": "#F0F0F5",
+          "99": "#FCFCFF",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#4C5C92",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#DBE1FF",
+          "on-primary-container": "#334479",
+          "secondary": "#595E72",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#DDE1F9",
+          "on-secondary-container": "#414659",
+          "tertiary": "#654ABA",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#E7DEFF",
+          "on-tertiary-container": "#4D30A1",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#93000A",
+          "surface": "#F8F9FE",
+          "on-surface": "#191C1F",
+          "on-surface-variant": "#41474F",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#F3F3F8",
+          "surface-container": "#EDEEF2",
+          "surface-container-high": "#E7E8EC",
+          "surface-container-highest": "#E1E2E7",
+          "outline": "#727880",
+          "outline-variant": "#C1C7D0",
+          "inverse-surface": "#2E3134",
+          "inverse-on-surface": "#F0F0F5",
+          "inverse-primary": "#B5C4FF",
+          "scene-1": "#B5C4FF",
+          "scene-2": "#C1C5DD",
+          "scene-3": "#CDBDFF",
+          "scene-base": "#EAEAF5"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#B5C4FF",
+          "tint-alpha": 0.06,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "blur": [
+            12,
+            20,
+            28,
+            38,
+            48
+          ],
+          "specular": 1,
+          "rim": 0.75,
+          "saturate": 1.8,
+          "shadow": "#02174B",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#B5C4FF",
+          "on-primary": "#1C2D61",
+          "primary-container": "#334479",
+          "on-primary-container": "#DBE1FF",
+          "secondary": "#C1C5DD",
+          "on-secondary": "#2B3042",
+          "secondary-container": "#414659",
+          "on-secondary-container": "#DDE1F9",
+          "tertiary": "#CDBDFF",
+          "on-tertiary": "#36108A",
+          "tertiary-container": "#4D30A1",
+          "on-tertiary-container": "#E7DEFF",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#111417",
+          "on-surface": "#E1E2E7",
+          "on-surface-variant": "#C1C7D0",
+          "surface-container-lowest": "#0C0E12",
+          "surface-container-low": "#191C1F",
+          "surface-container": "#1D2023",
+          "surface-container-high": "#282A2E",
+          "surface-container-highest": "#323539",
+          "outline": "#8B919A",
+          "outline-variant": "#41474F",
+          "inverse-surface": "#E1E2E7",
+          "inverse-on-surface": "#2E3134",
+          "inverse-primary": "#4C5C92",
+          "scene-1": "#6475AD",
+          "scene-2": "#595E72",
+          "scene-3": "#654ABA",
+          "scene-base": "#0D0E13"
+        },
+        "glass": {
+          "base": "#191C1F",
+          "tint": "#334479",
+          "tint-alpha": 0.12,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "blur": [
+            12,
+            20,
+            28,
+            38,
+            48
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.4,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
+      }
+    },
+    "ember": {
+      "$description": "Warm coral and gold on charcoal, with a sage accent. For media and food apps.",
+      "$source": {
+        "seed": "#FF6F4F",
+        "variant": "tonal-spot",
+        "secondary": "#E0A526",
+        "tertiary": "#8DAA7C",
+        "neutral": {
+          "hue": 30,
+          "chroma": 5
+        },
+        "glass": {
+          "light": {
+            "tint-alpha": 0.12,
+            "saturate": 1.5
+          },
+          "dark": {
+            "tint-alpha": 0.18,
+            "saturate": 1.5
+          }
+        },
+        "description": "Warm coral and gold on charcoal, with a sage accent. For media and food apps."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#3A0A02",
+          "20": "#561F12",
+          "30": "#733426",
+          "40": "#904B3B",
+          "50": "#AD6352",
+          "60": "#CB7C69",
+          "70": "#EA9582",
+          "80": "#FFB4A3",
+          "90": "#FFDAD2",
+          "95": "#FFEDE9",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#271900",
+          "20": "#422D00",
+          "30": "#5E4200",
+          "40": "#7C5800",
+          "50": "#9C6F00",
+          "60": "#BD8700",
+          "70": "#DBA121",
+          "80": "#FABC3E",
+          "90": "#FFDEA8",
+          "95": "#FFEED8",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#092102",
+          "20": "#1E3613",
+          "30": "#344D28",
+          "40": "#4B663E",
+          "50": "#637F54",
+          "60": "#7C996C",
+          "70": "#96B485",
+          "80": "#B1CF9F",
+          "90": "#CDECB9",
+          "95": "#DBFAC7",
+          "99": "#F7FFED",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#221A18",
+          "20": "#372E2D",
+          "30": "#4F4443",
+          "40": "#675C5A",
+          "50": "#807472",
+          "60": "#9B8E8B",
+          "70": "#B6A8A5",
+          "80": "#D2C3C0",
+          "90": "#EFDFDC",
+          "95": "#FDEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#904B3B",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#FFDAD2",
+          "on-primary-container": "#733426",
+          "secondary": "#7C5800",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#FFDEA8",
+          "on-secondary-container": "#5E4200",
+          "tertiary": "#4B663E",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#CDECB9",
+          "on-tertiary-container": "#344D28",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#93000A",
+          "surface": "#FFF8F6",
+          "on-surface": "#221A18",
+          "on-surface-variant": "#54433F",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#FFF0EE",
+          "surface-container": "#FAEAE7",
+          "surface-container-high": "#F5E5E2",
+          "surface-container-highest": "#EFDFDC",
+          "outline": "#87726E",
+          "outline-variant": "#DAC1BC",
+          "inverse-surface": "#372E2D",
+          "inverse-on-surface": "#FDEDEA",
+          "inverse-primary": "#FFB4A3",
+          "scene-1": "#FFB4A3",
+          "scene-2": "#FABC3E",
+          "scene-3": "#B1CF9F",
+          "scene-base": "#FEE6E1"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#FFB4A3",
+          "tint-alpha": 0.12,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1.5,
+          "shadow": "#3A0A02",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#FFB4A3",
+          "on-primary": "#561F12",
+          "primary-container": "#733426",
+          "on-primary-container": "#FFDAD2",
+          "secondary": "#FABC3E",
+          "on-secondary": "#422D00",
+          "secondary-container": "#5E4200",
+          "on-secondary-container": "#FFDEA8",
+          "tertiary": "#B1CF9F",
+          "on-tertiary": "#1E3613",
+          "tertiary-container": "#344D28",
+          "on-tertiary-container": "#CDECB9",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#191210",
+          "on-surface": "#EFDFDC",
+          "on-surface-variant": "#DAC1BC",
+          "surface-container-lowest": "#130D0B",
+          "surface-container-low": "#221A18",
+          "surface-container": "#261E1C",
+          "surface-container-high": "#312826",
+          "surface-container-highest": "#3C3331",
+          "outline": "#A28C87",
+          "outline-variant": "#54433F",
+          "inverse-surface": "#EFDFDC",
+          "inverse-on-surface": "#372E2D",
+          "inverse-primary": "#904B3B",
+          "scene-1": "#AD6352",
+          "scene-2": "#7C5800",
+          "scene-3": "#4B663E",
+          "scene-base": "#140C0A"
+        },
+        "glass": {
+          "base": "#221A18",
+          "tint": "#733426",
+          "tint-alpha": 0.18,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.5,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
+      }
+    },
+    "aurora": {
+      "$description": "Mint, violet and magenta. Gradient-forward and saturated. For landing pages and portfolios.",
+      "$source": {
+        "seed": "#3DDC97",
+        "variant": "vibrant",
+        "secondary": "#9B5CFF",
+        "tertiary": "#FF4FB8",
+        "scene": {
+          "light": {
+            "scene-1": "#7FF0C4",
+            "scene-2": "#C9A8FF",
+            "scene-3": "#FFA8D9"
+          },
+          "dark": {
+            "scene-1": "#00806A",
+            "scene-2": "#5B2DB0",
+            "scene-3": "#A0236E",
+            "scene-base": "#06040C"
+          }
+        },
+        "glass": {
+          "light": {
+            "saturate": 1.9,
+            "tint-alpha": 0.06
+          },
+          "dark": {
+            "saturate": 1.8,
+            "tint-alpha": 0.1
+          }
+        },
+        "description": "Mint, violet and magenta. Gradient-forward and saturated. For landing pages and portfolios."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#002112",
+          "20": "#003822",
+          "30": "#005233",
+          "40": "#006C45",
+          "50": "#008858",
+          "60": "#00A56C",
+          "70": "#00C381",
+          "80": "#00E296",
+          "90": "#4EFFB1",
+          "95": "#BFFFD8",
+          "99": "#F4FFF5",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#270057",
+          "20": "#42008A",
+          "30": "#5E00C1",
+          "40": "#7732D9",
+          "50": "#9151F4",
+          "60": "#A874FF",
+          "70": "#BF98FF",
+          "80": "#D5BAFF",
+          "90": "#ECDCFF",
+          "95": "#F7EDFF",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#3D0027",
+          "20": "#620042",
+          "30": "#8A005E",
+          "40": "#B5007C",
+          "50": "#D72B97",
+          "60": "#F949B3",
+          "70": "#FF80C4",
+          "80": "#FFAFD5",
+          "90": "#FFD8E8",
+          "95": "#FFECF2",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#131E17",
+          "20": "#28332C",
+          "30": "#3E4942",
+          "40": "#556159",
+          "50": "#6E7A71",
+          "60": "#88948A",
+          "70": "#A2AEA4",
+          "80": "#BDCABF",
+          "90": "#D9E6DB",
+          "95": "#E7F4E9",
+          "99": "#F4FFF5",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#006C45",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#4EFFB1",
+          "on-primary-container": "#005233",
+          "secondary": "#7732D9",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#ECDCFF",
+          "on-secondary-container": "#5E00C1",
+          "tertiary": "#B5007C",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#FFD8E8",
+          "on-tertiary-container": "#8A005E",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#93000A",
+          "surface": "#F0FDF1",
+          "on-surface": "#131E17",
+          "on-surface-variant": "#3C4A41",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#EAF7EC",
+          "surface-container": "#E4F1E6",
+          "surface-container-high": "#DFEBE0",
+          "surface-container-highest": "#D9E6DB",
+          "outline": "#6B7B70",
+          "outline-variant": "#BACBBE",
+          "inverse-surface": "#28332C",
+          "inverse-on-surface": "#E7F4E9",
+          "inverse-primary": "#00E296",
+          "scene-1": "#7FF0C4",
+          "scene-2": "#C9A8FF",
+          "scene-3": "#FFA8D9",
+          "scene-base": "#E4EDE5"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#00E296",
+          "tint-alpha": 0.06,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1.9,
+          "shadow": "#002112",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#00E296",
+          "on-primary": "#003822",
+          "primary-container": "#005233",
+          "on-primary-container": "#4EFFB1",
+          "secondary": "#D5BAFF",
+          "on-secondary": "#42008A",
+          "secondary-container": "#5E00C1",
+          "on-secondary-container": "#ECDCFF",
+          "tertiary": "#FFAFD5",
+          "on-tertiary": "#620042",
+          "tertiary-container": "#8A005E",
+          "on-tertiary-container": "#FFD8E8",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#0B160F",
+          "on-surface": "#D9E6DB",
+          "on-surface-variant": "#BACBBE",
+          "surface-container-lowest": "#06100A",
+          "surface-container-low": "#131E17",
+          "surface-container": "#17221B",
+          "surface-container-high": "#222C25",
+          "surface-container-highest": "#2C3730",
+          "outline": "#859589",
+          "outline-variant": "#3C4A41",
+          "inverse-surface": "#D9E6DB",
+          "inverse-on-surface": "#28332C",
+          "inverse-primary": "#006C45",
+          "scene-1": "#00806A",
+          "scene-2": "#5B2DB0",
+          "scene-3": "#A0236E",
+          "scene-base": "#06040C"
+        },
+        "glass": {
+          "base": "#131E17",
+          "tint": "#005233",
+          "tint-alpha": 0.1,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.8,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
+      }
+    },
+    "mono": {
+      "$description": "Achromatic greyscale. Proves the system works with no hue. The safe enterprise theme.",
+      "$source": {
+        "seed": "#5F6368",
+        "variant": "monochrome",
+        "roles": {
+          "light": {
+            "primary-container": "primary:90",
+            "on-primary-container": "primary:10",
+            "tertiary-container": "tertiary:90",
+            "on-tertiary-container": "tertiary:10"
+          },
+          "dark": {
+            "primary-container": "primary:30",
+            "on-primary-container": "primary:90",
+            "tertiary-container": "tertiary:30",
+            "on-tertiary-container": "tertiary:90"
+          }
+        },
+        "glass": {
+          "light": {
+            "tint-alpha": 0,
+            "saturate": 1
+          },
+          "dark": {
+            "tint-alpha": 0,
+            "saturate": 1
+          }
+        },
+        "description": "Achromatic greyscale. Proves the system works with no hue. The safe enterprise theme."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#1B1B1B",
+          "20": "#303030",
+          "30": "#474747",
+          "40": "#5E5E5E",
+          "50": "#777777",
+          "60": "#919191",
+          "70": "#ABABAB",
+          "80": "#C6C6C6",
+          "90": "#E2E2E2",
+          "95": "#F1F1F1",
+          "99": "#FCFCFC",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#1B1B1B",
+          "20": "#303030",
+          "30": "#474747",
+          "40": "#5E5E5E",
+          "50": "#777777",
+          "60": "#919191",
+          "70": "#ABABAB",
+          "80": "#C6C6C6",
+          "90": "#E2E2E2",
+          "95": "#F1F1F1",
+          "99": "#FCFCFC",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#1B1B1B",
+          "20": "#303030",
+          "30": "#474747",
+          "40": "#5E5E5E",
+          "50": "#777777",
+          "60": "#919191",
+          "70": "#ABABAB",
+          "80": "#C6C6C6",
+          "90": "#E2E2E2",
+          "95": "#F1F1F1",
+          "99": "#FCFCFC",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#1B1B1B",
+          "20": "#303030",
+          "30": "#474747",
+          "40": "#5E5E5E",
+          "50": "#777777",
+          "60": "#919191",
+          "70": "#ABABAB",
+          "80": "#C6C6C6",
+          "90": "#E2E2E2",
+          "95": "#F1F1F1",
+          "99": "#FCFCFC",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#000000",
+          "on-primary": "#E2E2E2",
+          "primary-container": "#E2E2E2",
+          "on-primary-container": "#1B1B1B",
+          "secondary": "#5E5E5E",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#D4D4D4",
+          "on-secondary-container": "#1B1B1B",
+          "tertiary": "#3B3B3B",
+          "on-tertiary": "#E2E2E2",
+          "tertiary-container": "#E2E2E2",
+          "on-tertiary-container": "#1B1B1B",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#410002",
+          "surface": "#F9F9F9",
+          "on-surface": "#1B1B1B",
+          "on-surface-variant": "#474747",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#F3F3F3",
+          "surface-container": "#EEEEEE",
+          "surface-container-high": "#E8E8E8",
+          "surface-container-highest": "#E2E2E2",
+          "outline": "#777777",
+          "outline-variant": "#C6C6C6",
+          "inverse-surface": "#303030",
+          "inverse-on-surface": "#F1F1F1",
+          "inverse-primary": "#C6C6C6",
+          "scene-1": "#C6C6C6",
+          "scene-2": "#C6C6C6",
+          "scene-3": "#C6C6C6",
+          "scene-base": "#E6EBF3"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#C6C6C6",
+          "tint-alpha": 0,
+          "alpha": [
+            0.36,
+            0.48,
+            0.6,
+            0.72,
+            0.84
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1,
+          "shadow": "#1B1B1B",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#FFFFFF",
+          "on-primary": "#1B1B1B",
+          "primary-container": "#474747",
+          "on-primary-container": "#E2E2E2",
+          "secondary": "#C6C6C6",
+          "on-secondary": "#1B1B1B",
+          "secondary-container": "#474747",
+          "on-secondary-container": "#E2E2E2",
+          "tertiary": "#E2E2E2",
+          "on-tertiary": "#1B1B1B",
+          "tertiary-container": "#474747",
+          "on-tertiary-container": "#E2E2E2",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#131313",
+          "on-surface": "#E2E2E2",
+          "on-surface-variant": "#C6C6C6",
+          "surface-container-lowest": "#0E0E0E",
+          "surface-container-low": "#1B1B1B",
+          "surface-container": "#1F1F1F",
+          "surface-container-high": "#2A2A2A",
+          "surface-container-highest": "#353535",
+          "outline": "#919191",
+          "outline-variant": "#474747",
+          "inverse-surface": "#E2E2E2",
+          "inverse-on-surface": "#303030",
+          "inverse-primary": "#5E5E5E",
+          "scene-1": "#777777",
+          "scene-2": "#5E5E5E",
+          "scene-3": "#5E5E5E",
+          "scene-base": "#0B0F12"
+        },
+        "glass": {
+          "base": "#1B1B1B",
+          "tint": "#474747",
+          "tint-alpha": 0,
+          "alpha": [
+            0.34,
+            0.46,
+            0.58,
+            0.68,
+            0.78
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
+      }
+    },
+    "sand": {
+      "$description": "Paper-toned neutrals, terracotta, olive and denim. Low blur, high opacity, closest to classic Material. For reading apps.",
+      "$source": {
+        "seed": "#C0623B",
+        "variant": "tonal-spot",
+        "secondary": "#7D8A3C",
+        "tertiary": "#4A6FA5",
+        "neutral": {
+          "hue": 70,
+          "chroma": 6
+        },
+        "glass": {
+          "light": {
+            "alpha": [
+              0.5,
+              0.62,
+              0.74,
+              0.84,
+              0.92
+            ],
+            "blur": [
+              4,
+              8,
+              12,
+              16,
+              20
+            ],
+            "saturate": 1.2
+          },
+          "dark": {
+            "alpha": [
+              0.48,
+              0.6,
+              0.72,
+              0.82,
+              0.9
+            ],
+            "blur": [
+              4,
+              8,
+              12,
+              16,
+              20
+            ],
+            "saturate": 1.15
+          }
+        },
+        "description": "Paper-toned neutrals, terracotta, olive and denim. Low blur, high opacity, closest to classic Material. For reading apps."
+      },
+      "palette": {
+        "primary": {
+          "0": "#000000",
+          "10": "#370E00",
+          "20": "#552009",
+          "30": "#71361D",
+          "40": "#8E4D32",
+          "50": "#AC6448",
+          "60": "#CA7D5F",
+          "70": "#E99777",
+          "80": "#FFB599",
+          "90": "#FFDBCE",
+          "95": "#FFEDE7",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "secondary": {
+          "0": "#000000",
+          "10": "#191E00",
+          "20": "#2C3400",
+          "30": "#414C00",
+          "40": "#58641A",
+          "50": "#717D31",
+          "60": "#8A9748",
+          "70": "#A4B25F",
+          "80": "#C0CE78",
+          "90": "#DCEA91",
+          "95": "#EAF99E",
+          "99": "#FCFFDD",
+          "100": "#FFFFFF"
+        },
+        "tertiary": {
+          "0": "#000000",
+          "10": "#001C3B",
+          "20": "#003060",
+          "30": "#1E477B",
+          "40": "#395F94",
+          "50": "#5378AF",
+          "60": "#6E92CA",
+          "70": "#88ADE7",
+          "80": "#A7C8FF",
+          "90": "#D5E3FF",
+          "95": "#EBF1FF",
+          "99": "#FDFBFF",
+          "100": "#FFFFFF"
+        },
+        "neutral": {
+          "0": "#000000",
+          "10": "#211A13",
+          "20": "#372F27",
+          "30": "#4E453D",
+          "40": "#665D54",
+          "50": "#80756C",
+          "60": "#9A8F85",
+          "70": "#B5A99E",
+          "80": "#D1C4B9",
+          "90": "#EEE0D4",
+          "95": "#FCEEE2",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        },
+        "error": {
+          "0": "#000000",
+          "10": "#410002",
+          "20": "#690005",
+          "30": "#93000A",
+          "40": "#BA1A1A",
+          "50": "#DE3730",
+          "60": "#FF5449",
+          "70": "#FF897D",
+          "80": "#FFB4AB",
+          "90": "#FFDAD6",
+          "95": "#FFEDEA",
+          "99": "#FFFBFF",
+          "100": "#FFFFFF"
+        }
+      },
+      "light": {
+        "color": {
+          "primary": "#8E4D32",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#FFDBCE",
+          "on-primary-container": "#71361D",
+          "secondary": "#58641A",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#DCEA91",
+          "on-secondary-container": "#414C00",
+          "tertiary": "#395F94",
+          "on-tertiary": "#FFFFFF",
+          "tertiary-container": "#D5E3FF",
+          "on-tertiary-container": "#1E477B",
+          "error": "#BA1A1A",
+          "on-error": "#FFFFFF",
+          "error-container": "#FFDAD6",
+          "on-error-container": "#93000A",
+          "surface": "#FFF8F4",
+          "on-surface": "#211A13",
+          "on-surface-variant": "#524436",
+          "surface-container-lowest": "#FFFFFF",
+          "surface-container-low": "#FFF1E6",
+          "surface-container": "#F9EBE0",
+          "surface-container-high": "#F4E6DA",
+          "surface-container-highest": "#EEE0D4",
+          "outline": "#847464",
+          "outline-variant": "#D7C3B0",
+          "inverse-surface": "#372F27",
+          "inverse-on-surface": "#FCEEE2",
+          "inverse-primary": "#FFB599",
+          "scene-1": "#FFB599",
+          "scene-2": "#C0CE78",
+          "scene-3": "#A7C8FF",
+          "scene-base": "#FDE6DE"
+        },
+        "glass": {
+          "base": "#FFFFFF",
+          "tint": "#FFB599",
+          "tint-alpha": 0.1,
+          "alpha": [
+            0.5,
+            0.62,
+            0.74,
+            0.84,
+            0.92
+          ],
+          "blur": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "specular": 1,
+          "rim": 0.6,
+          "saturate": 1.2,
+          "shadow": "#370E00",
+          "shadow-alpha": 0.14
+        }
+      },
+      "dark": {
+        "color": {
+          "primary": "#FFB599",
+          "on-primary": "#552009",
+          "primary-container": "#71361D",
+          "on-primary-container": "#FFDBCE",
+          "secondary": "#C0CE78",
+          "on-secondary": "#2C3400",
+          "secondary-container": "#414C00",
+          "on-secondary-container": "#DCEA91",
+          "tertiary": "#A7C8FF",
+          "on-tertiary": "#003060",
+          "tertiary-container": "#1E477B",
+          "on-tertiary-container": "#D5E3FF",
+          "error": "#FFB4AB",
+          "on-error": "#690005",
+          "error-container": "#93000A",
+          "on-error-container": "#FFDAD6",
+          "surface": "#18120C",
+          "on-surface": "#EEE0D4",
+          "on-surface-variant": "#D7C3B0",
+          "surface-container-lowest": "#130D07",
+          "surface-container-low": "#211A13",
+          "surface-container": "#251E17",
+          "surface-container-high": "#302921",
+          "surface-container-highest": "#3B332B",
+          "outline": "#9F8E7C",
+          "outline-variant": "#524436",
+          "inverse-surface": "#EEE0D4",
+          "inverse-on-surface": "#372F27",
+          "inverse-primary": "#8E4D32",
+          "scene-1": "#AC6448",
+          "scene-2": "#58641A",
+          "scene-3": "#395F94",
+          "scene-base": "#140C09"
+        },
+        "glass": {
+          "base": "#211A13",
+          "tint": "#71361D",
+          "tint-alpha": 0.16,
+          "alpha": [
+            0.48,
+            0.6,
+            0.72,
+            0.82,
+            0.9
+          ],
+          "blur": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "specular": 0.26,
+          "rim": 0.13,
+          "saturate": 1.15,
+          "shadow": "#000000",
+          "shadow-alpha": 0.45
+        }
       }
     }
   },
   "glass-tier": {
     "$description": "Glass tiers replace the five Material surface-container levels. Higher tier = more blur, more opacity, brighter edge.",
-    "blur": [8, 14, 20, 28, 36],
-    "shadow-y": [4, 6, 8, 11, 14],
-    "shadow-blur": [16, 22, 28, 44, 56]
+    "blur": [
+      8,
+      14,
+      20,
+      28,
+      36
+    ],
+    "shadow-y": [
+      4,
+      6,
+      8,
+      11,
+      14
+    ],
+    "shadow-blur": [
+      16,
+      22,
+      28,
+      44,
+      56
+    ]
   },
-  "shape": { "none": 0, "xs": 8, "sm": 12, "md": 16, "lg": 24, "xl": 32, "full": 9999 },
-  "state": { "hover": 0.08, "focus": 0.12, "pressed": 0.12, "dragged": 0.16 },
+  "glass-presets": {
+    "$description": "Named glass materials. Set data-mg-glass on <html> or any container. Values override the theme's glass for that mode. text-safe presets are contrast-checked like themes; the others are for decoration and large display text only.",
+    "frosted": {
+      "$description": "The default: what the theme defines.",
+      "text-safe": true
+    },
+    "milk": {
+      "$description": "Thick, bright glass. Most legible translucent option.",
+      "text-safe": true,
+      "blur": [
+        18,
+        24,
+        30,
+        36,
+        44
+      ],
+      "light": {
+        "alpha": [
+          0.62,
+          0.72,
+          0.8,
+          0.88,
+          0.94
+        ],
+        "tint-alpha": 0.04
+      },
+      "dark": {
+        "alpha": [
+          0.62,
+          0.72,
+          0.8,
+          0.86,
+          0.92
+        ],
+        "tint-alpha": 0.06
+      }
+    },
+    "smoked": {
+      "$description": "Darkened glass, like a tinted window.",
+      "text-safe": true,
+      "tint": "shadow",
+      "light": {
+        "alpha": [
+          0.42,
+          0.54,
+          0.66,
+          0.76,
+          0.86
+        ],
+        "tint-alpha": 0.14
+      },
+      "dark": {
+        "alpha": [
+          0.42,
+          0.54,
+          0.66,
+          0.74,
+          0.82
+        ],
+        "tint-alpha": 0.3,
+        "rim": 0.08
+      }
+    },
+    "crystal": {
+      "$description": "Thin, clear glass with a prismatic rim.",
+      "text-safe": true,
+      "blur": [
+        6,
+        10,
+        14,
+        18,
+        24
+      ],
+      "light": {
+        "alpha": [
+          0.3,
+          0.42,
+          0.54,
+          0.66,
+          0.78
+        ],
+        "rim": 0.85,
+        "saturate": 1.9
+      },
+      "dark": {
+        "alpha": [
+          0.34,
+          0.46,
+          0.58,
+          0.68,
+          0.78
+        ],
+        "rim": 0.2,
+        "saturate": 1.7
+      }
+    },
+    "clear": {
+      "$description": "Barely there. Decorative surfaces and large display text only.",
+      "text-safe": false,
+      "blur": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "light": {
+        "alpha": [
+          0.06,
+          0.1,
+          0.14,
+          0.2,
+          0.26
+        ],
+        "rim": 0.8
+      },
+      "dark": {
+        "alpha": [
+          0.08,
+          0.12,
+          0.16,
+          0.22,
+          0.28
+        ],
+        "rim": 0.22
+      }
+    },
+    "paper": {
+      "$description": "Opaque Material surfaces with a glass rim. No blur.",
+      "text-safe": true,
+      "solid": true
+    }
+  },
+  "shape": {
+    "none": 0,
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "full": 9999
+  },
+  "state": {
+    "hover": 0.08,
+    "focus": 0.12,
+    "pressed": 0.12,
+    "dragged": 0.16
+  },
   "motion": {
     "duration-short": 160,
     "duration-medium": 320,
@@ -96,10 +1924,35 @@
   "type": {
     "font-display": "\"Figtree\", ui-sans-serif, system-ui, sans-serif",
     "font-body": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
-    "display": { "size": 57, "line": 64, "weight": 700, "tracking": "-0.02em" },
-    "headline": { "size": 32, "line": 40, "weight": 600, "tracking": "-0.01em" },
-    "title": { "size": 22, "line": 28, "weight": 600, "tracking": "-0.01em" },
-    "body": { "size": 16, "line": 24, "weight": 400, "tracking": "0" },
-    "label": { "size": 14, "line": 20, "weight": 500, "tracking": "0.01em" }
+    "display": {
+      "size": 57,
+      "line": 64,
+      "weight": 700,
+      "tracking": "-0.02em"
+    },
+    "headline": {
+      "size": 32,
+      "line": 40,
+      "weight": 600,
+      "tracking": "-0.01em"
+    },
+    "title": {
+      "size": 22,
+      "line": 28,
+      "weight": 600,
+      "tracking": "-0.01em"
+    },
+    "body": {
+      "size": 16,
+      "line": 24,
+      "weight": 400,
+      "tracking": "0"
+    },
+    "label": {
+      "size": 14,
+      "line": 20,
+      "weight": 500,
+      "tracking": "0.01em"
+    }
   }
 }

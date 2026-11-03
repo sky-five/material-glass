@@ -1,0 +1,102 @@
+/* Motion: a real spring where the browser supports linear(), Material emphasized easing otherwise. */
+:root {
+  --mg-spring: var(--mg-motion-ease-emphasized);
+  --mg-spring-duration: 520ms;
+  --mg-motion-press: 1;          /* how far pressed things swell; 0 = no swell */
+  --mg-liquid-duration: 560ms;   /* selection pill travel time, read by material-glass.js */
+  --mg-liquid-stretch: 0.55;     /* how far the pill stretches mid-flight */
+  --mg-density-step: 0px;        /* -4px compact, -8px dense */
+}
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    --mg-spring: linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077 20.4%, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
+  }
+}
+
+/* ─── Typography ─── */
+.mg-display, .mg-headline, .mg-title { font-family: var(--mg-font-display); }
+.mg-body, .mg-label { font-family: var(--mg-font-body); }
+.mg-display  { font-size: var(--mg-type-display-size);  line-height: var(--mg-type-display-line);  font-weight: var(--mg-type-display-weight);  letter-spacing: var(--mg-type-display-tracking); }
+.mg-headline { font-size: var(--mg-type-headline-size); line-height: var(--mg-type-headline-line); font-weight: var(--mg-type-headline-weight); letter-spacing: var(--mg-type-headline-tracking); }
+.mg-title    { font-size: var(--mg-type-title-size);    line-height: var(--mg-type-title-line);    font-weight: var(--mg-type-title-weight);    letter-spacing: var(--mg-type-title-tracking); }
+.mg-body     { font-size: var(--mg-type-body-size);     line-height: var(--mg-type-body-line);     font-weight: var(--mg-type-body-weight); }
+.mg-label    { font-size: var(--mg-type-label-size);    line-height: var(--mg-type-label-line);    font-weight: var(--mg-type-label-weight);    letter-spacing: var(--mg-type-label-tracking); }
+
+/* ─── Glass surfaces ───
+   .mg-glass is tier 2. .mg-glass-0 … .mg-glass-4 pick a tier and are complete on their own.
+   Each tier maps to a Material surface-container level, used as the solid fallback. */
+.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4 {
+  --_a: var(--mg-glass-alpha-2);
+  --_blur: var(--mg-glass-blur-2);
+  --_sy: var(--mg-glass-shadow-y-2);
+  --_sb: var(--mg-glass-shadow-blur-2);
+  --_spec: 0.65;
+  --_solid: var(--mg-surface-container);
+  position: relative;
+  isolation: isolate;
+  color: var(--mg-on-surface);
+  background:
+    linear-gradient(135deg, rgb(var(--mg-glass-base) / calc(var(--_a) + 0.08)), rgb(var(--mg-glass-base) / calc(var(--_a) - 0.12))),
+    rgb(var(--mg-glass-tint) / var(--mg-glass-tint-alpha));
+  -webkit-backdrop-filter: blur(var(--_blur)) saturate(var(--mg-glass-saturate));
+  backdrop-filter: blur(var(--_blur)) saturate(var(--mg-glass-saturate));
+  border: 1px solid rgb(255 255 255 / var(--mg-glass-rim));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / calc(var(--_spec) * var(--mg-glass-specular))),
+    inset 0 -1px 0 rgb(255 255 255 / calc(var(--_spec) * var(--mg-glass-specular) * 0.3)),
+    0 var(--_sy) var(--_sb) rgb(var(--mg-shadow) / var(--mg-shadow-alpha));
+}
+.mg-glass-0 { --_a: var(--mg-glass-alpha-0); --_blur: var(--mg-glass-blur-0); --_sy: var(--mg-glass-shadow-y-0); --_sb: var(--mg-glass-shadow-blur-0); --_spec: 0.35; --_solid: var(--mg-surface-container-lowest); }
+.mg-glass-1 { --_a: var(--mg-glass-alpha-1); --_blur: var(--mg-glass-blur-1); --_sy: var(--mg-glass-shadow-y-1); --_sb: var(--mg-glass-shadow-blur-1); --_spec: 0.5;  --_solid: var(--mg-surface-container-low); }
+.mg-glass-3 { --_a: var(--mg-glass-alpha-3); --_blur: var(--mg-glass-blur-3); --_sy: var(--mg-glass-shadow-y-3); --_sb: var(--mg-glass-shadow-blur-3); --_spec: 0.8;  --_solid: var(--mg-surface-container-high); }
+.mg-glass-4 { --_a: var(--mg-glass-alpha-4); --_blur: var(--mg-glass-blur-4); --_sy: var(--mg-glass-shadow-y-4); --_sb: var(--mg-glass-shadow-blur-4); --_spec: 0.9;  --_solid: var(--mg-surface-container-highest); }
+
+/* Ambient scene: something worth looking through. Glass over a flat color is just a grey box. */
+.mg-scene {
+  position: relative;
+  isolation: isolate;
+  color: var(--mg-on-surface);
+  background:
+    radial-gradient(60% 55% at 12% 8%, rgb(var(--mg-scene-1-rgb) / 0.85), transparent 70%),
+    radial-gradient(50% 50% at 88% 18%, rgb(var(--mg-scene-2-rgb) / 0.75), transparent 70%),
+    radial-gradient(60% 55% at 45% 100%, rgb(var(--mg-scene-3-rgb) / 0.7), transparent 72%),
+    var(--mg-scene-base);
+}
+.mg-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Light as state ───
+   Material state-layer percentages, but the layer is light falling from the top edge.
+   Pressed glass brightens and swells; it does not darken. */
+.mg-btn, .mg-icon-btn, .mg-fab, .mg-chip, .mg-segmented__item, .mg-nav__item, .mg-list-item--interactive {
+  --_s: 0;
+  position: relative;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+}
+.mg-btn::after, .mg-icon-btn::after, .mg-fab::after, .mg-chip::after, .mg-segmented__item::after, .mg-nav__item::after, .mg-list-item--interactive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.85), rgb(255 255 255 / 0.2));
+  opacity: calc(var(--_s) * 2.2);
+  transition: opacity var(--mg-motion-duration-short) var(--mg-motion-ease-standard);
+}
+:is(.mg-btn, .mg-icon-btn, .mg-fab, .mg-chip, .mg-segmented__item, .mg-nav__item, .mg-list-item--interactive):hover { --_s: var(--mg-state-hover); }
+:is(.mg-btn, .mg-icon-btn, .mg-fab, .mg-chip, .mg-segmented__item, .mg-nav__item, .mg-list-item--interactive):focus-visible { --_s: var(--mg-state-focus); }
+:is(.mg-btn, .mg-icon-btn, .mg-fab, .mg-chip, .mg-segmented__item, .mg-nav__item, .mg-list-item--interactive):active { --_s: var(--mg-state-pressed); }
+
+:where(.mg-btn, .mg-icon-btn, .mg-fab, .mg-chip, .mg-segmented__item, .mg-nav__item, .mg-switch, .mg-list-item--interactive, .mg-field__input, .mg-slider):focus-visible {
+  outline: 2px solid var(--mg-primary);
+  outline-offset: 2px;
+}

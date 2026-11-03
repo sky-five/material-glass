@@ -1,0 +1,35 @@
+/* ─── Accessibility fallbacks ───
+   Glass turns into the matching Material surface container whenever translucency
+   is unavailable or unwanted. Add data-mg-transparency="reduced" to any ancestor to force it. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4 { background: var(--_solid); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4 { background: var(--_solid) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+  .mg-field, .mg-btn--glass, .mg-fab { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+  .mg-field, .mg-btn--glass { background: var(--mg-surface-container-high); }
+  .mg-fab { background: var(--mg-primary-container); }
+}
+[data-mg-transparency="reduced"] :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4),
+:is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4)[data-mg-transparency="reduced"] {
+  background: var(--_solid) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+[data-mg-transparency="reduced"] :is(.mg-field, .mg-btn--glass) { background: var(--mg-surface-container-high); -webkit-backdrop-filter: none; backdrop-filter: none; }
+[data-mg-transparency="reduced"] .mg-fab { background: var(--mg-primary-container); -webkit-backdrop-filter: none; backdrop-filter: none; }
+[data-mg-transparency="reduced"] .mg-lens { display: none; }
+
+@media (prefers-contrast: more) {
+  .mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4 { background: var(--_solid) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--mg-outline); }
+  .mg-chip, .mg-field { border-color: var(--mg-on-surface-variant); }
+}
+@media (forced-colors: active) {
+  .mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4, .mg-field, .mg-chip, .mg-btn--glass, .mg-fab { border: 1px solid CanvasText; }
+  .mg-liquid__indicator { background: Highlight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root, [data-mg-motion] { --mg-spring: linear; --mg-spring-duration: 0ms; --mg-motion-press: 0; --mg-liquid-duration: 0ms; --mg-liquid-stretch: 0; }
+  .mg-btn:active, .mg-icon-btn:active, .mg-fab:active, .mg-chip:active, .mg-nav__item:active { transform: none; }
+  .mg-dialog[open] { animation: none; }
+}

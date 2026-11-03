@@ -1,0 +1,90 @@
+/* ─── Dialog variants ─── */
+.mg-dialog--alert { max-width: min(320px, calc(100vw - 32px)); text-align: center; }
+.mg-dialog--alert .mg-dialog__actions { justify-content: center; }
+.mg-dialog__icon { display: block; width: 28px; height: 28px; margin: 0 auto 12px; color: var(--mg-secondary); }
+.mg-dialog--fullscreen {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+}
+.mg-dialog--fullscreen[open] { display: flex; flex-direction: column; animation-name: mg-sheet-in; }
+.mg-dialog--fullscreen .mg-top-bar { position: static; }
+.mg-dialog__content { flex: 1; overflow: auto; padding: 16px 24px; }
+/* Stacked dialogs climb a tier each so the newest is always the clearest object. */
+.mg-dialog[open] ~ .mg-dialog[open] { --_a: var(--mg-glass-alpha-4); --_blur: var(--mg-glass-blur-4); --_spec: 0.9; }
+
+/* ─── Scrim: <div class="mg-scrim"></div> behind custom overlays ─── */
+.mg-scrim { position: fixed; inset: 0; z-index: 40; background: rgb(0 0 0 / 0.32); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: mg-fade-in var(--mg-motion-duration-medium) var(--mg-motion-ease-standard); }
+
+/* ─── Layout primitives (every-layout style). Gap via --gap. ─── */
+.mg-stack { display: flex; flex-direction: column; gap: var(--gap, 16px); }
+.mg-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap, 8px); }
+.mg-cluster--between { justify-content: space-between; }
+.mg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(var(--min, 240px), 100%), 1fr)); gap: var(--gap, 16px); }
+.mg-sidebar-layout { display: flex; flex-wrap: wrap; gap: var(--gap, 16px); }
+.mg-sidebar-layout > :first-child { flex-basis: var(--side, 280px); flex-grow: 1; }
+.mg-sidebar-layout > :last-child { flex-basis: 0; flex-grow: 999; min-inline-size: 55%; }
+.mg-center { box-sizing: content-box; max-inline-size: var(--measure, 1200px); margin-inline: auto; padding-inline: var(--gutter, 16px); }
+.mg-container { container-type: inline-size; }
+.mg-spacer { flex: 1; }
+
+/* Container-query helpers: hide/show by the container's width, not the viewport's. */
+@container (max-width: 599px) { .mg-cq-hide-compact { display: none !important; } }
+@container (min-width: 600px) { .mg-cq-show-compact { display: none !important; } }
+
+/* ─── App shells ───
+   <div class="mg-shell mg-scene">
+     <nav class="mg-shell__rail mg-nav mg-rail mg-glass-2" data-mg-liquid>…</nav>
+     <header class="mg-shell__top mg-top-bar mg-glass-1">…</header>
+     <main class="mg-shell__main">…</main>
+     <nav class="mg-shell__bottom mg-nav mg-glass-3" data-mg-liquid>…</nav>   (shown on compact widths)
+     <button class="mg-shell__fab mg-fab">…</button>
+   </div> */
+.mg-shell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: "rail top" "rail main";
+  gap: 0 16px;
+  min-height: 100dvh;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.mg-shell__rail { grid-area: rail; align-self: start; position: sticky; top: 12px; }
+.mg-shell__top { grid-area: top; border-radius: var(--mg-shape-lg); border-width: 1px; top: 12px; }
+.mg-shell__main { grid-area: main; min-width: 0; padding: 16px 0 96px; }
+.mg-shell__bottom { display: none; }
+.mg-shell__fab { position: fixed; right: 24px; bottom: 24px; z-index: 20; }
+.mg-shell--drawer { grid-template-columns: auto minmax(0, 1fr); }
+.mg-shell--drawer .mg-shell__rail { width: 260px; }
+@media (max-width: 720px) {
+  .mg-shell { grid-template-columns: minmax(0, 1fr); grid-template-areas: "top" "main"; padding: 8px; }
+  .mg-shell__rail { display: none; }
+  .mg-shell__bottom { display: flex; position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 20; }
+  .mg-shell__fab { bottom: 100px; right: 20px; }
+}
+
+/* ─── Visually hidden ─── */
+.mg-sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* @a11y */
+@media (prefers-reduced-transparency: reduce) { .mg-scrim { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(0 0 0 / 0.55); } }
+@media (prefers-reduced-motion: reduce) { .mg-scrim, .mg-dialog--fullscreen[open] { animation: none; } }
+
+/* ─── Print: glass turns to paper, navigation disappears ─── */
+@media print {
+  :root { color-scheme: light; }
+  .mg-scene { background: none !important; }
+  .mg-scene::after, .mg-scene--orbs::before { display: none !important; }
+  :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4) { background: #fff !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; border: 1px solid #ccc !important; color: #000 !important; }
+  .mg-nav, .mg-rail, .mg-fab, .mg-top-bar, .mg-shell__bottom, .mg-snackbar, .mg-toasts, .mg-lens, .mg-drawer, [data-mg-print="hide"] { display: none !important; }
+  .mg-shell { display: block; min-height: 0; }
+  .mg-table td { background: none !important; border-bottom: 1px solid #ddd; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+}

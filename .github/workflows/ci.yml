@@ -13,9 +13,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Generated themes are up to date
+        run: npm run themes && git diff --exit-code -- tokens/
       - name: Build CSS from tokens
         run: npm run build
       - name: Generated CSS is committed
-        run: git diff --exit-code -- material-glass.css
-      - name: WCAG contrast checks
+        run: git diff --exit-code -- material-glass.css material-glass.min.css dist/
+      - name: CSS parses cleanly, WCAG contrast checks
         run: npm test

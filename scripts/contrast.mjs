@@ -1,74 +1,65 @@
-// WCAG contrast check for every theme and mode.
+// WCAG contrast check for every theme and mode, every text-safe glass preset, and a generator sweep.
 // Fails (exit 1) when a required pair drops below its threshold.
-// Usage: node scripts/contrast.mjs
+// Usage: node scripts/contrast.mjs [--no-sweep]
+import * as mcu from '@material/material-color-utilities';
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkMode, makeTheme } from '../src/theme-core.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const tokens = JSON.parse(readFileSync(join(root, 'tokens/material-glass.tokens.json'), 'utf8'));
 
-const toRgb = (hex) => [0, 2, 4].map((i) => parseInt(hex.replace('#', '').slice(i, i + 2), 16));
-const lin = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
-const lum = ([r, g, b]) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
-const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
-const over = (top, alpha, bottom) => top.map((c, i) => c * alpha + bottom[i] * (1 - alpha));
-
-// Text pairs that must reach 4.5:1 (AA body text).
-const TEXT = [
-  ['on-primary', 'primary'], ['on-primary-container', 'primary-container'],
-  ['on-secondary', 'secondary'], ['on-secondary-container', 'secondary-container'],
-  ['on-tertiary', 'tertiary'], ['on-tertiary-container', 'tertiary-container'],
-  ['on-error', 'error'], ['on-error-container', 'error-container'],
-  ['inverse-on-surface', 'inverse-surface'], ['inverse-primary', 'inverse-surface'],
-  ...['surface', 'surface-container-lowest', 'surface-container-low', 'surface-container', 'surface-container-high', 'surface-container-highest']
-    .flatMap((s) => [['on-surface', s], ['on-surface-variant', s], ['primary', s]])
-];
-// Non-text UI boundaries that must reach 3:1 (WCAG 1.4.11).
-const UI = [['outline', 'surface'], ['outline', 'surface-container-high'], ['primary', 'surface-container-highest']];
-// Backdrops glass is checked against. Glass over arbitrary photos cannot be guaranteed;
-// these are the theme's own surfaces and containers, which is what the components sit on.
-const BACKDROPS = ['surface', 'surface-container-highest', 'primary-container', 'secondary-container', 'tertiary-container', 'scene-base', 'scene-1', 'scene-2', 'scene-3'];
-
-let failures = 0;
 let checks = 0;
+let failures = 0;
 const report = [];
 
-for (const [themeName, theme] of Object.entries(tokens.themes)) {
+function tally(label, r) {
+  checks += r.checks;
+  failures += r.failures.length;
+  for (const f of r.failures) report.push(`  ✗ ${label}: ${f}`);
+}
+
+// 1. Every theme, both modes.
+for (const [name, theme] of Object.entries(tokens.themes)) {
   for (const modeName of ['light', 'dark']) {
-    const { color: c, glass: g } = theme[modeName];
-    const fail = (msg) => { failures++; report.push(`  ✗ ${themeName}/${modeName}: ${msg}`); };
+    const r = checkMode(theme[modeName]);
+    tally(`${name}/${modeName}`, r);
+    report.push(`  ${name}/${modeName}: worst text-on-glass ratio ${r.worst.toFixed(2)}`);
+  }
+}
 
-    for (const [fg, bg] of TEXT) {
-      checks++;
-      const r = ratio(toRgb(c[fg]), toRgb(c[bg]));
-      if (r < 4.5) fail(`${fg} on ${bg} = ${r.toFixed(2)} (needs 4.5)`);
+// 2. Text-safe glass presets on every theme and mode.
+for (const [preset, p] of Object.entries(tokens['glass-presets'])) {
+  if (preset[0] === '$' || preset === 'frosted' || p.solid || !p['text-safe']) continue;
+  for (const [name, theme] of Object.entries(tokens.themes)) {
+    for (const modeName of ['light', 'dark']) {
+      const v = { ...p, ...(p[modeName] || {}) };
+      const glass = { ...theme[modeName].glass };
+      for (const k of ['alpha', 'tint-alpha', 'specular', 'rim', 'saturate']) if (v[k] !== undefined) glass[k] = v[k];
+      if (v.tint === 'shadow') glass.tint = glass.shadow;
+      tally(`${name}/${modeName} + glass "${preset}"`, checkMode({ color: theme[modeName].color, glass }));
     }
-    for (const [fg, bg] of UI) {
-      checks++;
-      const r = ratio(toRgb(c[fg]), toRgb(c[bg]));
-      if (r < 3) fail(`${fg} vs ${bg} = ${r.toFixed(2)} (needs 3.0)`);
-    }
+  }
+  report.push(`  glass preset "${preset}": ${Object.keys(tokens.themes).length} themes × 2 modes`);
+}
 
-    // Glass tiers 1-4 carry text. Use the thinnest point of the glass gradient (alpha - 0.12).
-    // Scene colors are behind glass at reduced strength in .mg-scene (≤ 0.85), so test them as-is: worst case.
-    let worst = Infinity;
-    for (let tier = 1; tier <= 4; tier++) {
-      const a = Math.max(0, g.alpha[tier] - 0.12);
-      for (const b of BACKDROPS) {
-        const backdrop = toRgb(c[b]);
-        const tinted = over(toRgb(g.tint), g['tint-alpha'], backdrop);
-        const glass = over(toRgb(g.base), a, tinted);
-        for (const [fg, min] of [['on-surface', 4.5], ['on-surface-variant', tier >= 2 ? 4.5 : 3]]) {
-          checks++;
-          const r = ratio(toRgb(c[fg]), glass);
-          worst = Math.min(worst, r);
-          if (r < min) fail(`${fg} on glass tier ${tier} over ${b} = ${r.toFixed(2)} (needs ${min})`);
-        }
+// 3. Generator sweep: any seed with default settings must pass with no manual edits.
+//    24 hues × 3 chroma levels, deterministic.
+if (!process.argv.includes('--no-sweep')) {
+  let failingModes = 0;
+  for (let h = 0; h < 360; h += 15) {
+    for (const chroma of [16, 48, 80]) {
+      const seed = mcu.hexFromArgb(mcu.Hct.from(h, chroma, 55).toInt());
+      const theme = makeTheme(mcu, { seed });
+      for (const modeName of ['light', 'dark']) {
+        const r = checkMode(theme[modeName]);
+        if (r.failures.length) failingModes++;
+        tally(`generator ${seed}/${modeName}`, r);
       }
     }
-    report.push(`  ${themeName}/${modeName}: worst text-on-glass ratio ${worst.toFixed(2)}`);
   }
+  report.push(`  generator sweep: 72 seeds × 2 modes, ${failingModes} failing`);
 }
 
 console.log(report.join('\n'));

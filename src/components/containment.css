@@ -1,0 +1,215 @@
+/* ─── Card variants. .mg-card + a glass tier is the default "glass card". ─── */
+.mg-card { display: block; color: var(--mg-on-surface); font-family: var(--mg-font-body); }
+.mg-card--elevated { background: var(--mg-surface-container-low); box-shadow: 0 2px 6px rgb(var(--mg-shadow) / calc(var(--mg-shadow-alpha) * 0.8)), 0 1px 2px rgb(var(--mg-shadow) / var(--mg-shadow-alpha)); }
+.mg-card--filled { background: var(--mg-surface-container-highest); }
+.mg-card--outlined { background: transparent; border: 1px solid var(--mg-outline-variant); }
+.mg-card__subtitle { margin: 2px 0 0; font-size: 13px; line-height: 18px; color: var(--mg-on-surface-variant); }
+.mg-card__body { margin: 10px 0 0; font-size: 14px; line-height: 20px; color: var(--mg-on-surface-variant); }
+.mg-card__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; margin-top: 16px; }
+.mg-card__media {
+  display: block;
+  width: calc(100% + 40px);
+  margin: -20px -20px 16px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--mg-shape-lg) var(--mg-shape-lg) 0 0;
+  background: linear-gradient(135deg, var(--mg-primary-container), var(--mg-tertiary-container));
+}
+.mg-card--media { overflow: hidden; }
+.mg-card--horizontal { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: center; }
+.mg-card--horizontal .mg-card__media { width: 112px; height: 100%; min-height: 112px; margin: -20px 0 -20px -20px; aspect-ratio: auto; border-radius: var(--mg-shape-lg) 0 0 var(--mg-shape-lg); }
+.mg-card--interactive {
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--mg-spring-duration) var(--mg-spring), box-shadow var(--mg-motion-duration-medium) var(--mg-motion-ease-standard);
+}
+.mg-card--interactive:hover { transform: translateY(-3px); --_sy: var(--mg-glass-shadow-y-4); --_sb: var(--mg-glass-shadow-blur-4); --_spec: 0.95; }
+.mg-card--interactive:active { transform: translateY(-1px) scale(calc(1 + 0.012 * var(--mg-motion-press))); }
+.mg-card--interactive:focus-visible { outline: 2px solid var(--mg-primary); outline-offset: 3px; }
+
+/* ─── Accordion: <div class="mg-accordion"><details class="mg-glass-1"><summary>…</summary><div class="mg-accordion__body">…</div></details></div> ─── */
+.mg-accordion { display: flex; flex-direction: column; gap: 6px; font-family: var(--mg-font-body); }
+.mg-accordion details { border-radius: var(--mg-shape-md); overflow: hidden; transition: border-radius var(--mg-motion-duration-medium) var(--mg-motion-ease-standard); }
+.mg-accordion details[open] { border-radius: var(--mg-shape-lg); }
+.mg-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: calc(56px + var(--mg-density-step));
+  padding: 0 16px 0 20px;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--mg-on-surface);
+  cursor: pointer;
+}
+.mg-accordion summary::-webkit-details-marker { display: none; }
+.mg-accordion summary::after {
+  content: "";
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  background: var(--mg-on-surface-variant);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: rotate var(--mg-spring-duration) var(--mg-spring);
+}
+.mg-accordion details[open] > summary::after { rotate: 180deg; }
+.mg-accordion summary:hover { background: rgb(var(--mg-on-surface-rgb) / var(--mg-state-hover)); }
+.mg-accordion summary:focus-visible { outline: 2px solid var(--mg-primary); outline-offset: -2px; border-radius: inherit; }
+.mg-accordion__body { padding: 0 20px 18px; font-size: 14px; line-height: 21px; color: var(--mg-on-surface-variant); }
+@supports (interpolate-size: allow-keywords) {
+  .mg-accordion { interpolate-size: allow-keywords; }
+  .mg-accordion details::details-content { block-size: 0; overflow: hidden; transition: block-size var(--mg-motion-duration-medium) var(--mg-motion-ease-standard), content-visibility var(--mg-motion-duration-medium) allow-discrete; }
+  .mg-accordion details[open]::details-content { block-size: auto; }
+}
+
+/* ─── Dividers ─── */
+.mg-divider { height: 1px; margin: 8px 0; border: 0; background: rgb(var(--mg-outline-variant-rgb) / 0.9); }
+.mg-divider--inset { margin-left: 16px; }
+.mg-divider--middle { margin-inline: 16px; }
+.mg-divider--vertical { width: 1px; height: auto; align-self: stretch; margin: 0 8px; }
+.mg-divider--glass { height: 2px; background: linear-gradient(rgb(0 0 0 / 0.08), rgb(255 255 255 / calc(0.6 * var(--mg-glass-specular) + 0.05))); }
+.mg-divider--label { display: flex; align-items: center; gap: 12px; height: auto; background: none; font-family: var(--mg-font-body); font-size: 12px; font-weight: 600; color: var(--mg-on-surface-variant); }
+.mg-divider--label::before, .mg-divider--label::after { content: ""; flex: 1; height: 1px; background: rgb(var(--mg-outline-variant-rgb) / 0.9); }
+
+/* ─── Carousel ───
+   <div class="mg-carousel" data-mg-carousel>
+     <div class="mg-carousel__track"><figure class="mg-carousel__item">…</figure>…</div>
+     <div class="mg-carousel__dots mg-glass-2" data-mg-liquid="manual"></div>   (filled by JS)
+   </div>
+   Layouts: default multi-browse, --hero (one large, peek of next), --full (one per view). */
+.mg-carousel { position: relative; display: flex; flex-direction: column; gap: 12px; }
+.mg-carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 30%);
+  gap: 8px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.mg-carousel__track::-webkit-scrollbar { display: none; }
+.mg-carousel__item {
+  position: relative;
+  margin: 0;
+  min-height: 220px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: var(--mg-shape-xl);
+  background: linear-gradient(135deg, var(--mg-primary-container), var(--mg-secondary-container));
+  color: var(--mg-on-primary-container);
+}
+.mg-carousel__item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mg-carousel__caption {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px 14px;
+  border-radius: var(--mg-shape-md);
+  font-family: var(--mg-font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mg-carousel--hero .mg-carousel__track { grid-auto-columns: 82%; }
+.mg-carousel--full .mg-carousel__track { grid-auto-columns: 100%; }
+.mg-carousel--full .mg-carousel__item, .mg-carousel--hero .mg-carousel__item { min-height: 280px; }
+.mg-carousel__dots { align-self: center; display: inline-flex; gap: 2px; padding: 4px; border-radius: var(--mg-shape-full); }
+.mg-carousel__dots .mg-segmented__item { min-height: 14px; min-width: 14px; padding: 0; }
+.mg-carousel__dots .mg-segmented__item[aria-pressed="true"] { min-width: 28px; }
+.mg-carousel__nav { position: absolute; top: calc(50% - 30px); z-index: 2; }
+.mg-carousel__nav--prev { left: 8px; }
+.mg-carousel__nav--next { right: 8px; }
+
+/* ─── Popover: anchored glass panel. <div class="mg-popover mg-glass-3" popover id="p1">…</div> ─── */
+.mg-popover {
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(360px, calc(100vw - 16px));
+  margin: 0;
+  padding: 16px;
+  inset: auto;
+  border-radius: var(--mg-shape-lg);
+  font-family: var(--mg-font-body);
+  font-size: 14px;
+  color: var(--mg-on-surface);
+}
+.mg-popover:popover-open { animation: mg-pop-in var(--mg-motion-duration-medium) var(--mg-spring); }
+
+/* ─── Command palette ───
+   <dialog class="mg-command mg-glass-4" data-mg-command>
+     <label class="mg-command__search"><svg/><input placeholder="Type a command"></label>
+     <div class="mg-command__list" role="listbox"><div class="mg-menu__label">Group</div><button class="mg-menu__item" role="option">…</button></div>
+   </dialog>
+   material-glass.js opens it on Ctrl/⌘+K, filters as you type, and handles arrow keys. */
+.mg-command {
+  box-sizing: border-box;
+  width: min(620px, calc(100vw - 24px));
+  max-width: none;
+  max-height: min(520px, calc(100vh - 80px));
+  margin: 12vh auto auto;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--mg-shape-xl);
+  color: var(--mg-on-surface);
+}
+.mg-command[open] { display: flex; animation: mg-dialog-in var(--mg-spring-duration) var(--mg-spring); }
+.mg-command::backdrop { background: rgb(0 0 0 / 0.28); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.mg-command__search { display: flex; align-items: center; gap: 12px; padding: 0 20px; min-height: 64px; border-bottom: 1px solid rgb(var(--mg-outline-variant-rgb) / 0.8); }
+.mg-command__search svg { width: 22px; height: 22px; color: var(--mg-on-surface-variant); flex: none; }
+.mg-command__search input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--mg-on-surface); font-family: var(--mg-font-body); font-size: 17px; outline: none; }
+.mg-command__list { padding: 8px; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; }
+.mg-command__list .mg-menu__item[aria-selected="true"] { background: var(--mg-secondary-container); color: var(--mg-on-secondary-container); }
+.mg-command__foot { display: flex; gap: 16px; padding: 10px 20px; border-top: 1px solid rgb(var(--mg-outline-variant-rgb) / 0.8); font-family: var(--mg-font-body); font-size: 12px; color: var(--mg-on-surface-variant); }
+.mg-kbd {
+  display: inline-flex;
+  align-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 5px;
+  background: rgb(var(--mg-on-surface-rgb) / 0.08);
+  box-shadow: inset 0 -1px 0 rgb(var(--mg-on-surface-rgb) / 0.18);
+  font-family: var(--mg-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mg-on-surface-variant);
+}
+
+/* ─── Split pane: <div class="mg-split" data-mg-split style="--split:40%"><div/><div class="mg-split__handle" role="separator" tabindex="0"/><div/></div> ─── */
+.mg-split { --split: 50%; display: grid; grid-template-columns: var(--split) 12px 1fr; min-height: 240px; }
+.mg-split--vertical { grid-template-columns: none; grid-template-rows: var(--split) 12px 1fr; }
+.mg-split > :not(.mg-split__handle) { min-width: 0; min-height: 0; overflow: auto; }
+.mg-split__handle { position: relative; cursor: col-resize; touch-action: none; }
+.mg-split--vertical > .mg-split__handle { cursor: row-resize; }
+.mg-split__handle::after {
+  content: "";
+  position: absolute;
+  inset: calc(50% - 20px) 4px;
+  border-radius: 2px;
+  background: rgb(var(--mg-on-surface-variant-rgb) / 0.45);
+  transition: background-color var(--mg-motion-duration-short) linear, inset var(--mg-motion-duration-medium) var(--mg-spring);
+}
+.mg-split--vertical > .mg-split__handle::after { inset: 4px calc(50% - 20px); }
+.mg-split__handle:hover::after, .mg-split__handle:focus-visible::after, .mg-split__handle.is-dragging::after { background: var(--mg-primary); inset: calc(50% - 32px) 4px; }
+.mg-split--vertical > .mg-split__handle:is(:hover, :focus-visible, .is-dragging)::after { inset: 4px calc(50% - 32px); }
+.mg-split__handle:focus-visible { outline: none; }
+
+/* @a11y */
+@media (prefers-reduced-motion: reduce) {
+  .mg-card--interactive:hover, .mg-card--interactive:active { transform: none; }
+  .mg-popover:popover-open, .mg-command[open] { animation: none; }
+  .mg-accordion details::details-content { transition: none; }
+}
+@media (forced-colors: active) {
+  .mg-card--outlined, .mg-card--elevated, .mg-card--filled, .mg-accordion details { border: 1px solid CanvasText; }
+  .mg-split__handle::after { background: CanvasText; }
+}

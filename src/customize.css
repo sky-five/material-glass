@@ -1,0 +1,148 @@
+/* ═══ Customization ═══
+   Every switch is a data attribute on <html> or any container, so parts of a page can differ.
+     data-mg-glass    frosted | clear | smoked | milk | crystal | paper   (presets generated from tokens)
+     data-mg-density  comfortable | compact | dense
+     data-mg-shape    sharp | soft | round | squircle
+     data-mg-motion   none | calm | standard | expressive
+     data-mg-font     system | inter | geist | jakarta | serif | mono
+     data-mg-type     fluid
+     data-mg-specular pointer   (needs material-glass.js) */
+
+/* ─── Paper: glass becomes opaque Material surfaces, keeping the rim and highlight ─── */
+[data-mg-glass="paper"] :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4),
+:is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4)[data-mg-glass="paper"] {
+  background: var(--_solid);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+[data-mg-glass="paper"] :is(.mg-field, .mg-btn--glass) { background: var(--mg-surface-container-high); -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* ─── Crystal: a prismatic rim drawn as a 1px gradient ring ─── */
+[data-mg-glass="crystal"] :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4)::before,
+:is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4)[data-mg-glass="crystal"]::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from 210deg, rgb(255 255 255 / 0.9), rgb(var(--mg-tertiary-rgb) / 0.8), rgb(var(--mg-primary-rgb) / 0.85), rgb(var(--mg-secondary-rgb) / 0.8), rgb(255 255 255 / 0.9));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+
+/* ─── Density: Material density steps, -4px per step ─── */
+[data-mg-density="comfortable"] { --mg-density-step: 0px; }
+[data-mg-density="compact"] { --mg-density-step: -4px; }
+[data-mg-density="dense"] { --mg-density-step: -8px; }
+
+/* ─── Shape ─── */
+[data-mg-shape="sharp"] { --mg-shape-xs: 2px; --mg-shape-sm: 4px; --mg-shape-md: 6px; --mg-shape-lg: 8px; --mg-shape-xl: 12px; --mg-shape-full: 10px; }
+[data-mg-shape="soft"] { --mg-shape-xs: 8px; --mg-shape-sm: 12px; --mg-shape-md: 16px; --mg-shape-lg: 24px; --mg-shape-xl: 32px; --mg-shape-full: 9999px; }
+[data-mg-shape="round"] { --mg-shape-xs: 12px; --mg-shape-sm: 16px; --mg-shape-md: 22px; --mg-shape-lg: 30px; --mg-shape-xl: 40px; --mg-shape-full: 9999px; }
+[data-mg-shape="squircle"] { --mg-shape-xs: 12px; --mg-shape-sm: 18px; --mg-shape-md: 26px; --mg-shape-lg: 36px; --mg-shape-xl: 48px; --mg-shape-full: 9999px; }
+@supports (corner-shape: squircle) {
+  [data-mg-shape="squircle"] :is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4, .mg-btn, .mg-fab, .mg-card, .mg-field, .mg-dialog, .mg-chip) { corner-shape: squircle; }
+}
+
+/* ─── Motion ─── */
+[data-mg-motion="none"] { --mg-spring: linear; --mg-spring-duration: 0ms; --mg-motion-press: 0; --mg-liquid-duration: 0ms; --mg-liquid-stretch: 0; --mg-motion-duration-short: 0ms; --mg-motion-duration-medium: 0ms; --mg-motion-duration-long: 0ms; }
+[data-mg-motion="calm"] { --mg-spring: cubic-bezier(0.2, 0, 0, 1); --mg-spring-duration: 380ms; --mg-motion-press: 0.5; --mg-liquid-duration: 460ms; --mg-liquid-stretch: 0.25; }
+[data-mg-motion="standard"] { --mg-motion-press: 1; --mg-liquid-duration: 560ms; --mg-liquid-stretch: 0.55; }
+[data-mg-motion="expressive"] {
+  --mg-spring: cubic-bezier(0.3, 0, 0, 1.4);
+  --mg-spring-duration: 760ms;
+  --mg-motion-press: 1.7;
+  --mg-liquid-duration: 720ms;
+  --mg-liquid-stretch: 0.9;
+}
+@supports (transition-timing-function: linear(0, 1)) {
+  [data-mg-motion="expressive"] {
+    --mg-spring: linear(0, 0.072, 0.253, 0.489, 0.733, 0.949, 1.116, 1.222, 1.27, 1.269, 1.23, 1.171, 1.103, 1.039, 0.987, 0.95, 0.93, 0.924, 0.931, 0.945, 0.963, 0.982, 0.998, 1.01, 1.017, 1.021, 1.02, 1.017, 1.012, 1.007, 1.002, 0.999, 0.996, 0.995, 0.994, 0.995, 0.996, 0.997, 0.999, 1, 1);
+  }
+  [data-mg-motion="calm"] {
+    --mg-spring: linear(0, 0.159, 0.447, 0.703, 0.878, 0.975, 1.018, 1.028, 1.024, 1.016, 1.009, 1.004, 1.001, 1, 0.999, 0.999, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+  }
+}
+
+/* ─── Font packs. Material Glass does not load fonts; add the matching webfont yourself. ─── */
+[data-mg-font="system"] { --mg-font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --mg-font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+[data-mg-font="inter"] { --mg-font-display: "Inter", ui-sans-serif, system-ui, sans-serif; --mg-font-body: "Inter", ui-sans-serif, system-ui, sans-serif; }
+[data-mg-font="geist"] { --mg-font-display: "Geist", ui-sans-serif, system-ui, sans-serif; --mg-font-body: "Geist", ui-sans-serif, system-ui, sans-serif; }
+[data-mg-font="jakarta"] { --mg-font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; --mg-font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; }
+[data-mg-font="serif"] { --mg-font-display: "Fraunces", "Iowan Old Style", Georgia, serif; --mg-font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --mg-type-display-weight: 600; --mg-type-display-tracking: -0.01em; }
+[data-mg-font="mono"] { --mg-font-display: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace; --mg-font-body: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace; --mg-type-display-tracking: -0.04em; --mg-type-label-tracking: 0; }
+
+/* ─── Fluid type: scales between phone and desktop, line heights stay on a 4px grid ─── */
+[data-mg-type="fluid"] {
+  --mg-type-display-size: clamp(40px, 2.4vw + 30px, 57px);
+  --mg-type-display-line: clamp(48px, 2.2vw + 38px, 64px);
+  --mg-type-headline-size: clamp(26px, 0.8vw + 22px, 32px);
+  --mg-type-headline-line: clamp(32px, 0.8vw + 28px, 40px);
+  --mg-type-title-size: clamp(20px, 0.3vw + 19px, 22px);
+}
+
+/* ─── Scenes. .mg-scene alone is the mesh gradient. ─── */
+.mg-scene--orbs { background: var(--mg-scene-base); overflow: hidden; }
+.mg-scene--orbs::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(28% 28% at 25% 30%, rgb(var(--mg-scene-1-rgb) / 0.9), transparent 70%),
+    radial-gradient(24% 24% at 72% 26%, rgb(var(--mg-scene-2-rgb) / 0.85), transparent 70%),
+    radial-gradient(30% 30% at 55% 78%, rgb(var(--mg-scene-3-rgb) / 0.8), transparent 70%);
+  filter: blur(20px);
+  animation: mg-orbs 24s ease-in-out infinite alternate;
+}
+@keyframes mg-orbs {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(4%, -3%) rotate(12deg) scale(1.08); }
+  100% { transform: translate(-3%, 4%) rotate(-8deg) scale(0.96); }
+}
+.mg-scene--grid {
+  background:
+    radial-gradient(60% 55% at 12% 8%, rgb(var(--mg-scene-1-rgb) / 0.7), transparent 70%),
+    radial-gradient(50% 50% at 88% 80%, rgb(var(--mg-scene-2-rgb) / 0.6), transparent 70%),
+    repeating-linear-gradient(0deg, rgb(var(--mg-outline-rgb) / 0.22) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgb(var(--mg-outline-rgb) / 0.22) 0 1px, transparent 1px 32px),
+    var(--mg-scene-base);
+}
+.mg-scene--noise::after { opacity: 0.18; }
+.mg-scene--image {
+  background:
+    linear-gradient(rgb(var(--mg-scene-base-rgb) / var(--mg-scene-image-dim, 0.35)), rgb(var(--mg-scene-base-rgb) / var(--mg-scene-image-dim, 0.35))),
+    var(--mg-scene-image, none) center / cover no-repeat,
+    var(--mg-scene-base);
+}
+.mg-scene--video { background: var(--mg-scene-base); overflow: hidden; }
+.mg-scene__video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.mg-scene--video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: rgb(var(--mg-scene-base-rgb) / var(--mg-scene-image-dim, 0.35));
+}
+
+/* ─── Pointer specular: a highlight that follows the pointer (material-glass.js sets --mg-px/--mg-py) ─── */
+[data-mg-specular="pointer"]:is(.mg-glass, .mg-glass-0, .mg-glass-1, .mg-glass-2, .mg-glass-3, .mg-glass-4) {
+  background:
+    radial-gradient(circle at var(--mg-px, 30%) var(--mg-py, 0%), rgb(255 255 255 / calc(0.06 + 0.3 * var(--mg-glass-specular))), transparent 42%),
+    linear-gradient(135deg, rgb(var(--mg-glass-base) / calc(var(--_a) + 0.08)), rgb(var(--mg-glass-base) / calc(var(--_a) - 0.12))),
+    rgb(var(--mg-glass-tint) / var(--mg-glass-tint-alpha));
+}
+

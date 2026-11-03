@@ -1,94 +1,190 @@
-// Builds material-glass.css from tokens/material-glass.tokens.json + src/components.css.
-// Usage: node scripts/build.mjs
-import { readFileSync, writeFileSync } from 'node:fs';
+// Builds the CSS from tokens/material-glass.tokens.json and src/.
+//
+//   node scripts/build.mjs                 material-glass.css (everything) + dist/ split files
+//   node scripts/build.mjs --prefix acme   also dist/material-glass.acme.css with every "mg-" renamed
+//
+// Output is wrapped in cascade layers so your own CSS always wins without !important:
+//   @layer mg.tokens, mg.base, mg.components, mg.customize, mg.a11y;
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const tokens = JSON.parse(readFileSync(join(root, 'tokens/material-glass.tokens.json'), 'utf8'));
-const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
-const components = readFileSync(join(root, 'src/components.css'), 'utf8');
+const read = (p) => readFileSync(join(root, p), 'utf8');
+const tokens = JSON.parse(read('tokens/material-glass.tokens.json'));
+const pkg = JSON.parse(read('package.json'));
 
 const DEFAULT_THEME = 'sea-glass';
+const LAYERS = '@layer mg.tokens, mg.base, mg.components, mg.customize, mg.a11y;';
+// Component files in gallery order. core.css holds the v0.1 set.
+const COMPONENT_ORDER = ['core', 'navigation', 'inputs', 'feedback', 'containment', 'data', 'media', 'layout'];
 
 const rgb = (hex) => {
   const h = hex.replace('#', '');
   return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)).join(' ');
 };
+const indent = (s, n = 2) => s.replace(/^(?=.)/gm, ' '.repeat(n));
 
+/* ─── Theme tokens ─── */
 function modeVars(mode, name) {
-  const out = [`  color-scheme: ${name};`];
+  const out = [`color-scheme: ${name};`];
   for (const [role, hex] of Object.entries(mode.color)) {
-    out.push(`  --mg-${role}: ${hex};`);
-    out.push(`  --mg-${role}-rgb: ${rgb(hex)};`);
+    out.push(`--mg-${role}: ${hex};`);
+    out.push(`--mg-${role}-rgb: ${rgb(hex)};`);
   }
   const g = mode.glass;
-  out.push(`  --mg-glass-base: ${rgb(g.base)};`);
-  out.push(`  --mg-glass-tint: ${rgb(g.tint)};`);
-  out.push(`  --mg-glass-tint-alpha: ${g['tint-alpha']};`);
-  g.alpha.forEach((a, i) => out.push(`  --mg-glass-alpha-${i}: ${a};`));
-  out.push(`  --mg-glass-specular: ${g.specular};`);
-  out.push(`  --mg-glass-rim: ${g.rim};`);
-  out.push(`  --mg-glass-saturate: ${g.saturate};`);
-  out.push(`  --mg-shadow: ${rgb(g.shadow)};`);
-  out.push(`  --mg-shadow-alpha: ${g['shadow-alpha']};`);
+  out.push(`--mg-glass-base: ${rgb(g.base)};`);
+  out.push(`--mg-glass-tint: ${rgb(g.tint)};`);
+  out.push(`--mg-glass-tint-alpha: ${g['tint-alpha']};`);
+  g.alpha.forEach((a, i) => out.push(`--mg-glass-alpha-${i}: ${a};`));
+  if (g.blur) g.blur.forEach((v, i) => out.push(`--mg-glass-blur-${i}: ${v}px;`));
+  out.push(`--mg-glass-specular: ${g.specular};`);
+  out.push(`--mg-glass-rim: ${g.rim};`);
+  out.push(`--mg-glass-saturate: ${g.saturate};`);
+  out.push(`--mg-shadow: ${rgb(g.shadow)};`);
+  out.push(`--mg-shadow-alpha: ${g['shadow-alpha']};`);
   return out.join('\n');
 }
 
 function paletteVars(palette) {
   const out = [];
-  for (const [key, tones] of Object.entries(palette)) {
-    for (const [tone, hex] of Object.entries(tones)) out.push(`  --mg-ref-${key}-${tone}: ${hex};`);
-  }
+  for (const [key, tones] of Object.entries(palette)) for (const [tone, hex] of Object.entries(tones)) out.push(`--mg-ref-${key}-${tone}: ${hex};`);
   return out.join('\n');
 }
 
-const blocks = [];
-for (const [name, theme] of Object.entries(tokens.themes)) {
+const rule = (sel, body) => `${sel} {\n${indent(body)}\n}`;
+
+function themeBlocks(name, theme) {
   const isDefault = name === DEFAULT_THEME;
   const t = `[data-mg-theme="${name}"]`;
   const d = ':root:not([data-mg-theme])';
   const light = isDefault ? `${d},\n${t}` : t;
   const darkExplicit = isDefault ? `${d}[data-mg-mode="dark"],\n${t}[data-mg-mode="dark"]` : `${t}[data-mg-mode="dark"]`;
-  const darkAuto = isDefault
-    ? `  ${d}:not([data-mg-mode="light"]),\n  ${t}:not([data-mg-mode="light"])`
-    : `  ${t}:not([data-mg-mode="light"])`;
-
-  blocks.push(`/* ── Theme: ${name} ── ${theme.$description || ''} */`);
-  blocks.push(`${light} {\n${paletteVars(theme.palette)}\n${modeVars(theme.light, 'light')}\n}`);
-  blocks.push(`@media (prefers-color-scheme: dark) {\n${darkAuto} {\n${modeVars(theme.dark, 'dark').replace(/^/gm, '  ')}\n  }\n}`);
-  blocks.push(`${darkExplicit} {\n${modeVars(theme.dark, 'dark')}\n}`);
+  const darkAuto = isDefault ? `${d}:not([data-mg-mode="light"]),\n${t}:not([data-mg-mode="light"])` : `${t}:not([data-mg-mode="light"])`;
+  return [
+    `/* ── Theme: ${name} ── ${theme.$description || ''} */`,
+    rule(light, `${paletteVars(theme.palette)}\n${modeVars(theme.light, 'light')}`),
+    `@media (prefers-color-scheme: dark) {\n${indent(rule(darkAuto, modeVars(theme.dark, 'dark')))}\n}`,
+    rule(darkExplicit, modeVars(theme.dark, 'dark'))
+  ].join('\n\n');
 }
 
-const tier = tokens['glass-tier'];
-const globals = [':root {'];
-tier.blur.forEach((b, i) => {
-  globals.push(`  --mg-glass-blur-${i}: ${b}px;`);
-  globals.push(`  --mg-glass-shadow-y-${i}: ${tier['shadow-y'][i]}px;`);
-  globals.push(`  --mg-glass-shadow-blur-${i}: ${tier['shadow-blur'][i]}px;`);
+function globalVars() {
+  const tier = tokens['glass-tier'];
+  const g = [];
+  tier.blur.forEach((b, i) => {
+    g.push(`--mg-glass-blur-${i}: ${b}px;`);
+    g.push(`--mg-glass-shadow-y-${i}: ${tier['shadow-y'][i]}px;`);
+    g.push(`--mg-glass-shadow-blur-${i}: ${tier['shadow-blur'][i]}px;`);
+  });
+  for (const [k, v] of Object.entries(tokens.shape)) g.push(`--mg-shape-${k}: ${v}px;`);
+  for (const [k, v] of Object.entries(tokens.state)) g.push(`--mg-state-${k}: ${v};`);
+  for (const [k, v] of Object.entries(tokens.motion)) g.push(`--mg-motion-${k}: ${typeof v === 'number' ? v + 'ms' : v};`);
+  g.push(`--mg-font-display: ${tokens.type['font-display']};`);
+  g.push(`--mg-font-body: ${tokens.type['font-body']};`);
+  g.push(`--mg-font-mono: ${tokens.type['font-mono'] || 'ui-monospace, "Cascadia Code", "SF Mono", monospace'};`);
+  for (const k of ['display', 'headline', 'title', 'body', 'label']) {
+    const s = tokens.type[k];
+    g.push(`--mg-type-${k}-size: ${s.size}px;`, `--mg-type-${k}-line: ${s.line}px;`, `--mg-type-${k}-weight: ${s.weight};`, `--mg-type-${k}-tracking: ${s.tracking};`);
+  }
+  return rule(':root', g.join('\n'));
+}
+
+/* ─── Glass presets ─── */
+function presetVars(p, mode) {
+  const v = { ...p, ...(p[mode] || {}) };
+  const out = [];
+  if (v.alpha) v.alpha.forEach((a, i) => out.push(`--mg-glass-alpha-${i}: ${a};`));
+  if (v.blur) v.blur.forEach((b, i) => out.push(`--mg-glass-blur-${i}: ${b}px;`));
+  if (v.tint === 'shadow') out.push('--mg-glass-tint: var(--mg-shadow);');
+  for (const k of ['tint-alpha', 'specular', 'rim', 'saturate']) if (v[k] !== undefined) out.push(`--mg-glass-${k}: ${v[k]};`);
+  return out.join('\n');
+}
+
+function presetBlocks() {
+  const out = [];
+  for (const [name, p] of Object.entries(tokens['glass-presets'])) {
+    if (name.startsWith('$') || p.solid) continue;
+    const light = presetVars(p, 'light');
+    const dark = presetVars(p, 'dark');
+    if (!light && !dark) continue;
+    const s = `[data-mg-glass="${name}"]`;
+    out.push(`/* Glass preset: ${name}. ${p.$description || ''} */`);
+    out.push(rule(s, light));
+    out.push(`@media (prefers-color-scheme: dark) {\n${indent(rule(`:root:not([data-mg-mode="light"]) ${s},\n:root:not([data-mg-mode="light"])${s}`, dark))}\n}`);
+    out.push(rule(`[data-mg-mode="dark"] ${s},\n[data-mg-mode="dark"]${s}`, dark));
+  }
+  return out.join('\n\n');
+}
+
+/* ─── Sources ─── */
+const A11Y_MARK = '/* @a11y */';
+const files = readdirSync(join(root, 'src/components')).filter((f) => f.endsWith('.css')).map((f) => f.replace('.css', ''));
+const ordered = [...COMPONENT_ORDER.filter((n) => files.includes(n)), ...files.filter((n) => !COMPONENT_ORDER.includes(n)).sort()];
+// @property must live outside layers; hoist it to the top of the file.
+const hoisted = [];
+const hoist = (css) => css.replace(/@property[^{]+{[^}]*}s*/g, (m) => { hoisted.push(m.trim()); return ''; });
+const components = ordered.map((name) => {
+  const src = hoist(read(`src/components/${name}.css`));
+  const i = src.indexOf(A11Y_MARK);
+  return { name, main: (i < 0 ? src : src.slice(0, i)).trim(), a11y: i < 0 ? '' : src.slice(i + A11Y_MARK.length).trim() };
 });
-for (const [k, v] of Object.entries(tokens.shape)) globals.push(`  --mg-shape-${k}: ${v}px;`);
-for (const [k, v] of Object.entries(tokens.state)) globals.push(`  --mg-state-${k}: ${v};`);
-for (const [k, v] of Object.entries(tokens.motion)) globals.push(`  --mg-motion-${k}: ${typeof v === 'number' ? v + 'ms' : v};`);
-globals.push(`  --mg-font-display: ${tokens.type['font-display']};`);
-globals.push(`  --mg-font-body: ${tokens.type['font-body']};`);
-for (const k of ['display', 'headline', 'title', 'body', 'label']) {
-  const s = tokens.type[k];
-  globals.push(`  --mg-type-${k}-size: ${s.size}px;`);
-  globals.push(`  --mg-type-${k}-line: ${s.line}px;`);
-  globals.push(`  --mg-type-${k}-weight: ${s.weight};`);
-  globals.push(`  --mg-type-${k}-tracking: ${s.tracking};`);
-}
-globals.push('}');
 
-const header = `/*!
- * Material Glass v${pkg.version}
+const layer = (name, body) => `@layer ${name} {\n\n${body.trim()}\n\n}`;
+const header = (what) => `/*!
+ * Material Glass v${pkg.version}${what ? ` · ${what}` : ''}
  * Material 3 color roles and scales on Liquid-Glass-style surfaces.
  * ${pkg.homepage}
  * MIT License. Unofficial: not affiliated with Google or Apple.
  * GENERATED by scripts/build.mjs. Edit tokens/ or src/, not this file.
  */`;
 
-const css = [header, '', '/* ═══ Tokens ═══ */', globals.join('\n'), '', blocks.join('\n\n'), '', '/* ═══ Components ═══ */', components].join('\n');
-writeFileSync(join(root, 'material-glass.css'), css);
-console.log(`material-glass.css written (${(css.length / 1024).toFixed(1)} KB)`);
+const tokensCss = [globalVars(), ...Object.entries(tokens.themes).map(([n, t]) => themeBlocks(n, t))].join('\n\n');
+const baseCss = read('src/base.css');
+const customizeCss = [read('src/customize.css'), presetBlocks()].join('\n\n');
+const a11yCss = [read('src/a11y.css'), ...components.filter((c) => c.a11y).map((c) => `/* ${c.name} */\n${c.a11y}`)].join('\n\n');
+
+const full = [
+  header(),
+  LAYERS,
+  ...hoisted,
+  layer('mg.tokens', tokensCss),
+  layer('mg.base', baseCss),
+  layer('mg.components', components.map((c) => `/* ════ ${c.name} ════ */\n\n${c.main}`).join('\n\n')),
+  layer('mg.customize', customizeCss),
+  layer('mg.a11y', a11yCss)
+].join('\n\n') + '\n';
+
+writeFileSync(join(root, 'material-glass.css'), full);
+// Conservative minify: drop comments (keep the /*! licence), collapse whitespace, trim around braces and semicolons.
+// Deliberately never touches colons or combinators, so selectors cannot change meaning.
+const minify = (css) => css
+  .replace(/\/\*(?!!)[\s\S]*?\*\//g, '')
+  .replace(/\s+/g, ' ')
+  .replace(/\s*([{};])\s*/g, '$1')
+  .replace(/;}/g, '}')
+  .trim() + '\n';
+const min = minify(full);
+writeFileSync(join(root, 'material-glass.min.css'), min);
+const { gzipSync } = await import('node:zlib');
+console.log(`material-glass.css written (${(full.length / 1024).toFixed(1)} KB, min ${(min.length / 1024).toFixed(1)} KB, gzip ${(gzipSync(min).length / 1024).toFixed(1)} KB)`);
+
+/* ─── Split build: core + one file per component group ─── */
+mkdirSync(join(root, 'dist/components'), { recursive: true });
+const core = [header('core: tokens, glass, customization, a11y'), LAYERS, layer('mg.tokens', tokensCss), layer('mg.base', baseCss), layer('mg.customize', customizeCss), layer('mg.a11y', read('src/a11y.css'))].join('\n\n') + '\n';
+writeFileSync(join(root, 'dist/material-glass.core.css'), core);
+for (const c of components) {
+  const css = [header(`components/${c.name}`), LAYERS, ...(c.main.includes('--value') ? hoisted : []), layer('mg.components', c.main), c.a11y ? layer('mg.a11y', c.a11y) : ''].filter(Boolean).join('\n\n') + '\n';
+  writeFileSync(join(root, `dist/components/${c.name}.css`), css);
+}
+console.log(`dist/: core (${(core.length / 1024).toFixed(1)} KB) + ${components.length} component files`);
+
+/* ─── Optional prefix build ─── */
+const pi = process.argv.indexOf('--prefix');
+if (pi > 0) {
+  const prefix = process.argv[pi + 1];
+  if (!/^[a-z][a-z0-9]*$/.test(prefix || '')) { console.error('--prefix needs a short lowercase name'); process.exit(1); }
+  const renamed = full.replace(/(?<![a-z0-9])mg([-.])/g, `${prefix}$1`);
+  writeFileSync(join(root, `dist/material-glass.${prefix}.css`), renamed);
+  console.log(`dist/material-glass.${prefix}.css written (classes, variables, attributes and layers renamed to "${prefix}-")`);
+}
